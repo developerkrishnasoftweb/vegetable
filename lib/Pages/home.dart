@@ -125,12 +125,12 @@ class _HomeState extends State<Home> {
                     children: [
                       Text("GOOD MORNING",
                         softWrap: true,
-                        style: Theme.of(context).textTheme.bodyText2.copyWith(fontSize: 18),
+                        style: Theme.of(context).textTheme.bodyText2.copyWith(fontSize: 15),
                       ),
-                      SizedBox(height: 7,),
+                      SizedBox(height: 5,),
                       Text("Hey, Lorem",
                         softWrap: true,
-                        style: Theme.of(context).textTheme.bodyText2.copyWith(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30)
+                        style: Theme.of(context).textTheme.bodyText2.copyWith(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25)
                       )
                     ],
                   ),
@@ -149,7 +149,7 @@ class _HomeState extends State<Home> {
                           contentPadding: EdgeInsets.only(left: 20, right: 2),
                           onTap: (){},
                           title: Text("Food & Groceries",
-                            style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 23, fontWeight: FontWeight.normal),
+                            style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 20, fontWeight: FontWeight.normal),
                           ),
                           trailing: FlatButton(
                             child: Text("SEE ALL",
@@ -167,7 +167,7 @@ class _HomeState extends State<Home> {
                           contentPadding: EdgeInsets.only(left: 20, right: 2),
                           onTap: (){},
                           title: Text("Want to shop for",
-                            style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 23, fontWeight: FontWeight.normal),
+                            style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 20, fontWeight: FontWeight.normal),
                           ),
                           trailing: FlatButton(
                             child: Text("SEE ALL",

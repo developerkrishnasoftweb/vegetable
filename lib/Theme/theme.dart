@@ -10,5 +10,6 @@ ThemeData themeData = ThemeData(
     bodyText2: TextStyle(
         color: Colors.white54,
     ),
-  )
+  ),
+  fontFamily: "Poppins-Regular"
 );

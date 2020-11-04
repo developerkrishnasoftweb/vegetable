@@ -75,8 +75,9 @@ class _ItemState extends State<Item> {
                             children: [
                               Text(widget.items[index].price.toString(),
                                 style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black54
                                 ),
                               ),
                               Container(

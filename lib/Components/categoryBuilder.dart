@@ -37,7 +37,7 @@ GridView categoryBuilder({@required List<CategoryItems> items}){
                 ),
               ),
               Text(items[index].title,
-                style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 16,),
+                style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 14,),
               )
             ],
           ),
