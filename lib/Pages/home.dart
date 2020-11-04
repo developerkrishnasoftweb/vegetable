@@ -139,7 +139,7 @@ class _HomeState extends State<Home> {
                 Carousel(items: carousel, width: size.width * 0.92, borderRadius: BorderRadius.circular(20),),
                 SizedBox(height: 30,),
                 Container(
-                  height: size.height - 437,
+                  height: size.height - 457,
                   width: size.width,
                   child: SingleChildScrollView(
                     physics: BouncingScrollPhysics(),

@@ -79,9 +79,14 @@ class _HomeState extends State<HomeSecond> {
           CustomScrollView(
             slivers: [
               SliverAppBar(
+                pinned: true,
                 backgroundColor: Color(0xff81AE4F),
+                collapsedHeight: 60,
+                elevation: 0,
+                // shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
                 flexibleSpace: FlexibleSpaceBar(
-                  titlePadding: EdgeInsets.only(bottom: size.height * 0.13, left: 20),
+                  titlePadding: EdgeInsets.only(left: 20),
+                  // centerTitle: true,
                   title: RichText(
                     text: TextSpan(
                         text: "GOOD MORNING\n",
@@ -95,14 +100,11 @@ class _HomeState extends State<HomeSecond> {
                     ),
                   ),
                 ),
-                expandedHeight: size.height * 0.3,
+                expandedHeight: size.height * 0.2,
                 leading: IconButton(
                   icon: ImageIcon(AssetImage("assets/icons/menu-hamburger.png")),
                   onPressed: (){},
                   iconSize: 22,
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))
                 ),
                 actions: [
                   IconButton(
@@ -118,10 +120,89 @@ class _HomeState extends State<HomeSecond> {
                       ),
                       onPressed: () {}),
                 ],
+                onStretchTrigger: (){
+                  print("Hello");
+                  return;
+                },
+              ),
+              SliverList(
+                delegate: SliverChildListDelegate(
+                    [
+                      Stack(
+                        children: [
+                          Container(
+                            height: size.height * 0.1,
+                            width: size.width,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
+                              color: Color(0xff81AE4F),
+                            ),
+                          ),
+                          Positioned(
+                            top: size.height * 0.05,
+                            child: Container(
+                              height: size.height * 0.1,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.vertical(bottom: Radius.circular(30)),
+                                color: Color(0xff81AE4F),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: size.height,
+                            width: size.width,
+                            // padding: EdgeInsets.only(top: size.height * 0.25),
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.vertical,
+                              physics: BouncingScrollPhysics(),
+                              child: Column(
+                                children: [
+                                  Carousel(items: carousel, width: size.width * 0.92, borderRadius: BorderRadius.circular(20),),
+                                  ListTile(
+                                    contentPadding: EdgeInsets.only(left: 20, right: 2),
+                                    onTap: (){},
+                                    title: Text("Food & Groceries",
+                                      style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 20, fontWeight: FontWeight.normal),
+                                    ),
+                                    trailing: FlatButton(
+                                      child: Text("SEE ALL",
+                                        style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.black45, fontSize: 14),
+                                      ),
+                                      onPressed: (){},
+                                    ),
+                                  ),
+                                  Container(
+                                    width: size.width,
+                                    child: categoryBuilder(items: foodGroceries),
+                                  ),
+                                  SizedBox(height: 30,),
+                                  ListTile(
+                                    contentPadding: EdgeInsets.only(left: 20, right: 2),
+                                    onTap: (){},
+                                    title: Text("Want to shop for",
+                                      style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 20, fontWeight: FontWeight.normal),
+                                    ),
+                                    trailing: FlatButton(
+                                      child: Text("SEE ALL",
+                                        style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.black45, fontSize: 14),
+                                      ),
+                                      onPressed: (){},
+                                    ),
+                                  ),
+                                  Item(items: _item1)
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      )
+                    ]
+                ),
               )
             ],
           ),
-          Container(
+          /*Container(
             height: size.height,
             width: size.width,
             padding: EdgeInsets.only(top: size.height * 0.25),
@@ -166,7 +247,7 @@ class _HomeState extends State<HomeSecond> {
                 ],
               ),
             ),
-          )
+          )*/
         ],
       )
     );
