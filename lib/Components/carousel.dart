@@ -17,79 +17,84 @@ class _CarouselState extends State<Carousel> {
   Widget build(BuildContext context) {
     return Container(
       width: widget.width,
+      height: widget.height != null ? widget.height + 20 : 220,
       decoration: BoxDecoration(
         borderRadius: widget.borderRadius ?? null,
       ),
-      child: CarouselSlider(
-        items: widget.items.map((item) {
-          return GestureDetector(
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: item.image,
-                  fit: BoxFit.fill,
-                ),
-                borderRadius: widget.borderRadius ?? null,
-              ),
-              child: Stack(
-                children: [
-                  Align(
-                    child: RichText(
-                      text: TextSpan(
-                          text: item.title != null ? item.title : "",
-                          style: TextStyle(fontSize: 25, color: Colors.grey),
-                          children: [
-                            TextSpan(
-                                text: item.subtitle != null
-                                    ? "\n" + item.subtitle
-                                    : "",
-                                style: TextStyle(fontSize: 15, color: Colors.grey)),
-                          ]),
+      child: Column(
+        children: [
+          CarouselSlider(
+            items: widget.items.map((item) {
+              return GestureDetector(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: item.image,
+                      fit: BoxFit.fill,
                     ),
-                    alignment: Alignment.topLeft,
+                    borderRadius: widget.borderRadius ?? null,
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: widget.items.map((i) {
-                        int index = widget.items.indexOf(i);
-                        return AnimatedContainer(
-                          duration: Duration(milliseconds: 800),
-                          margin: EdgeInsets.symmetric(horizontal: 2),
-                          height: 12,
-                          width: 12,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.white),
-                            color:
-                            _index == index ? Colors.blue : Colors.grey,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        );
-                      }).toList(),
-                    ),
-                  )
-                ],
-              ),
+                  child: Stack(
+                    children: [
+                      Align(
+                        child: RichText(
+                          text: TextSpan(
+                              text: item.title != null ? item.title : "",
+                              style: TextStyle(fontSize: 25, color: Colors.grey),
+                              children: [
+                                TextSpan(
+                                    text: item.subtitle != null
+                                        ? "\n" + item.subtitle
+                                        : "",
+                                    style: TextStyle(fontSize: 15, color: Colors.grey)),
+                              ]),
+                        ),
+                        alignment: Alignment.topLeft,
+                      ),
+                    ],
+                  ),
+                ),
+                onTap: item.onTap,
+              );
+            }).toList(),
+            options: CarouselOptions(
+                initialPage: 1,
+                height: widget.height ?? 200,
+                autoPlay: true,
+                viewportFraction: 1,
+                aspectRatio: 16 / 9,
+                // autoPlayCurve: Curves.easeInToLinear,
+                // enlargeCenterPage: true,
+                autoPlayAnimationDuration: Duration(milliseconds: 900),
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _index = index;
+                  });
+                }),
+          ),
+          Container(
+            height: 20,
+            width: widget.width,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: widget.items.map((i) {
+                int index = widget.items.indexOf(i);
+                return AnimatedContainer(
+                  duration: Duration(milliseconds: 800),
+                  margin: EdgeInsets.symmetric(horizontal: 2),
+                  height: 10,
+                  width: _index == index ? 25 : 10,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Color(0xff81AE4F), width: 2),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                );
+              }).toList(),
             ),
-            onTap: item.onTap,
-          );
-        }).toList(),
-        options: CarouselOptions(
-            initialPage: 1,
-            height: widget.height ?? 200,
-            autoPlay: true,
-            viewportFraction: 1,
-            aspectRatio: 16 / 9,
-            // autoPlayCurve: Curves.easeInToLinear,
-            // enlargeCenterPage: true,
-            autoPlayAnimationDuration: Duration(milliseconds: 900),
-            onPageChanged: (index, reason) {
-              setState(() {
-                _index = index;
-              });
-            }),
+          )
+        ],
       ),
     );
   }
