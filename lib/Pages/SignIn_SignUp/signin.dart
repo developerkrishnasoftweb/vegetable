@@ -1,9 +1,12 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vegetable/services/services.dart';
 import '../../Components/customButton.dart';
 import '../../Components/textinput.dart';
+import '../home.dart';
 import 'signup.dart';
-import '../../Pages/home1.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -11,18 +14,24 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  bool loginStatus = false;
+  String email, password;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     Orientation orientation = MediaQuery.of(context).orientation;
 
     return Scaffold(
+      key: scaffoldKey,
       body: Container(
         height: size.height,
         width: size.width,
         alignment: Alignment.center,
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
+          padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -35,70 +44,147 @@ class _SignInState extends State<SignIn> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 30),
-                child: Text("Welcome Back!",
-                  style: Theme.of(context).textTheme.bodyText1.copyWith(color: Color(0xff81AE4F), fontSize: 22, fontWeight: FontWeight.bold),
+                child: Text(
+                  "Welcome Back!",
+                  style: Theme.of(context).textTheme.bodyText1.copyWith(
+                      color: Color(0xff81AE4F),
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 5, bottom: 20),
-                child: Text("Login to your existing account",
-                  style: Theme.of(context).textTheme.bodyText1.copyWith(color: Color(0xffA8A8A8), fontSize: 14, fontWeight: FontWeight.bold),
+                child: Text(
+                  "Login to your existing account",
+                  style: Theme.of(context).textTheme.bodyText1.copyWith(
+                      color: Color(0xffA8A8A8),
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               input(
-                  context: context,
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Color(0xffA8A8A8))
-                    ),
-                  ),
-                  onTap: (){},
-                  obscureText: true,
-                  text: "Email & Mobile No."
+                context: context,
+                decoration: InputDecoration(
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Color(0xffA8A8A8))),
+                ),
+                text: "Email & Mobile No.",
+                onChanged: (value) {
+                  setState(() {
+                    email = value;
+                  });
+                },
               ),
               input(
                   context: context,
                   decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Color(0xffA8A8A8))
-                    ),
+                        borderSide: BorderSide(color: Color(0xffA8A8A8))),
                   ),
-                  onTap: (){},
+                  onChanged: (value) {
+                    setState(() {
+                      password = value;
+                    });
+                  },
                   obscureText: true,
-                  text: "Password"
-              ),
+                  text: "Password"),
               Container(
                 width: size.width,
-                padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 35, vertical: 5),
                 alignment: Alignment.centerRight,
-                child: Text("Forgot password!",
-                  style: Theme.of(context).textTheme.bodyText1.copyWith(color: Color(0xff000000), fontSize: 14),
+                child: Text(
+                  "Forgot password!",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText1
+                      .copyWith(color: Color(0xff000000), fontSize: 14),
                 ),
               ),
-              SizedBox(height: 30,),
-              button(context: context, onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HomeSecond()));
-              }, text: "SIGN IN", height: 65),
+              SizedBox(
+                height: 30,
+              ),
+              button(
+                  context: context,
+                  onPressed: () async {
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeSecond()));
+                    setState(() {
+                      loginStatus = true;
+                    });
+                    if (email != null &&
+                        email != "" &&
+                        password != null &&
+                        password != "") {
+                      FormData formData = FormData.fromMap(
+                          {"email": email, "password": password});
+                      await Services.signIn(formData).then((value) {
+                        if (value.response == 1) {
+                          setState(() {
+                            loginStatus = false;
+                          });
+                          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Home()), (route) => false);
+                        } else {
+                          setState(() {
+                            loginStatus = false;
+                          });
+                          Fluttertoast.showToast(msg: value.message);
+                        }
+                      });
+                    } else
+                      setState(() => loginStatus = false);
+                  },
+                  height: 65,
+                  child: loginStatus
+                      ? SizedBox(
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation(Colors.white),
+                          ),
+                          height: 30,
+                          width: 30,
+                        )
+                      : Text(
+                          "Sign In",
+                          style: Theme.of(context).textTheme.bodyText1.copyWith(
+                                color: Color(0xffffffff),
+                                fontSize: 18,
+                              ),
+                        )),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 30),
                 child: RichText(
-                  text: TextSpan(text: "Don't have an account?\t",
-                      style: Theme.of(context).textTheme.bodyText1.copyWith(color: Color(0xffa8a8a8), fontSize: 16, fontWeight: FontWeight.bold),
+                  text: TextSpan(
+                      text: "Don't have an account?\t",
+                      style: Theme.of(context).textTheme.bodyText1.copyWith(
+                          color: Color(0xffa8a8a8),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold),
                       children: [
                         WidgetSpan(
                             child: GestureDetector(
-                              child: Text("Sign Up",
-                                style: Theme.of(context).textTheme.bodyText1.copyWith(color: Color(0xff81AE4F), fontSize: 16, fontWeight: FontWeight.bold),
+                              child: Text(
+                                "Sign Up",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1
+                                    .copyWith(
+                                        color: Color(0xff81AE4F),
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold),
                               ),
-                              onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp())); },
-                            )
-                        )
-                      ]
-                  ),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SignUp()));
+                              },
+                        ))
+                      ]),
                 ),
               ),
             ],

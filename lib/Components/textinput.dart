@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget input({@required BuildContext context, InputDecoration decoration, TextStyle style, GestureTapCallback onTap, TextEditingController controller, bool obscureText, ValueChanged<String> onChanged, String text}){
+Widget input({@required BuildContext context, InputDecoration decoration, TextStyle style, GestureTapCallback onTap, TextEditingController controller, bool obscureText, ValueChanged<String> onChanged, String text, TextInputType keyboardType}){
   Size size = MediaQuery.of(context).size;
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
@@ -19,6 +19,7 @@ Widget input({@required BuildContext context, InputDecoration decoration, TextSt
           controller: controller ?? null,
           obscureText: obscureText ?? false,
           onChanged: onChanged ?? null,
+          keyboardType: keyboardType,
         ),
       ],
     ),
