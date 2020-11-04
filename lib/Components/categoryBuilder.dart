@@ -46,7 +46,7 @@ GridView categoryBuilder({@required List<CategoryItems> items}){
       itemCount: items.length,
     );
   else {
-    return GridView();
+    return GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 0),);
   }
 }
 

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:vegetable/Pages/home.dart';
-import 'package:vegetable/Pages/home1.dart';
 import 'Pages/SignIn_SignUp/signin.dart';
 import 'Theme/theme.dart';
 

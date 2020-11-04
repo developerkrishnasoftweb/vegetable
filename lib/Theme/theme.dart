@@ -5,10 +5,12 @@ ThemeData themeData = ThemeData(
   visualDensity: VisualDensity.adaptivePlatformDensity,
   textTheme: TextTheme(
     bodyText1: TextStyle(
-      color: Colors.black
+      color: Colors.black,
+      letterSpacing: 0.3
     ),
     bodyText2: TextStyle(
         color: Colors.white54,
+        letterSpacing: 0.3
     ),
   ),
   fontFamily: "Poppins-Regular"

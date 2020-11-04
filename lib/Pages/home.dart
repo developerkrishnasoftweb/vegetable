@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:vegetable/Components/carousel.dart';
-import 'package:vegetable/Components/drawer.dart';
+import '../Components/carousel.dart';
+import '../Components/drawer.dart';
 import '../Components/categoryBuilder.dart';
-import 'package:vegetable/Components/itemBuilder.dart';
+import '../Components/itemBuilder.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -69,6 +69,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     Orientation orientation = MediaQuery.of(context).orientation;
+
     return Scaffold(
       key: scaffoldKey,
       drawer: SafeArea(child: drawer(context),),
@@ -136,15 +137,15 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 SizedBox(height: 30,),
-                Carousel(items: carousel, width: size.width * 0.92, borderRadius: BorderRadius.circular(20),),
-                SizedBox(height: 30,),
+                // Carousel(items: carousel, width: size.width * 0.92, borderRadius: BorderRadius.circular(20),),
                 Container(
-                  height: size.height - 457,
+                  height: size.height - 257,
                   width: size.width,
                   child: SingleChildScrollView(
                     physics: BouncingScrollPhysics(),
                     child: Column(
                       children: [
+                        Carousel(items: carousel, width: size.width * 0.92, borderRadius: BorderRadius.circular(20),),
                         ListTile(
                           contentPadding: EdgeInsets.only(left: 20, right: 2),
                           onTap: (){},
@@ -176,6 +177,7 @@ class _HomeState extends State<Home> {
                             onPressed: (){},
                           ),
                         ),
+                        Item(items: _item1),
                         Item(items: _item1)
                       ],
                     ),

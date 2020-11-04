@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:vegetable/Components/carousel.dart';
-import 'package:vegetable/Components/drawer.dart';
+import '../Components/carousel.dart';
+import '../Components/drawer.dart';
 import '../Components/categoryBuilder.dart';
-import 'package:vegetable/Components/itemBuilder.dart';
+import '../Components/itemBuilder.dart';
 
 class HomeSecond extends StatefulWidget {
   @override
@@ -74,9 +74,11 @@ class _HomeState extends State<HomeSecond> {
 
     return Scaffold(
       key: scaffoldKey,
+      drawer: drawer(context),
       body: Stack(
         children: [
           CustomScrollView(
+            // physics: BouncingScrollPhysics(),
             slivers: [
               SliverAppBar(
                 pinned: true,
@@ -85,8 +87,8 @@ class _HomeState extends State<HomeSecond> {
                 elevation: 0,
                 // shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
                 flexibleSpace: FlexibleSpaceBar(
-                  titlePadding: EdgeInsets.only(left: 20),
-                  // centerTitle: true,
+                  // titlePadding: EdgeInsets.only(left: 20),
+                  centerTitle: true,
                   title: RichText(
                     text: TextSpan(
                         text: "GOOD MORNING\n",
@@ -190,7 +192,8 @@ class _HomeState extends State<HomeSecond> {
                                       onPressed: (){},
                                     ),
                                   ),
-                                  Item(items: _item1)
+                                  Item(items: _item1),
+                                  // Item(items: _item1)
                                 ],
                               ),
                             ),
