@@ -136,8 +136,11 @@ class _SignInState extends State<SignIn> {
                           Fluttertoast.showToast(msg: value.message);
                         }
                       });
-                    } else
+                    }
+                    else {
                       setState(() => loginStatus = false);
+                      Fluttertoast.showToast(msg: "Please enter username & password");
+                    }
                   },
                   height: 65,
                   child: loginStatus

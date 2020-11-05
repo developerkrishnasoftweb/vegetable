@@ -1,6 +1,8 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vegetable/services/services.dart';
 import '../../Pages/home1.dart';
 import '../../Components/customButton.dart';
 import '../../Components/textinput.dart';
@@ -162,12 +164,42 @@ class _SignUpState extends State<SignUp> {
               ),
               button(
                   context: context,
-                  onPressed: () {
-                    if(fullName != null && fullName != "" && email != null && email != "" && mobile != null && mobile != "" && password != null && password != ""){
-                      if(terms){
-                        if(RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(email)){
-                          if(RegExp(r"^(?:[+0]9)?[0-9]{10}$").hasMatch(mobile)){
-                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeSecond()), (route) => false);
+                  onPressed: () async {
+                    if (fullName != null &&
+                        fullName != "" &&
+                        email != null &&
+                        email != "" &&
+                        mobile != null &&
+                        mobile != "" &&
+                        password != null &&
+                        password != "") {
+                      if (terms) {
+                        if (RegExp(
+                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                            .hasMatch(email)) {
+                          if (RegExp(r"^(?:[+0]9)?[0-9]{10}$")
+                              .hasMatch(mobile)) {
+                            signUpStatus = true;
+                            String firstName, lastName;
+                            if(fullName.split(" ").length >= 2){
+                              firstName = fullName.split(" ")[0];
+                              lastName = fullName.split(" ")[1];
+                            } else firstName = fullName;
+                            FormData formData = FormData.fromMap({
+                              "first_name" : firstName,
+                              "last_name" : lastName,
+                              "email" : email,
+                              "mobile" : mobile,
+                              "gender" : null,
+                              "password" : password,
+                            });
+                            await Services.signUp(formData).then((value) {
+                              if(value.response != 1){
+                                setState(() => signUpStatus = false);
+                              } else {
+                                setState(() => signUpStatus = false);
+                              }
+                            });
                           } else {
                             Fluttertoast.showToast(msg: "Invalid Mobile");
                           }
@@ -175,7 +207,8 @@ class _SignUpState extends State<SignUp> {
                           Fluttertoast.showToast(msg: "Invalid Email");
                         }
                       } else {
-                        Fluttertoast.showToast(msg: "Please check terms & conditions");
+                        Fluttertoast.showToast(
+                            msg: "Please check terms & conditions");
                       }
                     } else {
                       Fluttertoast.showToast(msg: "All fields are required!");
