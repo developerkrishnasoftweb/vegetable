@@ -179,24 +179,28 @@ class _SignUpState extends State<SignUp> {
                             .hasMatch(email)) {
                           if (RegExp(r"^(?:[+0]9)?[0-9]{10}$")
                               .hasMatch(mobile)) {
-                            signUpStatus = true;
+                            setState(() => signUpStatus = true);
                             String firstName, lastName;
-                            if(fullName.split(" ").length >= 2){
+                            if (fullName.split(" ").length >= 2) {
                               firstName = fullName.split(" ")[0];
                               lastName = fullName.split(" ")[1];
-                            } else firstName = fullName;
+                            } else
+                              firstName = fullName;
                             FormData formData = FormData.fromMap({
-                              "first_name" : firstName,
-                              "last_name" : lastName,
-                              "email" : email,
-                              "mobile" : mobile,
-                              "gender" : null,
-                              "password" : password,
+                              "first_name": firstName,
+                              "last_name": lastName,
+                              "email": email,
+                              "mobile": mobile,
+                              "gender": null,
+                              "password": password,
                             });
+                            print(formData.fields);
                             await Services.signUp(formData).then((value) {
-                              if(value.response != 1){
+                              if (value.response == 1) {
+                                Fluttertoast.showToast(msg: value.message);
                                 setState(() => signUpStatus = false);
                               } else {
+                                Fluttertoast.showToast(msg: value.message);
                                 setState(() => signUpStatus = false);
                               }
                             });
@@ -217,11 +221,11 @@ class _SignUpState extends State<SignUp> {
                   height: 65,
                   child: signUpStatus
                       ? SizedBox(
+                          height: 30,
+                          width: 30,
                           child: CircularProgressIndicator(
                             valueColor: AlwaysStoppedAnimation(Colors.white),
                           ),
-                          height: 30,
-                          width: 30,
                         )
                       : Text(
                           "Sign Up",
