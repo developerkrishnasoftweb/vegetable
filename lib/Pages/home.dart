@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vegetable/Pages/product/product.dart';
 import 'package:vegetable/Pages/subcategory/subcategory.dart';
 import 'package:vegetable/services/services.dart';
 import 'package:vegetable/services/urls.dart';
@@ -21,7 +22,7 @@ class _HomeState extends State<Home> {
 
   List<CategoryItems> foodGroceries = [];
 
-  List<AddItems> _item1 = [AddItems(image: AssetImage(""))];
+  List<AddItems> _item1 = [AddItems(image: NetworkImage("https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -176,7 +177,9 @@ class _HomeState extends State<Home> {
                             child: Text("SEE ALL",
                               style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.black45, fontSize: 14),
                             ),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => Products(title: "Want to shop for",)));
+                            },
                           ),
                         ),
                         Container(

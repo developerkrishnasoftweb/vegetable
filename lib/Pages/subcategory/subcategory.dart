@@ -17,6 +17,7 @@ class _SubCategoryState extends State<SubCategory> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   List<CategoryItems> categories = [];
   bool hasData = false;
+  bool found = false;
 
   @override
   void initState() {
@@ -43,7 +44,10 @@ class _SubCategoryState extends State<SubCategory> {
             ];
           });
         }
-      } else Fluttertoast.showToast(msg: value.message);
+      } else {
+        Fluttertoast.showToast(msg: value.message);
+        setState(() => found = true);
+      }
     });
   }
 
@@ -116,9 +120,16 @@ class _SubCategoryState extends State<SubCategory> {
                 ],
               )
             : Center(
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation(Colors.green),
-                ),
-              ));
+                child: found
+                    ? Image(
+                        height: 200,
+                        width: 200,
+                        image: AssetImage("assets/images/data-not-found.png"),
+                        fit: BoxFit.fill,
+                        color: Colors.green,
+                      )
+                    : CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation(Colors.green),
+                      )));
   }
 }

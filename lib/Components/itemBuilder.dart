@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-GridView itemBuilder({@required List<AddItems> items}){
+GridView itemBuilder({@required List<AddItems> items, Axis scrollDirection, int crossAxisCount, double childAspectRatio, double mainAxisSpacing, double crossAxisSpacing}){
   ScrollController scrollController = ScrollController();
 
   if(items != null){
@@ -10,10 +10,10 @@ GridView itemBuilder({@required List<AddItems> items}){
       physics: BouncingScrollPhysics(),
       padding: EdgeInsets.all(10),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 1,
-          mainAxisSpacing: 15,
-          crossAxisSpacing: 5,
-          childAspectRatio: 1.05
+          crossAxisCount: crossAxisCount ?? 1,
+          mainAxisSpacing: mainAxisSpacing ?? 15,
+          crossAxisSpacing: crossAxisSpacing ?? 5,
+          childAspectRatio: childAspectRatio ?? 1.05
       ),
       itemBuilder: (BuildContext context, int index){
         return InkWell(
@@ -85,7 +85,7 @@ GridView itemBuilder({@required List<AddItems> items}){
         );
       },
       itemCount: items.length != null ? items.length : 0,
-      scrollDirection: Axis.horizontal,
+      scrollDirection: scrollDirection ?? Axis.horizontal,
     );
   } else return GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 0),);
 }
