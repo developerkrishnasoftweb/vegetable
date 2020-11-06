@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vegetable/Pages/SignIn_SignUp/signin.dart';
 import 'package:vegetable/services/services.dart';
 import '../../Pages/home1.dart';
 import '../../Components/customButton.dart';
@@ -199,6 +200,7 @@ class _SignUpState extends State<SignUp> {
                               if (value.response == 1) {
                                 Fluttertoast.showToast(msg: value.message);
                                 setState(() => signUpStatus = false);
+                                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => SignIn(email: email,)), (route) => false);
                               } else {
                                 Fluttertoast.showToast(msg: value.message);
                                 setState(() => signUpStatus = false);

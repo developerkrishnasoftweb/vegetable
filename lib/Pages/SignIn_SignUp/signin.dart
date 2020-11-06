@@ -1,22 +1,54 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vegetable/Pages/home1.dart';
 import 'package:vegetable/services/services.dart';
 import '../../Components/customButton.dart';
 import '../../Components/textinput.dart';
 import '../home.dart';
 import 'signup.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignIn extends StatefulWidget {
+  final String email;
+  SignIn({this.email});
   @override
   _SignInState createState() => _SignInState();
 }
 
 class _SignInState extends State<SignIn> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  TextEditingController textEditingController = TextEditingController();
   bool loginStatus = false;
   String email, password;
+
+  @override
+  void initState() {
+    getCredential().then((value) {
+      if(value) {
+        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Home()), (route) => false);
+      } else {
+        setState(() {
+          textEditingController.text = email = widget.email;
+        });
+      }
+    });
+    super.initState();
+  }
+  Future<bool> getCredential() async {
+    SharedPreferences sharedPreference = await SharedPreferences.getInstance();
+    if (sharedPreference.getString("email") != null &&
+        sharedPreference.getString("email") != "" &&
+        sharedPreference.getString("password") != null &&
+        sharedPreference.getString("password") != "") {
+      print(sharedPreference.getString("email"));
+      return true;
+    } else
+      return false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +95,7 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
               input(
+                controller: textEditingController,
                 context: context,
                 decoration: InputDecoration(
                   contentPadding:
@@ -123,12 +156,18 @@ class _SignInState extends State<SignIn> {
                         password != "") {
                       FormData formData = FormData.fromMap(
                           {"email": email, "password": password});
-                      await Services.signIn(formData).then((value) {
+                      await Services.signIn(formData).then((value) async {
                         if (value.response == 1) {
+                          SharedPreferences sharedPreference = await SharedPreferences.getInstance();
+                          await sharedPreference.setString("email", email);
+                          await sharedPreference.setString("password", password);
                           setState(() {
                             loginStatus = false;
                           });
-                          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Home()), (route) => false);
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(builder: (context) => Home()),
+                              (route) => false);
                         } else {
                           setState(() {
                             loginStatus = false;
@@ -136,10 +175,10 @@ class _SignInState extends State<SignIn> {
                           Fluttertoast.showToast(msg: value.message);
                         }
                       });
-                    }
-                    else {
+                    } else {
                       setState(() => loginStatus = false);
-                      Fluttertoast.showToast(msg: "Please enter username & password");
+                      Fluttertoast.showToast(
+                          msg: "Please enter username & password");
                     }
                   },
                   height: 65,
@@ -170,22 +209,22 @@ class _SignInState extends State<SignIn> {
                       children: [
                         WidgetSpan(
                             child: GestureDetector(
-                              child: Text(
-                                "Sign Up",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyText1
-                                    .copyWith(
-                                        color: Color(0xff81AE4F),
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => SignUp()));
-                              },
+                          child: Text(
+                            "Sign Up",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1
+                                .copyWith(
+                                    color: Color(0xff81AE4F),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold),
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUp()));
+                          },
                         ))
                       ]),
                 ),

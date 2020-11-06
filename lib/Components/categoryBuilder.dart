@@ -16,9 +16,9 @@ GridView categoryBuilder({@required List<CategoryItems> items}){
       itemBuilder: (BuildContext context, int index){
         return InkWell(
           borderRadius: BorderRadius.circular(10),
-          onTap: (){},
+          onTap: items[index].onTap,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
@@ -37,21 +37,24 @@ GridView categoryBuilder({@required List<CategoryItems> items}){
                 ),
               ),
               Text(items[index].title,
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
                 style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 14,),
               )
             ],
           ),
         );
       },
-      itemCount: items.length,
+      itemCount: items.length ?? 0,
     );
-  else {
-    return GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 0),);
-  }
+  else return GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 0),);
 }
 
 class CategoryItems{
+  final String id, categoryId;
   final ImageProvider image;
   final String title;
-  CategoryItems({this.image, this.title});
+  final GestureTapCallback onTap;
+  final String homeScreen;
+  CategoryItems({this.image, this.title, this.onTap, this.id, this.homeScreen, this.categoryId});
 }

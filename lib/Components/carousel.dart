@@ -35,7 +35,7 @@ class _CarouselState extends State<Carousel> {
                     ),
                     borderRadius: widget.borderRadius ?? null,
                   ),
-                  child: Stack(
+                  /*child: Stack(
                     children: [
                       Align(
                         child: RichText(
@@ -44,8 +44,8 @@ class _CarouselState extends State<Carousel> {
                               style: TextStyle(fontSize: 25, color: Colors.grey),
                               children: [
                                 TextSpan(
-                                    text: item.subtitle != null
-                                        ? "\n" + item.subtitle
+                                    text: item.category != null
+                                        ? "\n" + item.category
                                         : "",
                                     style: TextStyle(fontSize: 15, color: Colors.grey)),
                               ]),
@@ -53,7 +53,7 @@ class _CarouselState extends State<Carousel> {
                         alignment: Alignment.topLeft,
                       ),
                     ],
-                  ),
+                  ),*/
                 ),
                 onTap: item.onTap,
               );
@@ -102,8 +102,8 @@ class _CarouselState extends State<Carousel> {
 
 
 class CarouselItems {
-  final String title, subtitle;
+  final String title, category;
   final ImageProvider image;
   final GestureTapCallback onTap;
-  CarouselItems({@required this.image, this.title, this.subtitle, this.onTap});
+  CarouselItems({@required this.image, this.title, this.category, this.onTap});
 }

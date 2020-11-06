@@ -1,5 +1,11 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vegetable/Pages/subcategory/subcategory.dart';
+import 'package:vegetable/services/services.dart';
+import 'package:vegetable/services/urls.dart';
 import '../Components/carousel.dart';
 import '../Components/drawer.dart';
 import '../Components/categoryBuilder.dart';
@@ -11,59 +17,57 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<CarouselItems> carousel = [
-    CarouselItems(image: AssetImage("assets/images/Banner-1.jpg")),
-    CarouselItems(image: AssetImage("assets/images/Banner-2.jpg")),
-  ];
+  List<CarouselItems> carousel = [];
 
-  List<CategoryItems> foodGroceries = [
-    CategoryItems(image: AssetImage("assets/icons/fruits.png"), title: "Fruits"),
-    CategoryItems(image: AssetImage("assets/icons/vegetable.png"), title: "Vegetable"),
-    CategoryItems(image: AssetImage("assets/icons/orange-juice.png"), title: "Juice"),
-    CategoryItems(image: AssetImage("assets/icons/soft-drink.png"), title: "Drinks"),
-    CategoryItems(image: AssetImage("assets/icons/breakfast.png"), title: "Food & Meals"),
-    CategoryItems(image: AssetImage("assets/icons/cake.png"), title: "Cake"),
-  ];
+  List<CategoryItems> foodGroceries = [];
 
-  List<AddItems> _item1 = [
-    AddItems(
-        image: AssetImage("assets/productImages/Cauliflower.png"),
-        name: "Fresh Cauliflowers",
-        price: "\$30.00",
-        rating: "4.2",
-        subName: "Pajeroma"),
-    AddItems(
-        image: AssetImage("assets/productImages/Garlic.png"),
-        name: "Fresh Garlic",
-        price: "\$10.00",
-        rating: "5.0",
-        subName: "Pajeroma"),
-    AddItems(
-        image: AssetImage("assets/productImages/lady finger.png"),
-        name: "Fresh Lady Finger",
-        price: "\$5.00",
-        rating: "4.0",
-        subName: "Pajeroma"),
-    AddItems(
-        image: AssetImage("assets/productImages/onion.png"),
-        name: "Fresh Red Onions",
-        price: "\$15.00",
-        rating: "4.5",
-        subName: "Pajeroma"),
-    AddItems(
-        image: AssetImage("assets/productImages/Potatoes.png"),
-        name: "Fresh Potatoes",
-        price: "\$10.00",
-        rating: "3.9",
-        subName: "Pajeroma"),
-    AddItems(
-        image: AssetImage("assets/productImages/tomato.png"),
-        name: "Fresh Tomatoes",
-        price: "\$12.00",
-        rating: "4.9",
-        subName: "Pajeroma"),
-  ];
+  List<AddItems> _item1 = [AddItems(image: AssetImage(""))];
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    getCategories();
+    getBanners();
+    getProducts();
+    super.initState();
+  }
+
+  void getCategories() async {
+    await Services.getAllCategory().then((value) {
+      if(value.response == 1){
+        for(int i = 0; i < value.data.length; i++){
+          setState(() {
+            foodGroceries += [CategoryItems(image: NetworkImage("http://vegetable.krishnasoftweb.com/" + value.data[i]["image"]), title: value.data[i]["title"], id: value.data[i]["id"], homeScreen: value.data[i]["home_screen"], onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SubCategory(productId: value.data[i]["id"],)));})];
+          });
+        }
+      } else Fluttertoast.showToast(msg: value.message);
+    });
+  }
+
+  void getBanners() async {
+    await Services.getBanner().then((value) {
+      if(value.response == 1){
+        for(int i = 0; i < value.data.length; i++){
+          setState(() {
+            carousel += [CarouselItems(image: NetworkImage("http://vegetable.krishnasoftweb.com/" + value.data[i]["image"]), title: value.data[i]["title"], category: value.data[i]["category_id"])];
+          });
+        }
+      } else Fluttertoast.showToast(msg: value.message);
+    });
+  }
+
+  void getProducts() async {
+    await Services.getProducts().then((value) {
+      if(value.response == 1){
+        for(int i = 0; i < value.data.length; i++){
+          setState(() {
+            _item1 += [AddItems(title: value.data[i]["title"], id: value.data[i]["id"], price: value.data[i]["price"], displayPrice: value.data[i]["display_price"], image: NetworkImage("http://vegetable.krishnasoftweb.com/" + value.data[i]["image"]), onTap: (){})];
+          });
+        }
+      } else Fluttertoast.showToast(msg: value.message);
+    });
+    _item1.removeAt(0);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +93,7 @@ class _HomeState extends State<Home> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 8, right: 8, top: 10),
+                  padding: const EdgeInsets.only(left: 8, right: 8),
                   child: AppBar(
                     backgroundColor: Colors.transparent,
                     elevation: 0,
@@ -138,9 +142,7 @@ class _HomeState extends State<Home> {
                 ),
                 SizedBox(height: 30,),
                 // Carousel(items: carousel, width: size.width * 0.92, borderRadius: BorderRadius.circular(20),),
-                Container(
-                  height: size.height - 257,
-                  width: size.width,
+                Expanded(
                   child: SingleChildScrollView(
                     physics: BouncingScrollPhysics(),
                     child: Column(
@@ -177,8 +179,11 @@ class _HomeState extends State<Home> {
                             onPressed: (){},
                           ),
                         ),
-                        Item(items: _item1),
-                        Item(items: _item1)
+                        Container(
+                          child: itemBuilder(items: _item1),
+                          height: 200,
+                          width: size.width,
+                        ),
                       ],
                     ),
                   ),
