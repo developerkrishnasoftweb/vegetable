@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
 
   List<CategoryItems> foodGroceries = [];
 
-  List<AddItems> _item1 = [AddItems(image: NetworkImage("https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
+  List<AddItems> _item1 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

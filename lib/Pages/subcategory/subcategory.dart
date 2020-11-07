@@ -128,8 +128,12 @@ class _SubCategoryState extends State<SubCategory> {
                         fit: BoxFit.fill,
                         color: Colors.green,
                       )
-                    : CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation(Colors.green),
+                    // : CircularProgressIndicator(
+                    //     valueColor: AlwaysStoppedAnimation(Colors.green),
+                    //   )
+                    : Image(
+                        image: AssetImage("assets/images/loading.gif"),
+                        fit: BoxFit.fill,
                       )));
   }
 }

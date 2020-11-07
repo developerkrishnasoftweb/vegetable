@@ -13,7 +13,7 @@ class Products extends StatefulWidget {
 
 class _ProductsState extends State<Products> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-  List<AddItems> _item1 = [AddItems(image: AssetImage(""), displayPrice: "00", price: "00", title: "----", id: null)];
+  List<AddItems> _item1 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
 
   @override
   void initState() {
