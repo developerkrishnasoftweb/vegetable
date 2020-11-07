@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vegetable/Pages/cart/cart.dart';
 import 'package:vegetable/Pages/product/product.dart';
 import 'package:vegetable/Pages/product_description/productDesc.dart';
 import 'package:vegetable/Pages/subcategory/subcategory.dart';
@@ -118,7 +119,7 @@ class _HomeState extends State<Home> {
                             AssetImage("assets/icons/shopping-cart.png"),
                             color: Colors.white70,
                           ),
-                          onPressed: () {}),
+                          onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));}),
                     ],
                   ),
                 ),

@@ -6,12 +6,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:vegetable/Components/customButton.dart';
 import 'package:vegetable/Components/itemBuilder.dart';
+import 'package:vegetable/Pages/cart/cart.dart';
 import 'package:vegetable/services/services.dart';
 import 'package:vegetable/services/urls.dart';
 
 class ProductDesc extends StatefulWidget {
   final String id;
-  ProductDesc({@required this.id});
+  final List productDetail;
+  ProductDesc({@required this.id, this.productDetail});
 
   @override
   _ProductDescState createState() => _ProductDescState();
@@ -19,7 +21,7 @@ class ProductDesc extends StatefulWidget {
 
 class _ProductDescState extends State<ProductDesc> {
   int unit = 1;
-  String measure = "KG";
+  String measure = "--";
   List<AddItems> _item1 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
   ImageProvider imageProvider;
   String price = "0", shortInfo = "----", longInfo = "----";
@@ -64,7 +66,6 @@ class _ProductDescState extends State<ProductDesc> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -225,7 +226,9 @@ class _ProductDescState extends State<ProductDesc> {
             bottom: 10,
             child: button(
                 context: context,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+                },
                 text: "CONTINUE SHOPPING",
                 height: 60),
           )
