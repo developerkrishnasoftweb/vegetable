@@ -1,5 +1,6 @@
 class Urls{
   static String baseUrl = "http://vegetable.krishnasoftweb.com/api/";
+  static String imageBaseUrl = "http://vegetable.krishnasoftweb.com/";
   static String signIn = "customer/login";
   static String signUp = "customer/signup";
   static String category = "category";

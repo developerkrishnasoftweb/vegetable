@@ -1,9 +1,8 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:vegetable/Pages/product/product.dart';
+import 'package:vegetable/Pages/product_description/productDesc.dart';
 import 'package:vegetable/Pages/subcategory/subcategory.dart';
 import 'package:vegetable/services/services.dart';
 import 'package:vegetable/services/urls.dart';
@@ -38,7 +37,7 @@ class _HomeState extends State<Home> {
       if(value.response == 1){
         for(int i = 0; i < value.data.length; i++){
           setState(() {
-            foodGroceries += [CategoryItems(image: NetworkImage("http://vegetable.krishnasoftweb.com/" + value.data[i]["image"]), title: value.data[i]["title"], id: value.data[i]["id"], homeScreen: value.data[i]["home_screen"], onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SubCategory(productId: value.data[i]["id"],)));})];
+            foodGroceries += [CategoryItems(image: NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]), title: value.data[i]["title"], id: value.data[i]["id"], homeScreen: value.data[i]["home_screen"], onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SubCategory(productId: value.data[i]["id"],)));})];
           });
         }
       } else Fluttertoast.showToast(msg: value.message);
@@ -50,7 +49,7 @@ class _HomeState extends State<Home> {
       if(value.response == 1){
         for(int i = 0; i < value.data.length; i++){
           setState(() {
-            carousel += [CarouselItems(image: NetworkImage("http://vegetable.krishnasoftweb.com/" + value.data[i]["image"]), title: value.data[i]["title"], category: value.data[i]["category_id"])];
+            carousel += [CarouselItems(image: NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]), title: value.data[i]["title"], category: value.data[i]["category_id"])];
           });
         }
       } else Fluttertoast.showToast(msg: value.message);
@@ -62,7 +61,7 @@ class _HomeState extends State<Home> {
       if(value.response == 1){
         for(int i = 0; i < value.data.length; i++){
           setState(() {
-            _item1 += [AddItems(title: value.data[i]["title"], id: value.data[i]["id"], price: value.data[i]["price"], displayPrice: value.data[i]["display_price"], image: NetworkImage("http://vegetable.krishnasoftweb.com/" + value.data[i]["image"]), onTap: (){})];
+            _item1 += [AddItems(title: value.data[i]["title"], id: value.data[i]["id"], price: value.data[i]["price"], displayPrice: value.data[i]["display_price"], image: NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]), onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDesc(id: value.data[i]["id"],))); })];
           });
         }
       } else Fluttertoast.showToast(msg: value.message);

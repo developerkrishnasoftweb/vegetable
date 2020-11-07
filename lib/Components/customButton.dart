@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-dynamic button({@required BuildContext context, double height, String text, @required VoidCallback onPressed, Widget child}){
+dynamic button({@required BuildContext context, double height, String text, @required VoidCallback onPressed, Widget child, double width}){
   Size size = MediaQuery.of(context).size;
   Widget childData;
   if(text != null && text != "") {
@@ -15,7 +15,7 @@ dynamic button({@required BuildContext context, double height, String text, @req
 
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 30),
-    width: size.width,
+    width: width ?? size.width,
     height: height ?? 0,
     child: FlatButton(
       child: childData,
