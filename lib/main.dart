@@ -5,23 +5,26 @@ import 'package:vegetable/Pages/home.dart';
 import 'Pages/SignIn_SignUp/signin.dart';
 import 'Theme/theme.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown
   ]);
-  SharedPreferences.setMockInitialValues({});
-  runApp(MyApp());
+  getCredential().then((status) {
+    runApp(MaterialApp(
+      theme: themeData,
+      home:  status ? Home() : SignIn(),
+      debugShowCheckedModeBanner: false,
+    ));
+  });
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: themeData,
-      home: Home(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
+Future<bool> getCredential() async {
+  SharedPreferences sharedPreference = await SharedPreferences.getInstance();
+  if (sharedPreference.getString("email") != null && sharedPreference.getString("password") != null)
+    return true;
+  else
+    return false;
 }
+

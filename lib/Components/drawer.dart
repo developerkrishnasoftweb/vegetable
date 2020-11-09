@@ -19,8 +19,9 @@ Drawer drawer(BuildContext context) {
         icon: Icon(Icons.exit_to_app),
         onTap: () async {
           SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-          sharedPreferences.remove("password");
-          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => SignIn(email : sharedPreferences.getString("emial"))), (route) => false);
+          String email = sharedPreferences.getString("email");
+          sharedPreferences.clear();
+          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => SignIn(email : email)), (route) => false);
         }),
     DrawerItem(text: "About Us", onTap: () {}),
     DrawerItem(text: "Privacy Policy", onTap: () {}),

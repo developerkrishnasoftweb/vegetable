@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:vegetable/Components/customButton.dart';
+import 'package:vegetable/Pages/cart/place_order.dart';
 import 'package:vegetable/services/urls.dart';
 
 class Cart extends StatefulWidget {
@@ -97,10 +98,16 @@ class _CartState extends State<Cart> {
                                 children: [
                                   SizedBox(
                                     child: InkWell(
-                                      onTap: () { setState(() => items[index].unit > 1 ? items[index].unit -= 1 : null);
-                                        for(int i = 0; i < items.length; i++)
-                                          total = total - items[i].total - items[i].price;
-                                        print(total);
+                                      onTap: () {
+                                        setState(() {
+                                          items[index].unit > 1 ? items[index].unit -= 1 : null;
+                                          total = 0;
+                                        });
+                                        for(int i = 0; i < items.length; i++) {
+                                          setState(() {
+                                            total += items[i].price * items[i].unit;
+                                          });
+                                        }
                                       },
                                       borderRadius: BorderRadius.circular(5),
                                       child: Container(
@@ -127,12 +134,17 @@ class _CartState extends State<Cart> {
                                   SizedBox(width: 5,),
                                   SizedBox(
                                     child: InkWell(
-                                      onTap: () => setState(() {
-                                        for(int i = 0; i < items.length; i++)
-                                          total = total + items[i].total + items[i].price;
-                                        print(total);
-                                        items[index].unit += 1;
-                                      }),
+                                      onTap: () {
+                                        setState(() {
+                                          items[index].unit += 1;
+                                          total = 0;
+                                        });
+                                        for(int i = 0; i < items.length; i++) {
+                                          setState(() {
+                                            total += items[i].price * items[i].unit;
+                                          });
+                                        }
+                                      },
                                       child: Container(
                                         height: 25,
                                         width: 25,
@@ -225,7 +237,7 @@ class _CartState extends State<Cart> {
   }
 
   void placeOrder(){
-    print("Order Placed Successfully !!!");
+    Navigator.push(context, MaterialPageRoute(builder: (context) => PlaceOrder(),));
   }
 }
 

@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -24,7 +23,7 @@ class _ProductDescState extends State<ProductDesc> {
   String measure = "--";
   List<AddItems> _item1 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
   ImageProvider imageProvider;
-  String price = "0", shortInfo = "----", longInfo = "----";
+  String price = "0", shortInfo = "----", longInfo = "----", id;
 
   @override
   void initState() {
@@ -58,6 +57,7 @@ class _ProductDescState extends State<ProductDesc> {
           measure = value.data[0]["unit"];
           shortInfo = value.data[0]["short_info"];
           longInfo = value.data[0]["long_info"];
+          id = value.data[0]["id"];
         });
       } else Fluttertoast.showToast(msg: value.message);
     });
@@ -227,7 +227,8 @@ class _ProductDescState extends State<ProductDesc> {
             child: button(
                 context: context,
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
                 },
                 text: "CONTINUE SHOPPING",
                 height: 60),

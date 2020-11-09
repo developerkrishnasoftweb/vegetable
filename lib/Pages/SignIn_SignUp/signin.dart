@@ -4,7 +4,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:vegetable/Pages/home1.dart';
 import 'package:vegetable/services/services.dart';
 import '../../Components/customButton.dart';
 import '../../Components/textinput.dart';
@@ -27,34 +26,14 @@ class _SignInState extends State<SignIn> {
 
   @override
   void initState() {
-    getCredential().then((value) {
-      if(value) {
-        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Home()), (route) => false);
-      } else {
-        setState(() {
-          textEditingController.text = email = widget.email;
-        });
-      }
-    });
+    textEditingController.text = email = widget.email;
     super.initState();
-  }
-  Future<bool> getCredential() async {
-    SharedPreferences sharedPreference = await SharedPreferences.getInstance();
-    if (sharedPreference.getString("email") != null &&
-        sharedPreference.getString("email") != "" &&
-        sharedPreference.getString("password") != null &&
-        sharedPreference.getString("password") != "") {
-      print(sharedPreference.getString("email"));
-      return true;
-    } else
-      return false;
   }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     Orientation orientation = MediaQuery.of(context).orientation;
-
     return Scaffold(
       key: scaffoldKey,
       body: Container(
@@ -105,6 +84,7 @@ class _SignInState extends State<SignIn> {
                       borderSide: BorderSide(color: Color(0xffA8A8A8))),
                 ),
                 text: "Email & Mobile No.",
+                keyboardType: TextInputType.emailAddress,
                 onChanged: (value) {
                   setState(() {
                     email = value;
@@ -159,8 +139,8 @@ class _SignInState extends State<SignIn> {
                       await Services.signIn(formData).then((value) async {
                         if (value.response == 1) {
                           SharedPreferences sharedPreference = await SharedPreferences.getInstance();
-                          await sharedPreference.setString("email", email);
-                          await sharedPreference.setString("password", password);
+                          sharedPreference.setString("email", email);
+                          sharedPreference.setString("password", password);
                           setState(() {
                             loginStatus = false;
                           });
@@ -169,9 +149,7 @@ class _SignInState extends State<SignIn> {
                               MaterialPageRoute(builder: (context) => Home()),
                               (route) => false);
                         } else {
-                          setState(() {
-                            loginStatus = false;
-                          });
+                          setState(() => loginStatus = false);
                           Fluttertoast.showToast(msg: value.message);
                         }
                       });
