@@ -183,7 +183,7 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                         Container(
-                          child: itemBuilder(items: _item1),
+                          child: ItemBuilder(items: _item1),
                           height: 200,
                           width: size.width,
                         ),

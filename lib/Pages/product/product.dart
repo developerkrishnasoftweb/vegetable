@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:vegetable/Components/itemBuilder.dart';
+import 'package:vegetable/Pages/product_description/productDesc.dart';
 import 'package:vegetable/services/services.dart';
 
 class Products extends StatefulWidget {
@@ -26,7 +27,7 @@ class _ProductsState extends State<Products> {
       if(value.response == 1){
         for(int i = 0; i < value.data.length; i++){
           setState(() {
-            _item1 += [AddItems(title: value.data[i]["title"], id: value.data[i]["id"], price: value.data[i]["price"], displayPrice: value.data[i]["display_price"], image: NetworkImage("http://vegetable.krishnasoftweb.com/" + value.data[i]["image"]), onTap: (){})];
+            _item1 += [AddItems(title: value.data[i]["title"], id: value.data[i]["id"], price: value.data[i]["price"], displayPrice: value.data[i]["display_price"], image: NetworkImage("http://vegetable.krishnasoftweb.com/" + value.data[i]["image"]), onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDesc(id: value.data[i]["id"],))); })];
           });
         }
       } else Fluttertoast.showToast(msg: value.message);
@@ -67,7 +68,7 @@ class _ProductsState extends State<Products> {
       body: Container(
         height: size.height,
         width: size.width,
-        child: itemBuilder(items: _item1, scrollDirection: Axis.vertical, crossAxisCount: 2, childAspectRatio: 1)
+        child: ItemBuilder(items: _item1, scrollDirection: Axis.vertical, crossAxisCount: 2, childAspectRatio: 1)
       ),
     );
   }

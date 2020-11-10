@@ -13,8 +13,7 @@ import 'package:vegetable/services/urls.dart';
 
 class ProductDesc extends StatefulWidget {
   final String id;
-  final List productDetail;
-  ProductDesc({@required this.id, this.productDetail});
+  ProductDesc({@required this.id});
 
   @override
   _ProductDescState createState() => _ProductDescState();
@@ -294,7 +293,7 @@ class _ProductDescState extends State<ProductDesc> {
                     ),
                   ),
                   Container(
-                    child: itemBuilder(items: _item1),
+                    child: ItemBuilder(items: _item1,),
                     height: 200,
                     width: size.width,
                   ),
