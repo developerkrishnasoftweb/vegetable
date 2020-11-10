@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -142,6 +143,7 @@ class _SignInState extends State<SignIn> {
                           sharedPreference.setString("email", email);
                           sharedPreference.setString("password", password);
                           sharedPreference.setString("id", value.data[0]["id"]);
+                          sharedPreference.setString("userData", jsonEncode(value.data).toString());
                           setState(() {
                             loginStatus = false;
                           });

@@ -122,11 +122,10 @@ class _SubCategoryState extends State<SubCategory> {
             : Center(
                 child: found
                     ? Image(
-                        height: 200,
-                        width: 200,
-                        image: AssetImage("assets/images/data-not-found.png"),
+                        height: 250,
+                        width: 300,
+                        image: AssetImage("assets/images/empty-cart.png"),
                         fit: BoxFit.fill,
-                        color: Colors.green,
                       )
                     // : CircularProgressIndicator(
                     //     valueColor: AlwaysStoppedAnimation(Colors.green),

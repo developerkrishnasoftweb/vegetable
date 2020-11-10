@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/Pages/badges/badge.dart';
 import 'package:vegetable/Pages/cart/cart.dart';
 import 'package:vegetable/Pages/product/product.dart';
 import 'package:vegetable/Pages/product_description/productDesc.dart';
@@ -19,9 +23,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List<CarouselItems> carousel = [];
-
   List<CategoryItems> foodGroceries = [];
-
+  List userdata = [];
   List<AddItems> _item1 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -30,7 +33,25 @@ class _HomeState extends State<Home> {
     getCategories();
     getBanners();
     getProducts();
+    getUserData();
     super.initState();
+  }
+  String greeting(){
+    int hour = DateTime.now().hour;
+    if(hour < 12){
+      return "MORNING";
+    }
+    if(hour < 17){
+      return "AFTERNOON";
+    }
+    return "EVENING";
+  }
+
+  void getUserData() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    setState(() {
+      userdata = jsonDecode(sharedPreferences.getString("userData"));
+    });
   }
 
   void getCategories() async {
@@ -74,7 +95,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     Orientation orientation = MediaQuery.of(context).orientation;
-
     return Scaffold(
       key: scaffoldKey,
       drawer: SafeArea(child: drawer(context),),
@@ -108,18 +128,30 @@ class _HomeState extends State<Home> {
                         },
                         iconSize: 22,),
                     actions: [
-                      IconButton(
-                          icon: ImageIcon(
-                            AssetImage("assets/icons/bell.png"),
-                            color: Colors.white70,
-                          ),
-                          onPressed: () {}),
-                      IconButton(
-                          icon: ImageIcon(
-                            AssetImage("assets/icons/shopping-cart.png"),
-                            color: Colors.white70,
-                          ),
-                          onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));}),
+                      badge(
+                        context: context,
+                        iconButton: IconButton(
+                            icon: ImageIcon(
+                              AssetImage("assets/icons/bell.png"),
+                              color: Colors.white70,
+                            ),
+                            onPressed: () {}),
+                        badgeValue: 0,
+                        badgeColor: Colors.green,
+                        badgeSize: Size(15, 15),
+                      ),
+                      badge(
+                        context: context,
+                        iconButton: IconButton(
+                            icon: ImageIcon(
+                              AssetImage("assets/icons/shopping-cart.png"),
+                              color: Colors.white70,
+                            ),
+                            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));}),
+                        badgeValue: Badges.getCartCount(customerId: Badges.customerId()),
+                        badgeColor: Colors.green,
+                        badgeSize: Size(15, 15),
+                      ),
                     ],
                   ),
                 ),
@@ -129,12 +161,12 @@ class _HomeState extends State<Home> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("GOOD MORNING",
+                      Text("GOOD ${greeting()}",
                         softWrap: true,
                         style: Theme.of(context).textTheme.bodyText2.copyWith(fontSize: 15),
                       ),
                       SizedBox(height: 5,),
-                      Text("Hey, Lorem",
+                      Text("Hey, ${userdata.length != 0 ? userdata[0]["first_name"] : ""}",
                         softWrap: true,
                         style: Theme.of(context).textTheme.bodyText2.copyWith(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25)
                       )
