@@ -3,9 +3,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vegetable/Components/customButton.dart';
 import 'package:vegetable/Components/itemBuilder.dart';
 import 'package:vegetable/Pages/cart/cart.dart';
+import 'package:vegetable/Pages/home.dart';
 import 'package:vegetable/services/services.dart';
 import 'package:vegetable/services/urls.dart';
 
@@ -19,48 +21,100 @@ class ProductDesc extends StatefulWidget {
 }
 
 class _ProductDescState extends State<ProductDesc> {
-  int unit = 1;
+  int quantity = 0;
   String measure = "--";
-  List<AddItems> _item1 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
+  List<AddItems> _item1 = [
+    AddItems(
+        image: AssetImage("assets/images/loading.gif"),
+        displayPrice: "00",
+        price: "00",
+        title: "----",
+        id: null)
+  ];
   ImageProvider imageProvider;
-  String price = "0", shortInfo = "----", longInfo = "----", id;
+  String price = "0", shortInfo = "----", longInfo = "----", productId, cartId;
+  bool checkCartStatus = false;
 
   @override
   void initState() {
     getProducts();
     getProductData();
+    checkStatus();
     super.initState();
   }
 
   void getProducts() async {
     await Services.getProducts().then((value) {
-      if(value.response == 1){
-        for(int i = 0; i < value.data.length; i++){
+      if (value.response == 1) {
+        for (int i = 0; i < value.data.length; i++) {
           setState(() {
-            _item1 += [AddItems(title: value.data[i]["title"], id: value.data[i]["id"], price: value.data[i]["price"], displayPrice: value.data[i]["display_price"], image: NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]), onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDesc(id: value.data[i]["id"],))); })];
+            _item1 += [
+              AddItems(
+                  title: value.data[i]["title"],
+                  id: value.data[i]["id"],
+                  price: value.data[i]["price"],
+                  displayPrice: value.data[i]["display_price"],
+                  image:
+                      NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProductDesc(
+                                  id: value.data[i]["id"],
+                                )));
+                  })
+            ];
           });
         }
-      } else Fluttertoast.showToast(msg: value.message);
+      } else
+        Fluttertoast.showToast(msg: value.message);
     });
     _item1.removeAt(0);
   }
 
   void getProductData() async {
     FormData formData = FormData.fromMap({
-      "product_id" : widget.id,
+      "product_id": widget.id,
     });
     await Services.getProduct(formData).then((value) {
-      if(value.response == 1){
+      if (value.response == 1) {
         setState(() {
-          imageProvider = NetworkImage(Urls.imageBaseUrl + value.data[0]["image"]);
+          imageProvider =
+              NetworkImage(Urls.imageBaseUrl + value.data[0]["image"]);
           price = value.data[0]["display_price"];
           measure = value.data[0]["unit"];
           shortInfo = value.data[0]["short_info"];
           longInfo = value.data[0]["long_info"];
-          id = value.data[0]["id"];
+          productId = value.data[0]["id"];
         });
-      } else Fluttertoast.showToast(msg: value.message);
+      } else
+        Fluttertoast.showToast(msg: value.message);
     });
+  }
+
+  void checkStatus() async {
+    String customerId;
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    setState(() {
+      customerId = sharedPreferences.getString("id");
+    });
+    if (customerId != null && widget.id != null) {
+      FormData formData = FormData.fromMap({
+        "product_id": widget.id,
+        "customer_id": customerId,
+      });
+      await Services.checkCartStatus(formData).then((value) {
+        if (value.response == 1) {
+          setState(() {
+            checkCartStatus = true;
+            quantity = int.parse(value.data[0]["quantity"]);
+            cartId = value.data[0]["id"];
+          });
+        } else
+          setState(() => quantity = 1);
+      });
+    }
   }
 
   @override
@@ -86,7 +140,9 @@ class _ProductDescState extends State<ProductDesc> {
                 AssetImage("assets/icons/shopping-cart.png"),
                 color: Colors.black,
               ),
-              onPressed: () {}),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+              }),
         ],
       ),
       body: Stack(
@@ -101,26 +157,40 @@ class _ProductDescState extends State<ProductDesc> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: size.width * 0.7,
-                    width: size.width,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 7,
-                              spreadRadius: -3,
-                              offset: Offset(2, 2)),
-                          BoxShadow(
-                              color: Colors.white,
-                              blurRadius: 7,
-                              spreadRadius: -3,
-                              offset: Offset(-2, -2))
-                        ]),
-                    child: imageProvider == null ? SizedBox(height: 50, width: 50, child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.green), strokeWidth: 2,),) : Image(height: (size.width * 0.7) - 10, width: size.width - 10, image: imageProvider, fit: BoxFit.fill,)
-                  ),
+                      height: size.width * 0.7,
+                      width: size.width,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 7,
+                                spreadRadius: -3,
+                                offset: Offset(2, 2)),
+                            BoxShadow(
+                                color: Colors.white,
+                                blurRadius: 7,
+                                spreadRadius: -3,
+                                offset: Offset(-2, -2))
+                          ]),
+                      child: imageProvider == null
+                          ? SizedBox(
+                              height: 50,
+                              width: 50,
+                              child: CircularProgressIndicator(
+                                valueColor:
+                                    AlwaysStoppedAnimation(Colors.green),
+                                strokeWidth: 2,
+                              ),
+                            )
+                          : Image(
+                              height: (size.width * 0.7) - 10,
+                              width: size.width - 10,
+                              image: imageProvider,
+                              fit: BoxFit.fill,
+                            )),
                   SizedBox(
                     height: 40,
                   ),
@@ -143,7 +213,8 @@ class _ProductDescState extends State<ProductDesc> {
                           children: [
                             SizedBox(
                               child: InkWell(
-                                onTap: () => setState(() => unit > 1 ? unit -= 1 : null),
+                                onTap: () => setState(
+                                    () => quantity > 1 ? quantity -= 1 : null),
                                 borderRadius: BorderRadius.circular(5),
                                 child: Container(
                                   height: 30,
@@ -164,16 +235,18 @@ class _ProductDescState extends State<ProductDesc> {
                               width: 5,
                             ),
                             Text(
-                              unit.toString().padLeft(2, '0') + " " + measure,
+                              quantity.toString().padLeft(2, '0') +
+                                  " " +
+                                  measure.toUpperCase(),
                               style:
-                              TextStyle(fontSize: 17, color: Colors.black),
+                                  TextStyle(fontSize: 17, color: Colors.black),
                             ),
                             SizedBox(
                               width: 5,
                             ),
                             SizedBox(
                               child: InkWell(
-                                onTap: () => setState(() => unit += 1),
+                                onTap: () => setState(() => quantity += 1),
                                 child: Container(
                                   height: 30,
                                   width: 35,
@@ -197,19 +270,22 @@ class _ProductDescState extends State<ProductDesc> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                    child: Text("Description :",
+                    child: Text(
+                      "Description :",
                       style: TextStyle(fontSize: 17, color: Colors.black),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                    child: Text(longInfo,
+                    child: Text(
+                      longInfo,
                       style: TextStyle(fontSize: 14, color: Colors.black45),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                    child: Text("Related Products",
+                    child: Text(
+                      "Related Products",
                       style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
                   ),
@@ -224,17 +300,95 @@ class _ProductDescState extends State<ProductDesc> {
           ),
           Positioned(
             bottom: 10,
-            child: button(
-                context: context,
-                onPressed: () {
-
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
-                },
-                text: "CONTINUE SHOPPING",
-                height: 60),
+            child: !checkCartStatus
+                ? button(
+                    context: context,
+                    onPressed: addToCart,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ImageIcon(
+                          AssetImage("assets/icons/cart-bag.png"),
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                        Text(
+                          " ADD TO BAG",
+                          style: Theme.of(context).textTheme.bodyText1.copyWith(
+                                color: Color(0xffffffff),
+                                fontSize: 18,
+                              ),
+                        )
+                      ],
+                    ),
+                    height: 60)
+                : button(
+                    context: context,
+                    onPressed: removeFromCart,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ImageIcon(
+                          AssetImage("assets/icons/remove-from-bag.png"),
+                          color: Colors.white,
+                          size: 26,
+                        ),
+                        Text(
+                          " REMOVE FROM BAG",
+                          style: Theme.of(context).textTheme.bodyText1.copyWith(
+                                color: Color(0xffffffff),
+                                fontSize: 18,
+                              ),
+                        )
+                      ],
+                    ),
+                    height: 60),
           )
         ],
       ),
     );
+  }
+
+  void addToCart() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String customerId;
+    setState(() {
+      customerId = sharedPreferences.getString("id");
+    });
+    if (customerId != null && productId != null) {
+      FormData formData = FormData.fromMap({
+        "customer_id": customerId,
+        "product_id": productId,
+        "quantity": quantity,
+      });
+      Services.addToCart(formData).then((value) {
+        print(value.message);
+        if (value.response == 1) {
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+              (route) => false);
+          Fluttertoast.showToast(msg: value.message);
+        } else
+          Fluttertoast.showToast(msg: value.message);
+      });
+    } else {}
+    // Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+  }
+
+  void removeFromCart() {
+    if(cartId != null){
+      FormData formData = FormData.fromMap({
+        "cart_id": cartId
+      });
+      Services.removeFromCart(formData).then((value) {
+        if(value.response == 1){
+          Fluttertoast.showToast(msg: value.message);
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDesc(id: widget.id)));
+        }
+      });
+    } else Fluttertoast.showToast(msg: "Something went wrong !!!");
   }
 }

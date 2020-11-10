@@ -7,4 +7,8 @@ class Urls{
   static String banner = "banner";
   static String product = "product";
   static String subCategory = "sub_category";
+  static String addToCart = "cart/add";
+  static String viewCart = "cart/view";
+  static String checkCartStatus = "cart/check";
+  static String removeFromCart = "cart/delete";
 }

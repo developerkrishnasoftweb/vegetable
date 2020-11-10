@@ -15,10 +15,10 @@ class PaymentConfirm extends StatefulWidget {
 class _PaymentConfirmState extends State<PaymentConfirm> {
   Razorpay razorPay;
   final List<CartItem> items = [
-    CartItem(image: AssetImage("assets/productImages/tomato.png"), title: "Tomato", price: 45, measureUnit: "KG", id: "1", unit: 1),
-    CartItem(image: AssetImage("assets/productImages/Potatoes.png"), title: "Potato", price: 10, measureUnit: "LTR", id: "1", unit: 5),
-    CartItem(image: AssetImage("assets/productImages/onion.png"), title: "Onion", price: 100, measureUnit: "GR", id: "1", unit: 10),
-    CartItem(image: AssetImage("assets/productImages/onion.png"), title: "Onion", price: 100, measureUnit: "GR", id: "1", unit: 10),
+    CartItem(image: AssetImage("assets/productImages/tomato.png"), title: "Tomato", price: 45, measureUnit: "KG", id: "1", quantity: 1),
+    CartItem(image: AssetImage("assets/productImages/Potatoes.png"), title: "Potato", price: 10, measureUnit: "LTR", id: "1", quantity: 5),
+    CartItem(image: AssetImage("assets/productImages/onion.png"), title: "Onion", price: 100, measureUnit: "GR", id: "1", quantity: 10),
+    CartItem(image: AssetImage("assets/productImages/onion.png"), title: "Onion", price: 100, measureUnit: "GR", id: "1", quantity: 10),
   ];
   double total;
   double tax = 6;
@@ -28,7 +28,7 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
   void getTotalAmount(){
     setState(() => total = 0);
     for(int i = 0; i < items.length; i++)
-      setState(() => total += items[i].unit * items[i].price);
+      setState(() => total += items[i].quantity * items[i].price);
   }
   void getGrandTotal(){
     double taxAmount = total / tax;
@@ -133,13 +133,13 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
                             child: ListTile(
                               leading: Image(image: items[index].image, height: 70, width: 60, fit: BoxFit.fill,),
                               title: Text(items[index].title),
-                              subtitle: Text("${items[index].unit} ${items[index].measureUnit} X \u20B9 ${items[index].price}", style: TextStyle(color: Colors.green),),
+                              subtitle: Text("${items[index].quantity} ${items[index].measureUnit} X \u20B9 ${items[index].price}", style: TextStyle(color: Colors.green),),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                   side: BorderSide(color: Colors.black, style: BorderStyle.solid)
                               ),
                               onTap: (){},
-                              trailing: Text("\u20B9 " + (items[index].unit * items[index].price).toString(), style: TextStyle(color: Colors.green),),
+                              trailing: Text("\u20B9 " + (items[index].quantity * items[index].price).toString(), style: TextStyle(color: Colors.green),),
                             ),
                           );
                         }

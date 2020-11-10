@@ -141,6 +141,7 @@ class _SignInState extends State<SignIn> {
                           SharedPreferences sharedPreference = await SharedPreferences.getInstance();
                           sharedPreference.setString("email", email);
                           sharedPreference.setString("password", password);
+                          sharedPreference.setString("id", value.data[0]["id"]);
                           setState(() {
                             loginStatus = false;
                           });
