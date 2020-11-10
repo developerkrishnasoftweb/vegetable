@@ -33,7 +33,7 @@ class _ProductDescState extends State<ProductDesc> {
   ];
   ImageProvider imageProvider;
   String price = "0", shortInfo = "----", longInfo = "----", productId, cartId;
-  bool checkCartStatus = false;
+  bool checkCartStatus = false, add = false, remove = false;
 
   @override
   void initState() {
@@ -141,6 +141,7 @@ class _ProductDescState extends State<ProductDesc> {
                 color: Colors.black,
               ),
               onPressed: () {
+                Navigator.pop(context);
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
               }),
         ],
@@ -213,8 +214,7 @@ class _ProductDescState extends State<ProductDesc> {
                           children: [
                             SizedBox(
                               child: InkWell(
-                                onTap: () => setState(
-                                    () => quantity > 1 ? quantity -= 1 : null),
+                                onTap: !remove ? removeQuantity : null,
                                 borderRadius: BorderRadius.circular(5),
                                 child: Container(
                                   height: 30,
@@ -223,10 +223,12 @@ class _ProductDescState extends State<ProductDesc> {
                                     borderRadius: BorderRadius.circular(5),
                                     color: Colors.green,
                                   ),
-                                  child: Icon(
-                                    Icons.remove,
-                                    color: Colors.white,
-                                  ),
+                                  child: remove
+                                      ? SizedBox(height: 20, width: 20, child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.white), strokeWidth: 1.5,),)
+                                      : Icon(
+                                          Icons.remove,
+                                          color: Colors.white,
+                                        ),
                                   alignment: Alignment.center,
                                 ),
                               ),
@@ -246,11 +248,13 @@ class _ProductDescState extends State<ProductDesc> {
                             ),
                             SizedBox(
                               child: InkWell(
-                                onTap: () => setState(() => quantity += 1),
+                                onTap: !add ? updateQuantity : null,
                                 child: Container(
                                   height: 30,
                                   width: 35,
-                                  child: Icon(
+                                  child: add
+                                      ? SizedBox(height: 20, width: 20, child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.white), strokeWidth: 1.5,),)
+                                      : Icon(
                                     Icons.add,
                                     color: Colors.white,
                                   ),
@@ -324,6 +328,7 @@ class _ProductDescState extends State<ProductDesc> {
                     ),
                     height: 60)
                 : button(
+                    color: Colors.redAccent,
                     context: context,
                     onPressed: removeFromCart,
                     child: Row(
@@ -344,7 +349,7 @@ class _ProductDescState extends State<ProductDesc> {
                         )
                       ],
                     ),
-                    height: 60),
+                    height: 60,),
           )
         ],
       ),
@@ -386,9 +391,74 @@ class _ProductDescState extends State<ProductDesc> {
       Services.removeFromCart(formData).then((value) {
         if(value.response == 1){
           Fluttertoast.showToast(msg: value.message);
+          Navigator.pop(context);
           Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDesc(id: widget.id)));
         }
       });
     } else Fluttertoast.showToast(msg: "Something went wrong !!!");
+  }
+
+  void removeQuantity() {
+    if(checkCartStatus){
+      if(cartId != null){
+        setState(() {
+          remove = true;
+          if(quantity > 1)
+            quantity -= 1;
+        });
+        FormData formData = FormData.fromMap({
+          "cart_id" : cartId,
+          "quantity" : quantity,
+        });
+        Services.updateQuantity(formData).then((value) {
+          if(value.response == 1){
+            setState(() {
+              remove = false;
+            });
+            Fluttertoast.showToast(msg: value.message);
+          } else {
+            setState(() {
+              remove = false;
+            });
+          }
+        });
+      }
+    } else {
+      setState(() {
+        if(quantity > 1)
+          quantity -= 1;
+      });
+    }
+  }
+
+  void updateQuantity() {
+    if(checkCartStatus){
+      if(cartId != null){
+        setState(() {
+          add = true;
+          quantity += 1;
+        });
+        FormData formData = FormData.fromMap({
+          "cart_id" : cartId,
+          "quantity" : quantity,
+        });
+        Services.updateQuantity(formData).then((value) {
+          if(value.response == 1){
+            setState(() {
+              add = false;
+            });
+            Fluttertoast.showToast(msg: value.message);
+          } else {
+            setState(() {
+              add = false;
+            });
+          }
+        });
+      }
+    } else {
+      setState(() {
+        quantity += 1;
+      });
+    }
   }
 }

@@ -11,4 +11,5 @@ class Urls{
   static String viewCart = "cart/view";
   static String checkCartStatus = "cart/check";
   static String removeFromCart = "cart/delete";
+  static String updateQuantity = "cart/update_quantity";
 }
