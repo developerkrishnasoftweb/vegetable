@@ -6,6 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vegetable/Components/customButton.dart';
 import 'package:vegetable/Pages/cart/place_order.dart';
+import 'package:vegetable/Pages/product_description/productDesc.dart';
 import 'package:vegetable/services/services.dart';
 import 'package:vegetable/services/urls.dart';
 
@@ -42,7 +43,7 @@ class _CartState extends State<Cart> {
         });
         for(int i = 0; i < value.data.length; i++){
           setState(() {
-            items += [CartItem(image: NetworkImage(Urls.imageBaseUrl + value.data[i]["image"].toString()), title: value.data[i]["title"].toString(), price: double.parse(value.data[i]["price"]), measureUnit: value.data[i]["unit"].toString(), id: value.data[i]["id"].toString(), quantity: int.parse(value.data[i]["quantity"]))];
+            items += [CartItem(image: NetworkImage(Urls.imageBaseUrl + value.data[i]["image"].toString()), title: value.data[i]["title"].toString(), price: double.parse(value.data[i]["price"]), measureUnit: value.data[i]["unit"].toString(), id: value.data[i]["id"].toString(), quantity: int.parse(value.data[i]["quantity"]), productId: value.data[i]["product_id"].toString())];
             total += double.parse(value.data[i]["total_price"]);
           });
         }
@@ -208,7 +209,10 @@ class _CartState extends State<Cart> {
                               ],
                             ),
                           ),
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.pop(context);
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDesc(id: items[index].productId)));
+                          },
                         ),
                       ),
                       actionPane: SlidableDrawerActionPane(),
@@ -360,9 +364,9 @@ class _CartState extends State<Cart> {
 
 class CartItem{
   final ImageProvider image;
-  final String measureUnit, id, title;
+  final String measureUnit, id, title, productId;
   double price, total;
   int quantity;
   bool add = false, remove = false;
-  CartItem({this.title, this.image, this.price, this.measureUnit, this.id, this.quantity, this.total});
+  CartItem({this.title, this.image, this.price, this.measureUnit, this.id, this.quantity, this.total, this.productId});
 }

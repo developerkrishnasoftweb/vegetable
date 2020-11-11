@@ -1,10 +1,5 @@
-import 'dart:convert';
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/services/services.dart';
 
 Stack badge({@required IconButton iconButton, BuildContext context, Color badgeColor, int badgeValue, Size badgeSize, double top, double bottom, double left, double right}){
   return Stack(
@@ -28,24 +23,4 @@ Stack badge({@required IconButton iconButton, BuildContext context, Color badgeC
       iconButton
     ],
   );
-}
-
-class Badges{
-  static dynamic getCartCount({Future<dynamic> customerId}){
-    customerId.then((value) {
-      FormData body = FormData.fromMap({
-        "customer_id" : value.toString()
-      });
-      Services.getCartCount(body).then((value) {
-        if(value.response == 1)
-          return int.parse(value.data[0]["total"]);
-      });
-    });
-    return 0;
-  }
-
-  static dynamic customerId() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    return int.parse(jsonDecode(sharedPreferences.getString("userData"))[0]["id"]);
-  }
 }

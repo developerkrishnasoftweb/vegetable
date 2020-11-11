@@ -189,13 +189,12 @@ class _SignUpState extends State<SignUp> {
                               firstName = fullName;
                             FormData formData = FormData.fromMap({
                               "first_name": firstName,
-                              "last_name": lastName,
+                              "last_name": lastName ?? "",
                               "email": email,
                               "mobile": mobile,
                               "gender": null,
                               "password": password,
                             });
-                            print(formData.fields);
                             await Services.signUp(formData).then((value) {
                               if (value.response == 1) {
                                 Fluttertoast.showToast(msg: value.message);

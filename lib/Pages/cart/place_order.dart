@@ -56,14 +56,6 @@ class _PlaceOrderState extends State<PlaceOrder> {
             },
             iconSize: 22,
           ),
-          actions: [
-            IconButton(
-                icon: ImageIcon(
-                  AssetImage("assets/icons/shopping-cart.png"),
-                  color: Colors.white70,
-                ),
-                onPressed: () {}),
-          ],
         ),
       ),
       body: Stack(

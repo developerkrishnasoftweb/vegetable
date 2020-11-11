@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -26,12 +26,15 @@ class _HomeState extends State<Home> {
   List<CategoryItems> foodGroceries = [];
   List userdata = [];
   List<AddItems> _item1 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
+  List<AddItems> _item2 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  int cartCount = 0;
 
   @override
   void initState() {
     getCategories();
     getBanners();
+    getPopularProducts();
     getProducts();
     getUserData();
     super.initState();
@@ -78,8 +81,8 @@ class _HomeState extends State<Home> {
     });
   }
 
-  void getProducts() async {
-    await Services.getProducts().then((value) {
+  void getPopularProducts() async {
+    await Services.getPopularProducts().then((value) {
       if(value.response == 1){
         for(int i = 0; i < value.data.length; i++){
           setState(() {
@@ -90,9 +93,21 @@ class _HomeState extends State<Home> {
     });
     _item1.removeAt(0);
   }
-
+  void getProducts() async {
+    await Services.getProducts().then((value) {
+      if(value.response == 1){
+        for(int i = 0; i < value.data.length; i++){
+          setState(() {
+            _item2 += [AddItems(title: value.data[i]["title"], id: value.data[i]["id"], price: value.data[i]["price"], displayPrice: value.data[i]["display_price"], image: NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]), onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDesc(id: value.data[i]["id"],))); })];
+          });
+        }
+      } else Fluttertoast.showToast(msg: value.message);
+    });
+    _item2.removeAt(0);
+  }
   @override
   Widget build(BuildContext context) {
+    getCartCount();
     Size size = MediaQuery.of(context).size;
     Orientation orientation = MediaQuery.of(context).orientation;
     return Scaffold(
@@ -148,7 +163,7 @@ class _HomeState extends State<Home> {
                               color: Colors.white70,
                             ),
                             onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));}),
-                        badgeValue: Badges.getCartCount(customerId: Badges.customerId()),
+                        badgeValue: cartCount,
                         badgeColor: Colors.green,
                         badgeSize: Size(15, 15),
                       ),
@@ -177,45 +192,29 @@ class _HomeState extends State<Home> {
                 // Carousel(items: carousel, width: size.width * 0.92, borderRadius: BorderRadius.circular(20),),
                 Expanded(
                   child: SingleChildScrollView(
-                    physics: BouncingScrollPhysics(),
+                    // physics: BouncingScrollPhysics(),
                     child: Column(
                       children: [
                         Carousel(items: carousel, width: size.width * 0.92, borderRadius: BorderRadius.circular(20),),
-                        ListTile(
-                          contentPadding: EdgeInsets.only(left: 20, right: 2),
-                          onTap: (){},
-                          title: Text("Food & Groceries",
-                            style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 20, fontWeight: FontWeight.normal),
-                          ),
-                          trailing: FlatButton(
-                            child: Text("SEE ALL",
-                              style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.black45, fontSize: 14),
-                            ),
-                            onPressed: (){},
-                          ),
-                        ),
+                        buildTitledRow(context: context, onPressed: (){}, title: "Food & Groceries", buttonTitle: "SEE ALL"),
                         Container(
                           width: size.width,
                           child: categoryBuilder(items: foodGroceries),
                         ),
                         SizedBox(height: 30,),
-                        ListTile(
-                          contentPadding: EdgeInsets.only(left: 20, right: 2),
-                          onTap: (){},
-                          title: Text("Want to shop for",
-                            style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 20, fontWeight: FontWeight.normal),
-                          ),
-                          trailing: FlatButton(
-                            child: Text("SEE ALL",
-                              style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.black45, fontSize: 14),
-                            ),
-                            onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => Products(title: "Want to shop for",)));
-                            },
-                          ),
-                        ),
+                        buildTitledRow(context: context, onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Products(title: "Popular Products",)));
+                        }, title: "Popular Products", buttonTitle: "SEE ALL"),
                         Container(
                           child: ItemBuilder(items: _item1),
+                          height: 200,
+                          width: size.width,
+                        ),
+                        buildTitledRow(context: context, onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Products(title: "Regular Products",)));
+                        }, title: "Regular Products", buttonTitle: "SEE ALL"),
+                        Container(
+                          child: ItemBuilder(items: _item2),
                           height: 200,
                           width: size.width,
                         ),
@@ -230,4 +229,32 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+  void getCartCount() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    FormData body = FormData.fromMap({
+      "customer_id" : int.parse(jsonDecode(sharedPreferences.getString("userData"))[0]["id"]).toString()
+    });
+    Services.getCartCount(body).then((value) {
+      if(value.response == 1)
+        setState(() {
+          cartCount = int.parse(value.data[0]["total"]);
+        });
+    });
+  }
+}
+
+Widget buildTitledRow({@required BuildContext context, String title, String buttonTitle, @required VoidCallback onPressed}){
+  return ListTile(
+    contentPadding: EdgeInsets.only(left: 20, right: 2),
+    onTap: null,
+    title: Text(title ?? "",
+      style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 20, fontWeight: FontWeight.normal),
+    ),
+    trailing: FlatButton(
+      child: Text(buttonTitle ?? "",
+        style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.black45, fontSize: 14),
+      ),
+      onPressed: onPressed,
+    ),
+  );
 }

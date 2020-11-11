@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:ui';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vegetable/Components/customButton.dart';
 import 'package:vegetable/Components/itemBuilder.dart';
+import 'package:vegetable/Pages/badges/badge.dart';
 import 'package:vegetable/Pages/cart/cart.dart';
 import 'package:vegetable/Pages/home.dart';
 import 'package:vegetable/services/services.dart';
@@ -20,7 +22,7 @@ class ProductDesc extends StatefulWidget {
 }
 
 class _ProductDescState extends State<ProductDesc> {
-  int quantity = 0;
+  int quantity = 0, cartCount = 0;
   String measure = "--";
   List<AddItems> _item1 = [
     AddItems(
@@ -118,6 +120,7 @@ class _ProductDescState extends State<ProductDesc> {
 
   @override
   Widget build(BuildContext context) {
+    getCartCount();
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -134,15 +137,18 @@ class _ProductDescState extends State<ProductDesc> {
           iconSize: 22,
         ),
         actions: [
-          IconButton(
-              icon: ImageIcon(
-                AssetImage("assets/icons/shopping-cart.png"),
-                color: Colors.black,
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
-              }),
+          badge(
+            context: context,
+            iconButton: IconButton(
+                icon: ImageIcon(
+                  AssetImage("assets/icons/shopping-cart.png"),
+                  color: Colors.black,
+                ),
+                onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));}),
+            badgeValue: cartCount,
+            badgeColor: Colors.green,
+            badgeSize: Size(15, 15),
+          ),
         ],
       ),
       body: Stack(
@@ -186,8 +192,8 @@ class _ProductDescState extends State<ProductDesc> {
                               ),
                             )
                           : Image(
-                              height: (size.width * 0.7) - 10,
-                              width: size.width - 10,
+                              height: 200,
+                              width: 200,
                               image: imageProvider,
                               fit: BoxFit.fill,
                             )),
@@ -379,7 +385,6 @@ class _ProductDescState extends State<ProductDesc> {
           Fluttertoast.showToast(msg: value.message);
       });
     } else {}
-    // Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
   }
 
   void removeFromCart() {
@@ -459,5 +464,18 @@ class _ProductDescState extends State<ProductDesc> {
         quantity += 1;
       });
     }
+  }
+
+  void getCartCount() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    FormData body = FormData.fromMap({
+      "customer_id" : int.parse(jsonDecode(sharedPreferences.getString("userData"))[0]["id"]).toString()
+    });
+    Services.getCartCount(body).then((value) {
+      if(value.response == 1)
+        setState(() {
+          cartCount = int.parse(value.data[0]["total"]);
+        });
+    });
   }
 }
