@@ -27,6 +27,11 @@ class _AddressState extends State<Address> {
     Services.myAddresses(formData).then((value) {
       if (value.response == 1) {
         for (int i = 0; i < value.data.length; i++) {
+          if(i == 0){
+            setState(() {
+              selectedAddress = int.parse(value.data[i]["id"]);
+            });
+          }
           setState(() {
             addressList += [
               Addresses(
