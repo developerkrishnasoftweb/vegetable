@@ -21,7 +21,7 @@ class _CartState extends State<Cart> {
   GlobalKey globalKey = GlobalKey();
   List<CartItem> items = [];
   double total = 0;
-  bool isLoading = true, add = false, remove = false, isCartEmpty = false;
+  bool isLoading = true, add = false, remove = false, isCartEmpty = false, removeOrAdd = false;
   List<Color> colors = [
     Color(0xff008744),
     Color(0xff0057e7),
@@ -127,6 +127,7 @@ class _CartState extends State<Cart> {
                                   onTap: !items[index].remove ? (){
                                     if(items[index].id != null){
                                       setState(() {
+                                        removeOrAdd = true;
                                         items[index].remove = true;
                                         if(items[index].quantity > 1)
                                           items[index].quantity -= 1;
@@ -138,6 +139,7 @@ class _CartState extends State<Cart> {
                                       Services.updateQuantity(formData).then((value) {
                                         if(value.response == 1){
                                           setState(() {
+                                            removeOrAdd = false;
                                             items[index].remove = false;
                                           });
                                           Fluttertoast.showToast(msg: value.message);
@@ -145,6 +147,7 @@ class _CartState extends State<Cart> {
                                           Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
                                         } else {
                                           setState(() {
+                                            removeOrAdd = false;
                                             items[index].remove = false;
                                           });
                                         }
@@ -181,6 +184,7 @@ class _CartState extends State<Cart> {
                                   onTap: !items[index].add ? (){
                                     if(items[index].id != null){
                                       setState(() {
+                                        removeOrAdd = true;
                                         items[index].add = true;
                                         items[index].quantity += 1;
                                       });
@@ -191,12 +195,14 @@ class _CartState extends State<Cart> {
                                       Services.updateQuantity(formData).then((value) {
                                         if(value.response == 1){
                                           setState(() {
+                                            removeOrAdd = false;
                                             items[index].add = false;
                                           });
                                           Fluttertoast.showToast(msg: value.message);
                                           getCartData();
                                         } else {
                                           setState(() {
+                                            removeOrAdd = false;
                                             items[index].add = false;
                                           });
                                         }
@@ -269,7 +275,7 @@ class _CartState extends State<Cart> {
               bottom: 10,
               child: button(
                   context: context,
-                  onPressed: items.length != 0 ? placeOrder : null,
+                  onPressed: items.length != 0 ? !removeOrAdd ? placeOrder : null : null,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 8.0, right: 2),
                     child: items.length != 0
@@ -307,7 +313,7 @@ class _CartState extends State<Cart> {
   }
 
   void placeOrder(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => PlaceOrder(),));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => PlaceOrder(items: items),));
   }
 
   void removeFromCart({@required String cartId}) {
@@ -329,7 +335,7 @@ class _CartState extends State<Cart> {
   void removeQuantity(cartId, quantity) {
     if(cartId != null){
       setState(() {
-        remove = true;
+        removeOrAdd = true;
         if(quantity > 1)
           quantity -= 1;
       });
@@ -340,11 +346,11 @@ class _CartState extends State<Cart> {
       Services.updateQuantity(formData).then((value) {
         if(value.response == 1){
           setState(() {
-            remove = false;
+            removeOrAdd = false;
           });
         } else {
           setState(() {
-            remove = false;
+            removeOrAdd = false;
           });
         }
       });
@@ -354,7 +360,7 @@ class _CartState extends State<Cart> {
   void updateQuantity(cartId, quantity) {
     if(cartId != null){
       setState(() {
-        add = true;
+        removeOrAdd = true;
         quantity += 1;
       });
       FormData formData = FormData.fromMap({
@@ -364,11 +370,11 @@ class _CartState extends State<Cart> {
       Services.updateQuantity(formData).then((value) {
         if(value.response == 1){
           setState(() {
-            add = false;
+            removeOrAdd = false;
           });
         } else {
           setState(() {
-            add = false;
+            removeOrAdd = false;
           });
         }
       });

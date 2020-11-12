@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vegetable/Components/customButton.dart';
 import 'cart.dart';
 
 class PaymentConfirm extends StatefulWidget {
   final String paymentMethod;
-  PaymentConfirm({this.paymentMethod});
+  final List<CartItem> items;
+  PaymentConfirm({this.paymentMethod, @required this.items});
 
   @override
   _PaymentConfirmState createState() => _PaymentConfirmState();
@@ -14,31 +16,30 @@ class PaymentConfirm extends StatefulWidget {
 
 class _PaymentConfirmState extends State<PaymentConfirm> {
   Razorpay razorPay;
-  final List<CartItem> items = [
-    CartItem(image: AssetImage("assets/productImages/tomato.png"), title: "Tomato", price: 45, measureUnit: "KG", id: "1", quantity: 1),
-    CartItem(image: AssetImage("assets/productImages/Potatoes.png"), title: "Potato", price: 10, measureUnit: "LTR", id: "1", quantity: 5),
-    CartItem(image: AssetImage("assets/productImages/onion.png"), title: "Onion", price: 100, measureUnit: "GR", id: "1", quantity: 10),
-    CartItem(image: AssetImage("assets/productImages/onion.png"), title: "Onion", price: 100, measureUnit: "GR", id: "1", quantity: 10),
-  ];
+  List<CartItem> items = [];
   double total;
   double tax = 6;
   double grandTotal;
   double deliveryCharge = 25;
   double discount = 50;
+  double taxAmount;
   void getTotalAmount(){
     setState(() => total = 0);
     for(int i = 0; i < items.length; i++)
       setState(() => total += items[i].quantity * items[i].price);
   }
   void getGrandTotal(){
-    double taxAmount = total / tax;
+    taxAmount = (total * tax) / 100;
     setState(() {
-      grandTotal = total + (total / tax) + discount + deliveryCharge;
+      grandTotal = total + deliveryCharge + taxAmount - discount;
     });
   }
 
   @override
   void initState() {
+    setState(() {
+      items = widget.items;
+    });
     super.initState();
     razorPay = Razorpay();
     razorPay.on(Razorpay.EVENT_PAYMENT_SUCCESS, paymentSuccess);
@@ -133,7 +134,7 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
                             child: ListTile(
                               leading: Image(image: items[index].image, height: 70, width: 60, fit: BoxFit.fill,),
                               title: Text(items[index].title),
-                              subtitle: Text("${items[index].quantity} ${items[index].measureUnit} X \u20B9 ${items[index].price}", style: TextStyle(color: Colors.green),),
+                              subtitle: Text("${items[index].quantity} ${items[index].measureUnit} x \u20B9 ${items[index].price}", style: TextStyle(color: Colors.green),),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                   side: BorderSide(color: Colors.black, style: BorderStyle.solid)
@@ -148,11 +149,11 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
                     Text("Billing Details :", style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),),
                     SizedBox(height: 10,),
                     descList(title: "Total", amount: (total).toString()),
-                    descList(title: "Delivery Charge", amount: (tax).toString(), lead: "+"),
-                    descList(title: "Service Tax (${tax.toString()}%)", amount: (total / tax).toStringAsFixed(2), lead: "+"),
+                    descList(title: "Delivery Charge", amount: (deliveryCharge).toString(), lead: "+"),
+                    descList(title: "Service Tax (${tax.toString()}%)", amount: taxAmount.toStringAsFixed(2), lead: "+"),
                     descList(title: "Discount", amount: discount.toString(), lead: "-"),
                     Divider(color: Colors.black, thickness: 2,),
-                    descList(title: "Total Payable", amount: "1333.5"),
+                    descList(title: "Total Payable", amount: grandTotal.toStringAsFixed(2)),
                   ],
                 ),
               ),
@@ -167,7 +168,7 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
                           checkOut();
                         break;
                       case "1":
-
+                          cashOnDelivery();
                         break;
                       case "2":
 
@@ -195,5 +196,9 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
         ],
       ),
     );
+  }
+
+  void cashOnDelivery() {
+    // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
   }
 }

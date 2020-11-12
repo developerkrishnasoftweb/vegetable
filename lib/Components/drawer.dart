@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vegetable/Components/userdata.dart';
+import 'package:vegetable/Pages/address_management/address.dart';
 import 'package:vegetable/Pages/home.dart';
 import '../Pages/my_orders/my_orders.dart';
 import 'package:vegetable/services/urls.dart';
@@ -18,7 +19,10 @@ Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState
           scaffoldKey.currentState.openEndDrawer();
           Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrders()));
     }),
-    DrawerItem(text: "My Address", icon: Icon(Icons.location_on), onTap: () {}),
+    DrawerItem(text: "My Address", icon: Icon(Icons.location_on), onTap: () {
+      scaffoldKey.currentState.openEndDrawer();
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Address()));
+    }),
     DrawerItem(text: "My Profile", icon: Icon(Icons.person), onTap: () {
       scaffoldKey.currentState.openEndDrawer();
       Navigator.push(context, MaterialPageRoute(builder: (context) => Profile()));
