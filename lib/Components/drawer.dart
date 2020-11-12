@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vegetable/Components/userdata.dart';
 import 'package:vegetable/Pages/home.dart';
+import '../Pages/my_orders/my_orders.dart';
 import 'package:vegetable/services/urls.dart';
 import '../Pages/personalise/profile.dart';
 import '../Pages/SignIn_SignUp/signin.dart';
@@ -13,7 +14,10 @@ Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState
       Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
     }),
     DrawerItem(
-        text: "My Orders", icon: Icon(Icons.shopping_cart), onTap: () {}),
+        text: "My Orders", icon: Icon(Icons.shopping_cart), onTap: () {
+          scaffoldKey.currentState.openEndDrawer();
+          Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrders()));
+    }),
     DrawerItem(text: "My Address", icon: Icon(Icons.location_on), onTap: () {}),
     DrawerItem(text: "My Profile", icon: Icon(Icons.person), onTap: () {
       scaffoldKey.currentState.openEndDrawer();

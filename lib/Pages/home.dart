@@ -196,7 +196,7 @@ class _HomeState extends State<Home> {
       body: Stack(
         children: [
           Container(
-            height: size.height * 0.3,
+            height: size.height > 500 ? size.height * 0.3 : 180,
             width: size.width,
             decoration: BoxDecoration(
               color: Color(0xFF81ae4f),
@@ -287,16 +287,17 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: 30,
                 ),
+                Carousel(
+                  height: size.height > 500 ? null : 150,
+                  items: carousel,
+                  width: size.width * 0.92,
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 Expanded(
                   child: SingleChildScrollView(
-                    // physics: BouncingScrollPhysics(),
+                    physics: BouncingScrollPhysics(),
                     child: Column(
                       children: [
-                        Carousel(
-                          items: carousel,
-                          width: size.width * 0.92,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
                         buildTitledRow(
                             context: context,
                             onPressed: () {},
