@@ -14,4 +14,6 @@ class Urls{
   static String updateQuantity = "cart/update_quantity";
   static String getCartCount = "cart/count";
   static String popularProducts = "popular_product";
+  static String getUserProfile = "customer/get_profile";
+  static String name;
 }

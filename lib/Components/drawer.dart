@@ -1,15 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/Components/userdata.dart';
+import 'package:vegetable/Pages/home.dart';
+import 'package:vegetable/services/urls.dart';
+import '../Pages/personalise/profile.dart';
 import '../Pages/SignIn_SignUp/signin.dart';
 
-Drawer drawer(BuildContext context) {
+Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState> scaffoldKey}) {
   List<DrawerItem> items = [
-    DrawerItem(text: "Home", icon: Icon(Icons.home), onTap: () {}),
+    DrawerItem(text: "Home", icon: Icon(Icons.home), onTap: () {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+    }),
     DrawerItem(
         text: "My Orders", icon: Icon(Icons.shopping_cart), onTap: () {}),
     DrawerItem(text: "My Address", icon: Icon(Icons.location_on), onTap: () {}),
-    DrawerItem(text: "My Profile", icon: Icon(Icons.person), onTap: () {}),
+    DrawerItem(text: "My Profile", icon: Icon(Icons.person), onTap: () {
+      scaffoldKey.currentState.openEndDrawer();
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Profile()));
+    }),
     DrawerItem(text: "Feedback", icon: Icon(Icons.feedback), onTap: () {}),
     DrawerItem(
         text: "Contact Us", icon: Icon(Icons.contact_phone), onTap: () {}),
@@ -37,16 +46,17 @@ Drawer drawer(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ClipRRect(
-                  child: Image(
-                    image: AssetImage("assets/images/user-avatar.jpg"),
-                    fit: BoxFit.fill,
-
-                    ///make image height width responsive
-                    height: 100,
-                    width: 100,
+                Container(
+                  height: 90,
+                  width: 90,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    border: Border.all(width: 5, color: Colors.white),
+                    image: DecorationImage(
+                      image: NetworkImage(Urls.imageBaseUrl + UserData.image),
+                      fit: BoxFit.cover
+                    )
                   ),
-                  borderRadius: BorderRadius.circular(100),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.4,
@@ -55,7 +65,7 @@ Drawer drawer(BuildContext context) {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("admin",
+                      Text(UserData.firstName,
                           style: Theme.of(context)
                               .textTheme
                               .bodyText1
@@ -64,11 +74,12 @@ Drawer drawer(BuildContext context) {
                       SizedBox(
                         height: 3,
                       ),
-                      Text("admin@gmail.com",
+                      Text(UserData.email,
+                          softWrap: true,
                           style: Theme.of(context)
                               .textTheme
                               .bodyText1
-                              .copyWith(fontSize: 16),
+                              .copyWith(fontSize: 13),
                           overflow: TextOverflow.ellipsis),
                       SizedBox(
                         height: 15,

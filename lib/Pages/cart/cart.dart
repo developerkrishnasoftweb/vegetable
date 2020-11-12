@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,7 +21,14 @@ class _CartState extends State<Cart> {
   GlobalKey globalKey = GlobalKey();
   List<CartItem> items = [];
   double total = 0;
-  bool isLoading = true, add = false, remove = false;
+  bool isLoading = true, add = false, remove = false, isCartEmpty = false;
+  List<Color> colors = [
+    Color(0xff008744),
+    Color(0xff0057e7),
+    Color(0xffd62d20),
+    Color(0xffffa700),
+    Color(0xff0c1b32)
+  ];
 
   @override
   void initState() {
@@ -47,7 +56,12 @@ class _CartState extends State<Cart> {
             total += double.parse(value.data[i]["total_price"]);
           });
         }
-      } else setState(() => isLoading = false);
+      } else{
+        setState(() {
+          isLoading = false;
+          isCartEmpty = true;
+        });
+      }
     });
   }
 
@@ -81,7 +95,7 @@ class _CartState extends State<Cart> {
         body: Stack(
           children: [
             items.length != 0
-            ? Container(
+                ? Container(
               height: size.height,
               width: size.width,
               child: ListView.builder(
@@ -179,8 +193,8 @@ class _CartState extends State<Cart> {
                                             items[index].add = false;
                                           });
                                           Fluttertoast.showToast(msg: value.message);
-                                          Navigator.pop(context);
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+                                          items.clear();
+                                          getCartData();
                                         } else {
                                           setState(() {
                                             items[index].add = false;
@@ -228,8 +242,7 @@ class _CartState extends State<Cart> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Icon(Icons.delete, color: Colors.white,),
-                                Text("Delete", style: TextStyle(color: Colors.white),),
+                                Icon(Icons.delete, color: Colors.white, size: 30,),
                               ],
                             ),
                             onPressed: (){
@@ -247,25 +260,26 @@ class _CartState extends State<Cart> {
                   }
               ),
             )
-            : Center(
-                child: isLoading
-                ? SizedBox(height: 50, width: 50, child: CircularProgressIndicator(strokeWidth: 1, valueColor: AlwaysStoppedAnimation(Colors.green),),)
-                : Image(image: AssetImage("assets/images/empty-cart.png"), fit: BoxFit.fill, height: 200, width: 200,),
-              ),
+                : Center(
+              child: isLoading
+                  ? SizedBox.shrink()
+                  : Image(image: AssetImage("assets/images/empty-cart.png"), fit: BoxFit.fill, height: 200, width: 200,),
+            ),
             Positioned(
               bottom: 10,
               child: button(
                   context: context,
-                  onPressed: placeOrder,
+                  onPressed: items.length != 0 ? placeOrder : null,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 8.0, right: 2),
-                    child: Row(
+                    child: items.length != 0
+                    ? Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("${items.length != 0 ? items.length : 0} ITEMS | \u20B9 " + total.toString().padRight(2, '0'),
                           style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold
                           ),
                         ),
                         FlatButton(
@@ -276,14 +290,15 @@ class _CartState extends State<Cart> {
                             ),
                           ),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)
+                              borderRadius: BorderRadius.circular(10)
                           ),
                           onPressed: placeOrder,
                           color: Colors.white.withOpacity(0.3),
                           padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
                         )
                       ],
-                    ),
+                    )
+                    : !isCartEmpty ? SizedBox(height: 30, width: 30, child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(colors[Random().nextInt(colors.length)]), strokeWidth: 1.5,)) : Text("Your cart is empty !!!", style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.black),)
                   ),
                   height: 60),
             )
@@ -302,9 +317,10 @@ class _CartState extends State<Cart> {
       });
       Services.removeFromCart(formData).then((value) {
         if(value.response == 1){
+          getCartData();
           Fluttertoast.showToast(msg: value.message);
-          Navigator.pop(context);
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+          // Navigator.pop(context);
+          // Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
         }
       });
     } else Fluttertoast.showToast(msg: "Something went wrong !!!");

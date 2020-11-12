@@ -82,7 +82,8 @@ class _PlaceOrderState extends State<PlaceOrder> {
                     keyboardType: TextInputType.datetime,
                     style: TextStyle(
                       color: Colors.black45,
-                    )
+                    ),
+                    onTap: (){_selectDate(context);},
                 ),
                 SizedBox(height: 30,),
                 Text("Delivery By :", style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),),

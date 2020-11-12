@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/Components/userdata.dart';
 import 'package:vegetable/Pages/badges/badge.dart';
 import 'package:vegetable/Pages/cart/cart.dart';
 import 'package:vegetable/Pages/product/product.dart';
@@ -24,7 +25,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   List<CarouselItems> carousel = [];
   List<CategoryItems> foodGroceries = [];
-  List userdata = [];
   List<AddItems> _item1 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
   List<AddItems> _item2 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
     getBanners();
     getPopularProducts();
     getProducts();
-    getUserData();
+    setUserData();
     super.initState();
   }
   String greeting(){
@@ -48,13 +48,6 @@ class _HomeState extends State<Home> {
       return "AFTERNOON";
     }
     return "EVENING";
-  }
-
-  void getUserData() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    setState(() {
-      userdata = jsonDecode(sharedPreferences.getString("userData"));
-    });
   }
 
   void getCategories() async {
@@ -105,6 +98,20 @@ class _HomeState extends State<Home> {
     });
     _item2.removeAt(0);
   }
+
+  void setUserData() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    var userData = jsonDecode(sharedPreferences.getString("userData"));
+    setState(() {
+      UserData.firstName = userData[0]["first_name"];
+      UserData.lastName = userData[0]["last_name"];
+      UserData.email = userData[0]["email"];
+      UserData.mobile = userData[0]["mobile"];
+      UserData.gender = userData[0]["gender"];
+      UserData.image = userData[0]["image"];
+      UserData.id = userData[0]["id"];
+    });
+  }
   @override
   Widget build(BuildContext context) {
     getCartCount();
@@ -112,7 +119,7 @@ class _HomeState extends State<Home> {
     Orientation orientation = MediaQuery.of(context).orientation;
     return Scaffold(
       key: scaffoldKey,
-      drawer: SafeArea(child: drawer(context),),
+      drawer: SafeArea(child: drawer(context: context, scaffoldKey: scaffoldKey),),
       body: Stack(
         children: [
           Container(
@@ -181,7 +188,7 @@ class _HomeState extends State<Home> {
                         style: Theme.of(context).textTheme.bodyText2.copyWith(fontSize: 15),
                       ),
                       SizedBox(height: 5,),
-                      Text("Hey, ${userdata.length != 0 ? userdata[0]["first_name"] : ""}",
+                      Text("Hey, ${UserData.firstName != null ? UserData.firstName : ""}",
                         softWrap: true,
                         style: Theme.of(context).textTheme.bodyText2.copyWith(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25)
                       )
@@ -189,7 +196,6 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 SizedBox(height: 30,),
-                // Carousel(items: carousel, width: size.width * 0.92, borderRadius: BorderRadius.circular(20),),
                 Expanded(
                   child: SingleChildScrollView(
                     // physics: BouncingScrollPhysics(),

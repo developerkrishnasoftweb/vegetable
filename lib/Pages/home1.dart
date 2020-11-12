@@ -74,7 +74,7 @@ class _HomeState extends State<HomeSecond> {
 
     return Scaffold(
       key: scaffoldKey,
-      drawer: drawer(context),
+      drawer: drawer(scaffoldKey: scaffoldKey, context: context),
       body: Stack(
         children: [
           CustomScrollView(
