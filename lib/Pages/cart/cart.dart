@@ -36,6 +36,7 @@ class _CartState extends State<Cart> {
     super.initState();
   }
   void getCartData() async {
+    items.clear();
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String customerId;
     setState(() {
@@ -193,7 +194,6 @@ class _CartState extends State<Cart> {
                                             items[index].add = false;
                                           });
                                           Fluttertoast.showToast(msg: value.message);
-                                          items.clear();
                                           getCartData();
                                         } else {
                                           setState(() {
@@ -342,7 +342,6 @@ class _CartState extends State<Cart> {
           setState(() {
             remove = false;
           });
-          Fluttertoast.showToast(msg: value.message);
         } else {
           setState(() {
             remove = false;
@@ -367,7 +366,6 @@ class _CartState extends State<Cart> {
           setState(() {
             add = false;
           });
-          Fluttertoast.showToast(msg: value.message);
         } else {
           setState(() {
             add = false;

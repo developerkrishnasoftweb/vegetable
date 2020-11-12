@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/Components/userdata.dart';
-import 'package:vegetable/Pages/badges/badge.dart';
-import 'package:vegetable/Pages/cart/cart.dart';
-import 'package:vegetable/Pages/product/product.dart';
-import 'package:vegetable/Pages/product_description/productDesc.dart';
-import 'package:vegetable/Pages/subcategory/subcategory.dart';
-import 'package:vegetable/services/services.dart';
-import 'package:vegetable/services/urls.dart';
+import '../Components/userdata.dart';
+import '../Pages/badges/badge.dart';
+import '../Pages/cart/cart.dart';
+import '../Pages/product/product.dart';
+import '../Pages/product_description/productDesc.dart';
+import '../Pages/subcategory/subcategory.dart';
+import '../services/services.dart';
+import '../services/urls.dart';
 import '../Components/carousel.dart';
 import '../Components/drawer.dart';
 import '../Components/categoryBuilder.dart';
@@ -25,8 +25,22 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   List<CarouselItems> carousel = [];
   List<CategoryItems> foodGroceries = [];
-  List<AddItems> _item1 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
-  List<AddItems> _item2 = [AddItems(image: AssetImage("assets/images/loading.gif"), displayPrice: "00", price: "00", title: "----", id: null)];
+  List<AddItems> _item1 = [
+    AddItems(
+        image: AssetImage("assets/images/loading.gif"),
+        displayPrice: "00",
+        price: "00",
+        title: "----",
+        id: null)
+  ];
+  List<AddItems> _item2 = [
+    AddItems(
+        image: AssetImage("assets/images/loading.gif"),
+        displayPrice: "00",
+        price: "00",
+        title: "----",
+        id: null)
+  ];
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   int cartCount = 0;
 
@@ -39,12 +53,13 @@ class _HomeState extends State<Home> {
     setUserData();
     super.initState();
   }
-  String greeting(){
+
+  String greeting() {
     int hour = DateTime.now().hour;
-    if(hour < 12){
+    if (hour < 12) {
       return "MORNING";
     }
-    if(hour < 17){
+    if (hour < 17) {
       return "AFTERNOON";
     }
     return "EVENING";
@@ -52,49 +67,105 @@ class _HomeState extends State<Home> {
 
   void getCategories() async {
     await Services.getAllCategory().then((value) {
-      if(value.response == 1){
-        for(int i = 0; i < value.data.length; i++){
+      if (value.response == 1) {
+        for (int i = 0; i < value.data.length; i++) {
           setState(() {
-            foodGroceries += [CategoryItems(image: NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]), title: value.data[i]["title"], id: value.data[i]["id"], homeScreen: value.data[i]["home_screen"], onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SubCategory(productId: value.data[i]["id"],)));})];
+            foodGroceries += [
+              CategoryItems(
+                  image:
+                      NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]),
+                  title: value.data[i]["title"],
+                  id: value.data[i]["id"],
+                  homeScreen: value.data[i]["home_screen"],
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SubCategory(
+                                  productId: value.data[i]["id"],
+                                )));
+                  })
+            ];
           });
         }
-      } else Fluttertoast.showToast(msg: value.message);
+      } else {
+        Fluttertoast.showToast(msg: value.message);
+      }
     });
   }
 
   void getBanners() async {
     await Services.getBanner().then((value) {
-      if(value.response == 1){
-        for(int i = 0; i < value.data.length; i++){
+      if (value.response == 1) {
+        for (int i = 0; i < value.data.length; i++) {
           setState(() {
-            carousel += [CarouselItems(image: NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]), title: value.data[i]["title"], category: value.data[i]["category_id"])];
+            carousel += [
+              CarouselItems(
+                  image:
+                      NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]),
+                  title: value.data[i]["title"],
+                  category: value.data[i]["category_id"])
+            ];
           });
         }
-      } else Fluttertoast.showToast(msg: value.message);
+      }
     });
   }
 
   void getPopularProducts() async {
     await Services.getPopularProducts().then((value) {
-      if(value.response == 1){
-        for(int i = 0; i < value.data.length; i++){
+      if (value.response == 1) {
+        for (int i = 0; i < value.data.length; i++) {
           setState(() {
-            _item1 += [AddItems(title: value.data[i]["title"], id: value.data[i]["id"], price: value.data[i]["price"], displayPrice: value.data[i]["display_price"], image: NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]), onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDesc(id: value.data[i]["id"],))); })];
+            _item1 += [
+              AddItems(
+                  title: value.data[i]["title"],
+                  id: value.data[i]["id"],
+                  price: value.data[i]["price"],
+                  displayPrice: value.data[i]["display_price"],
+                  image:
+                      NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProductDesc(
+                                  id: value.data[i]["id"],
+                                )));
+                  })
+            ];
           });
         }
-      } else Fluttertoast.showToast(msg: value.message);
+      }
     });
     _item1.removeAt(0);
   }
+
   void getProducts() async {
     await Services.getProducts().then((value) {
-      if(value.response == 1){
-        for(int i = 0; i < value.data.length; i++){
+      if (value.response == 1) {
+        for (int i = 0; i < value.data.length; i++) {
           setState(() {
-            _item2 += [AddItems(title: value.data[i]["title"], id: value.data[i]["id"], price: value.data[i]["price"], displayPrice: value.data[i]["display_price"], image: NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]), onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDesc(id: value.data[i]["id"],))); })];
+            _item2 += [
+              AddItems(
+                  title: value.data[i]["title"],
+                  id: value.data[i]["id"],
+                  price: value.data[i]["price"],
+                  displayPrice: value.data[i]["display_price"],
+                  image:
+                      NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProductDesc(
+                                  id: value.data[i]["id"],
+                                )));
+                  })
+            ];
           });
         }
-      } else Fluttertoast.showToast(msg: value.message);
+      }
     });
     _item2.removeAt(0);
   }
@@ -112,14 +183,16 @@ class _HomeState extends State<Home> {
       UserData.id = userData[0]["id"];
     });
   }
+
   @override
   Widget build(BuildContext context) {
     getCartCount();
     Size size = MediaQuery.of(context).size;
-    Orientation orientation = MediaQuery.of(context).orientation;
     return Scaffold(
       key: scaffoldKey,
-      drawer: SafeArea(child: drawer(context: context, scaffoldKey: scaffoldKey),),
+      drawer: SafeArea(
+        child: drawer(context: context, scaffoldKey: scaffoldKey),
+      ),
       body: Stack(
         children: [
           Container(
@@ -141,14 +214,15 @@ class _HomeState extends State<Home> {
                     backgroundColor: Colors.transparent,
                     elevation: 0,
                     leading: IconButton(
-                        icon: ImageIcon(
-                          AssetImage("assets/icons/menu-hamburger.png"),
-                          color: Colors.white70,
-                        ),
-                        onPressed: () {
-                          scaffoldKey.currentState.openDrawer();
-                        },
-                        iconSize: 22,),
+                      icon: ImageIcon(
+                        AssetImage("assets/icons/menu-hamburger.png"),
+                        color: Colors.white70,
+                      ),
+                      onPressed: () {
+                        scaffoldKey.currentState.openDrawer();
+                      },
+                      iconSize: 22,
+                    ),
                     actions: [
                       badge(
                         context: context,
@@ -157,7 +231,8 @@ class _HomeState extends State<Home> {
                               AssetImage("assets/icons/bell.png"),
                               color: Colors.white70,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                            }),
                         badgeValue: 0,
                         badgeColor: Colors.green,
                         badgeSize: Size(15, 15),
@@ -169,7 +244,12 @@ class _HomeState extends State<Home> {
                               AssetImage("assets/icons/shopping-cart.png"),
                               color: Colors.white70,
                             ),
-                            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));}),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Cart()));
+                            }),
                         badgeValue: cartCount,
                         badgeColor: Colors.green,
                         badgeSize: Size(15, 15),
@@ -183,44 +263,83 @@ class _HomeState extends State<Home> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("GOOD ${greeting()}",
+                      Text(
+                        "GOOD ${greeting()}",
                         softWrap: true,
-                        style: Theme.of(context).textTheme.bodyText2.copyWith(fontSize: 15),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText2
+                            .copyWith(fontSize: 15),
                       ),
-                      SizedBox(height: 5,),
-                      Text("Hey, ${UserData.firstName != null ? UserData.firstName : ""}",
-                        softWrap: true,
-                        style: Theme.of(context).textTheme.bodyText2.copyWith(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25)
-                      )
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                          "Hey, ${UserData.firstName != null ? UserData.firstName : ""}",
+                          softWrap: true,
+                          style: Theme.of(context).textTheme.bodyText2.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25))
                     ],
                   ),
                 ),
-                SizedBox(height: 30,),
+                SizedBox(
+                  height: 30,
+                ),
                 Expanded(
                   child: SingleChildScrollView(
                     // physics: BouncingScrollPhysics(),
                     child: Column(
                       children: [
-                        Carousel(items: carousel, width: size.width * 0.92, borderRadius: BorderRadius.circular(20),),
-                        buildTitledRow(context: context, onPressed: (){}, title: "Food & Groceries", buttonTitle: "SEE ALL"),
+                        Carousel(
+                          items: carousel,
+                          width: size.width * 0.92,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        buildTitledRow(
+                            context: context,
+                            onPressed: () {},
+                            title: "Food & Groceries",
+                            buttonTitle: "SEE ALL"),
                         Container(
                           width: size.width,
                           child: categoryBuilder(items: foodGroceries),
                         ),
-                        SizedBox(height: 30,),
-                        buildTitledRow(context: context, onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Products(title: "Popular Products",)));
-                        }, title: "Popular Products", buttonTitle: "SEE ALL"),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        buildTitledRow(
+                            context: context,
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Products(
+                                            title: "Popular Products",
+                                          )));
+                            },
+                            title: "Popular Products",
+                            buttonTitle: "SEE ALL"),
                         Container(
-                          child: ItemBuilder(items: _item1),
+                          child: _item1.length != 0 ? ItemBuilder(items: _item1) : SizedBox.shrink(),
                           height: 200,
                           width: size.width,
                         ),
-                        buildTitledRow(context: context, onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Products(title: "Regular Products",)));
-                        }, title: "Regular Products", buttonTitle: "SEE ALL"),
+                        buildTitledRow(
+                            context: context,
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Products(
+                                            title: "Regular Products",
+                                          )));
+                            },
+                            title: "Regular Products",
+                            buttonTitle: "SEE ALL"),
                         Container(
-                          child: ItemBuilder(items: _item2),
+                          child: _item2.length != 0 ? ItemBuilder(items: _item2) : SizedBox.shrink(),
                           height: 200,
                           width: size.width,
                         ),
@@ -235,13 +354,16 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
   void getCartCount() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     FormData body = FormData.fromMap({
-      "customer_id" : int.parse(jsonDecode(sharedPreferences.getString("userData"))[0]["id"]).toString()
+      "customer_id": int.parse(
+              jsonDecode(sharedPreferences.getString("userData"))[0]["id"])
+          .toString()
     });
     Services.getCartCount(body).then((value) {
-      if(value.response == 1)
+      if (value.response == 1)
         setState(() {
           cartCount = int.parse(value.data[0]["total"]);
         });
@@ -249,16 +371,28 @@ class _HomeState extends State<Home> {
   }
 }
 
-Widget buildTitledRow({@required BuildContext context, String title, String buttonTitle, @required VoidCallback onPressed}){
+Widget buildTitledRow(
+    {@required BuildContext context,
+    String title,
+    String buttonTitle,
+    @required VoidCallback onPressed}) {
   return ListTile(
     contentPadding: EdgeInsets.only(left: 20, right: 2),
     onTap: null,
-    title: Text(title ?? "",
-      style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 20, fontWeight: FontWeight.normal),
+    title: Text(
+      title ?? "",
+      style: Theme.of(context)
+          .textTheme
+          .bodyText1
+          .copyWith(fontSize: 20, fontWeight: FontWeight.normal),
     ),
     trailing: FlatButton(
-      child: Text(buttonTitle ?? "",
-        style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.black45, fontSize: 14),
+      child: Text(
+        buttonTitle ?? "",
+        style: Theme.of(context)
+            .textTheme
+            .bodyText1
+            .copyWith(color: Colors.black45, fontSize: 14),
       ),
       onPressed: onPressed,
     ),

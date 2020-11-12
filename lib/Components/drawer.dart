@@ -53,7 +53,7 @@ Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState
                     borderRadius: BorderRadius.circular(100),
                     border: Border.all(width: 5, color: Colors.white),
                     image: DecorationImage(
-                      image: NetworkImage(Urls.imageBaseUrl + UserData.image),
+                      image: NetworkImage(UserData.image != null ? Urls.imageBaseUrl + UserData.image : ""),
                       fit: BoxFit.cover
                     )
                   ),
