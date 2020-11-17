@@ -134,19 +134,18 @@ class _AddressState extends State<Address> {
                                 height: 5,
                               ),
                               Text(
-                                addressList[index].address1 != "null" ? addressList[index].address1 : "N/A",
+                                addressList[index].address1 != "null" ? addressList[index].area != "null" ? addressList[index].city != "null" ? addressList[index].address1 + ", " + addressList[index].area + ", " + addressList[index].city : "N/A" : "N/A" : "N/A",
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText1
                                     .copyWith(
-                                        fontSize: 15,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w500),
+                                    fontSize: 15,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500),
                                 overflow: TextOverflow.ellipsis,
+                                softWrap: true,
                               ),
-                              SizedBox(
-                                height: 5,
-                              ),
+                              SizedBox(height: 5,),
                               Text(
                                 addressList[index].mobile != "null" ? addressList[index].mobile : "N/A",
                                 style: Theme.of(context)
