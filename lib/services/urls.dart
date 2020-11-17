@@ -17,4 +17,7 @@ class Urls{
   static String getUserProfile = "customer/get_profile";
   static String myOrders = "order/view";
   static String myAddresses = "customer/get_address";
+  static String deleteAddress = "customer/delete_address";
+  static String updateAddress = "customer/update_address";
+  static String addAddress = "customer/add_address";
 }

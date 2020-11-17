@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/services/services.dart';
+import '../../Pages/address_management/address_mgt.dart';
+import '../../services/services.dart';
 
 class Address extends StatefulWidget {
   @override
@@ -70,7 +70,10 @@ class _AddressState extends State<Address> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ManageAddress()));
+            },
             icon: Icon(
               Icons.add,
               color: Colors.white,
@@ -84,7 +87,10 @@ class _AddressState extends State<Address> {
               physics: BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ManageAddress(address: addressList[index])));
+                  },
                   child: Container(
                     height: 150,
                     width: size.width,
@@ -114,25 +120,41 @@ class _AddressState extends State<Address> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "46, Apeksha nagar, Althan road, Pandesara, Surat",
+                                addressList[index].name != "null" ? addressList[index].name : "N/A",
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText1
                                     .copyWith(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
+                                    fontSize: 17,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
                                 overflow: TextOverflow.ellipsis,
                               ),
                               SizedBox(
-                                height: 10,
+                                height: 5,
                               ),
                               Text(
-                                "8758432528",
+                                addressList[index].address1 != "null" ? addressList[index].address1 : "N/A",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1
+                                    .copyWith(
+                                        fontSize: 15,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w500),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                addressList[index].mobile != "null" ? addressList[index].mobile : "N/A",
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText1
                                     .copyWith(
                                       color: Colors.black54,
+                                      fontSize: 13
                                     ),
                                 overflow: TextOverflow.ellipsis,
                                 softWrap: true,
@@ -154,10 +176,11 @@ class _AddressState extends State<Address> {
             )
           : Center(
               child: SizedBox(
-                height: 40,
-                width: 40,
+                height: 30,
+                width: 30,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation(Colors.green),
+                  strokeWidth: 1.3,
                 ),
               ),
             ),

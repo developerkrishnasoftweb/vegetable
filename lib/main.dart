@@ -27,4 +27,3 @@ Future<bool> getCredential() async {
   else
     return false;
 }
-

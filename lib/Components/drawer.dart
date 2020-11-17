@@ -73,7 +73,7 @@ Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(UserData.firstName,
+                      Text(UserData.firstName != null ? UserData.firstName : "N/A",
                           style: Theme.of(context)
                               .textTheme
                               .bodyText1
@@ -82,7 +82,7 @@ Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState
                       SizedBox(
                         height: 3,
                       ),
-                      Text(UserData.email,
+                      Text(UserData.email != null ? UserData.email : "N/A",
                           softWrap: true,
                           style: Theme.of(context)
                               .textTheme

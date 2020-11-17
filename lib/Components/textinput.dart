@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 Widget input({@required BuildContext context, InputDecoration decoration, TextStyle style, GestureTapCallback onTap, TextEditingController controller, bool obscureText, ValueChanged<String> onChanged, String text, TextInputType keyboardType, bool readOnly, EdgeInsetsGeometry padding, double width, TextStyle labelStyle}){
   Size size = MediaQuery.of(context).size;
   return Container(
-    padding: padding ?? const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+    padding: padding ?? const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
     width: size.width ?? width,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,

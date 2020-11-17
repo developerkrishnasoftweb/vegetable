@@ -37,23 +37,34 @@ class _MyOrdersState extends State<MyOrders> {
         });
     });
   }
+
   void myOrders() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     FormData body = FormData.fromMap({
       "customer_id": int.parse(
-          jsonDecode(sharedPreferences.getString("userData"))[0]["id"])
+              jsonDecode(sharedPreferences.getString("userData"))[0]["id"])
           .toString()
     });
     Services.myOrders(body).then((value) {
-      if(value.response == 1){
-        for(int i = 0; i < value.data.length; i++){
-          setState(() {
-            orders += [OrderDetail(image: value.data[i]["image"].toString(), desc: value.data[i]["short_info"].toString(), orderProgress: value.data[i]["order_progress"].toString(), orderId: value.data[i]["id"].toString(), deliveryStatus: "Delivery expected by Sat, Nov 12")];
-          });
+      if (value.response == 1) {
+        for (int i = 0; i < value.data.length; i++) {
+          for (int j = 0; j < value.data[i]["products"].length; j++) {
+            setState(() {
+              orders += [
+                OrderDetail(
+                    image: value.data[i]["products"][j]["image"].toString(),
+                    desc: value.data[i]["products"][j]["short_info"].toString(),
+                    orderProgress: value.data[i]["order_progress"].toString(),
+                    orderId: value.data[i]["id"].toString(),
+                    deliveryStatus: "Delivery expected by Sat, Nov 12")
+              ];
+            });
+          }
         }
       }
     });
   }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -87,82 +98,97 @@ class _MyOrdersState extends State<MyOrders> {
         ],
       ),
       body: orders.length != 0
-        ? ListView.builder(
-          physics: BouncingScrollPhysics(),
-          shrinkWrap: true,
-          itemCount: orders.length,
-          itemBuilder: (BuildContext context, int index) {
-            return InkWell(
-              onTap: () {
-              },
-              child: Container(
-                height: 150,
-                width: size.width,
-                decoration: BoxDecoration(
-                    border: Border(
-                        bottom:
-                            BorderSide(color: Colors.grey[200], width: 1.5))),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image(
-                      height: size.width * 0.25,
-                      width: size.width * 0.25,
-                      image: NetworkImage(Urls.imageBaseUrl + orders[index].image),
-                      fit: BoxFit.fill,
-                    ),
-                    Container(
-                      height: 150,
-                      width: size.width * 0.75 - 60,
-                      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            orders[index].deliveryStatus,
-                            style:
-                                Theme.of(context).textTheme.bodyText1.copyWith(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold
-                                    ),
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          SizedBox(height: 10,),
-                          Text(
-                            orders[index].desc,
-                            style:
-                                Theme.of(context).textTheme.bodyText1.copyWith(
+          ? ListView.builder(
+              physics: BouncingScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: orders.length,
+              itemBuilder: (BuildContext context, int index) {
+                return InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 150,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                        border: Border(
+                            bottom: BorderSide(
+                                color: Colors.grey[200], width: 1.5))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image(
+                          height: size.width * 0.25,
+                          width: size.width * 0.25,
+                          image: NetworkImage(
+                              Urls.imageBaseUrl + orders[index].image),
+                          fit: BoxFit.fill,
+                        ),
+                        Container(
+                          height: 150,
+                          width: size.width * 0.75 - 60,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                orders[index].deliveryStatus,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1
+                                    .copyWith(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                orders[index].desc,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1
+                                    .copyWith(
                                       color: Colors.black54,
                                     ),
-                            overflow: TextOverflow.ellipsis,
-                            softWrap: true,
+                                overflow: TextOverflow.ellipsis,
+                                softWrap: true,
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.grey,
+                          size: 20,
+                        ),
+                      ],
                     ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.grey,
-                      size: 20,
-                    ),
-                  ],
+                  ),
+                );
+              })
+          : Center(
+              child: SizedBox(
+                height: 30,
+                width: 30,
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation(Colors.green),
+                  strokeWidth: 1.4,
                 ),
               ),
-            );
-          })
-        : Center(
-        child: SizedBox(
-          height: 40,
-          width: 40,
-          child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.green), strokeWidth: 1.4,),
-        )),
+            ),
     );
   }
 }
 
-class OrderDetail{
+class OrderDetail {
   final String image, desc, orderProgress, orderId, deliveryStatus;
-  OrderDetail({this.image, this.orderProgress, this.desc, this.orderId, this.deliveryStatus});
+  OrderDetail(
+      {this.image,
+      this.orderProgress,
+      this.desc,
+      this.orderId,
+      this.deliveryStatus});
 }
