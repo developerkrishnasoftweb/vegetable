@@ -244,6 +244,7 @@ class _ProfileState extends State<Profile> {
                       width: size.width,
                       padding: EdgeInsets.only(left: 20, right: 20),
                       child: DropdownButton(
+                          isExpanded: true,
                           items: ["Male", "Female"].map((gender) {
                             return DropdownMenuItem(
                                 value: gender.toLowerCase(),

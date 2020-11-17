@@ -304,6 +304,7 @@ class _ManageAddressState extends State<ManageAddress> {
               width: size.width,
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
               child: DropdownButton(
+                  isExpanded: true,
                   value: addressType,
                   items: ["Address Type", "Home", "Office"].map((value) {
                     return DropdownMenuItem(
