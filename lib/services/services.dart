@@ -602,7 +602,6 @@ class Services{
       if(response.statusCode == 200){
         Data data = Data();
         final jsonResponse = jsonDecode(response.data);
-        print(response.data);
         data.message = jsonResponse["message"];
         data.response = jsonResponse["status"];
         data.data = jsonResponse["data"];
@@ -635,7 +634,6 @@ class Services{
       if(response.statusCode == 200){
         Data data = Data();
         final jsonResponse = jsonDecode(response.data);
-        print(response.data);
         data.message = jsonResponse["message"];
         data.response = jsonResponse["status"];
         data.data = jsonResponse["data"];

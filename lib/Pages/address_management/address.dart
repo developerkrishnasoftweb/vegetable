@@ -119,16 +119,41 @@ class _AddressState extends State<Address> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                addressList[index].name != "null" ? addressList[index].name : "N/A",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyText1
-                                    .copyWith(
-                                    fontSize: 17,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                                overflow: TextOverflow.ellipsis,
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      addressList[index].name != "null" ? addressList[index].name : "N/A",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyText1
+                                          .copyWith(
+                                          fontSize: 17,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.only(top: 1, bottom: 1, left: 5, right: 5),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(color: Colors.grey, width: 1),
+                                        borderRadius: BorderRadius.circular(3)
+                                      ),
+                                      child: Text(
+                                        addressList[index].type != "null" ? addressList[index].type.toUpperCase() : "N/A",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyText1
+                                            .copyWith(
+                                            fontSize: 12,
+                                            color: Colors.black45,),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                               SizedBox(
                                 height: 5,
