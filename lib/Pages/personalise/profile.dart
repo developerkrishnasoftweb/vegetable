@@ -1,7 +1,13 @@
 import 'dart:convert';
+import 'dart:io';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/Components/userdata.dart';
+import 'package:vegetable/services/services.dart';
 import 'dart:math';
 
 import 'package:vegetable/services/urls.dart';
@@ -17,9 +23,17 @@ class _ProfileState extends State<Profile> {
   TextEditingController MOBILE = TextEditingController();
   String fullName, email, mobile;
   String gender = "Male", image;
-  bool isLoading = true;
-  Icon dangerIcon = Icon(Icons.info_outline, color: Colors.red,);
-  Icon primaryIcon = Icon(Icons.check_circle_outline, color: Colors.blue,);
+  bool isLoading = true, isSaving = false;
+  File _image;
+  final ImagePicker imagePicker = ImagePicker();
+  Icon dangerIcon = Icon(
+    Icons.info_outline,
+    color: Colors.red,
+  );
+  Icon primaryIcon = Icon(
+    Icons.check_circle_outline,
+    color: Colors.blue,
+  );
   var userData;
   List<Color> colors = [
     Color(0xff008744),
@@ -38,7 +52,8 @@ class _ProfileState extends State<Profile> {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     setState(() {
       userData = jsonDecode(sharedPreferences.getString("userData"));
-      FULLNAME.text = fullName = userData[0]["first_name"] + " " + userData[0]["last_name"];
+      FULLNAME.text =
+          fullName = userData[0]["first_name"] + " " + userData[0]["last_name"];
       EMAIL.text = email = userData[0]["email"];
       MOBILE.text = mobile = userData[0]["mobile"];
       gender = userData[0]["gender"];
@@ -69,19 +84,30 @@ class _ProfileState extends State<Profile> {
           centerTitle: true,
           actions: [
             FlatButton.icon(
-                onPressed: save,
+                onPressed: isSaving ? null : save,
                 padding: EdgeInsets.zero,
-                icon: Icon(
-                  Icons.check,
-                  color: Colors.white,
-                ),
-                label: Text(
-                  "SAVE",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText1
-                      .copyWith(color: Colors.white, fontSize: 15),
-                ))
+                icon: isSaving
+                    ? SizedBox.shrink()
+                    : Icon(
+                        Icons.check,
+                        color: Colors.white,
+                      ),
+                label: isSaving
+                    ? SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 1,
+                          valueColor: AlwaysStoppedAnimation(Colors.white),
+                        ),
+                      )
+                    : Text(
+                        "SAVE",
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1
+                            .copyWith(color: Colors.white, fontSize: 15),
+                      ))
           ],
           backgroundColor: Color(0xff0c1b32),
         ),
@@ -91,7 +117,8 @@ class _ProfileState extends State<Profile> {
                   height: 60,
                   width: 60,
                   child: CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation(colors[Random().nextInt(colors.length)]),
+                    valueColor: AlwaysStoppedAnimation(
+                        colors[Random().nextInt(colors.length)]),
                     backgroundColor: Color(0xffeeeeee),
                     strokeWidth: 1.5,
                   ),
@@ -112,7 +139,7 @@ class _ProfileState extends State<Profile> {
                         alignment: Alignment(0.9, 1.0),
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: NetworkImage(Urls.imageBaseUrl + image),
+                              image: _image == null ? NetworkImage(Urls.imageBaseUrl + image) : AssetImage(_image.path),
                               fit: BoxFit.cover,
                             ),
                             border: Border.all(color: Colors.white, width: 5),
@@ -121,7 +148,14 @@ class _ProfileState extends State<Profile> {
                           height: 40,
                           width: 40,
                           child: FlatButton(
-                            onPressed: () {},
+                            onPressed: () async {
+                              final pickedFile = await imagePicker.getImage(source: ImageSource.gallery);
+                              setState(() {
+                                if(pickedFile != null){
+                                  _image = File(pickedFile.path);
+                                }
+                              });
+                            },
                             child: ImageIcon(
                               AssetImage("assets/icons/camera.png"),
                               color: Colors.white,
@@ -146,7 +180,7 @@ class _ProfileState extends State<Profile> {
                               borderSide: BorderSide(color: Colors.black38)),
                           contentPadding: EdgeInsets.zero,
                         ),
-                        onChanged: (value){
+                        onChanged: (value) {
                           setState(() {
                             fullName = value;
                           });
@@ -158,16 +192,17 @@ class _ProfileState extends State<Profile> {
                         context: context,
                         title: "Email",
                         inputDecoration: InputDecoration(
-                          border: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black38)),
-                          contentPadding: EdgeInsets.zero,
-                          suffixIcon: RegExp(
-                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                              .hasMatch(email) ? primaryIcon : dangerIcon,
-                          suffixIconConstraints: BoxConstraints()
-                        ),
+                            border: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black38)),
+                            contentPadding: EdgeInsets.zero,
+                            suffixIcon:
+                                RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                        .hasMatch(email)
+                                    ? primaryIcon
+                                    : dangerIcon,
+                            suffixIconConstraints: BoxConstraints()),
                         textEditingController: EMAIL,
-                        onChanged: (value){
+                        onChanged: (value) {
                           setState(() {
                             email = value;
                           });
@@ -179,14 +214,15 @@ class _ProfileState extends State<Profile> {
                         context: context,
                         title: "Mobile",
                         inputDecoration: InputDecoration(
-                          border: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black38)),
-                          contentPadding: EdgeInsets.zero,
-                          suffixIcon: RegExp(r"^(?:[+0]9)?[0-9]{10}$")
-                              .hasMatch(mobile) ? primaryIcon : dangerIcon,
-                          suffixIconConstraints: BoxConstraints()
-                        ),
-                        onChanged: (value){
+                            border: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black38)),
+                            contentPadding: EdgeInsets.zero,
+                            suffixIcon: RegExp(r"^(?:[+0]9)?[0-9]{10}$")
+                                    .hasMatch(mobile)
+                                ? primaryIcon
+                                : dangerIcon,
+                            suffixIconConstraints: BoxConstraints()),
+                        onChanged: (value) {
                           setState(() {
                             mobile = value;
                           });
@@ -232,7 +268,56 @@ class _ProfileState extends State<Profile> {
               ));
   }
 
-  void save() {
+  void save() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String firstName, lastName;
+    setState(() {
+      isSaving = true;
+      firstName =
+          fullName.split(" ")[0] != null ? fullName.split(" ")[0] : null;
+      lastName = fullName.split(" ").length > 2 ? fullName.split(" ")[1] : "";
+    });
+    if (firstName != null && lastName != null) {
+      if (RegExp(
+              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+          .hasMatch(email)) {
+        if (RegExp(r"^(?:[+0]9)?[0-9]{10}$").hasMatch(mobile)) {
+          FormData formData = FormData.fromMap({
+            "customer_id": sharedPreferences.getString("id"),
+            "first_name": firstName,
+            "last_name": lastName,
+            "email": email,
+            "mobile": mobile,
+            "gender": gender,
+            "image": _image != null ? await MultipartFile.fromFile(_image.path, filename: "user.png") : null,
+          });
+          Services.updateProfile(formData).then((value) {
+            if(value.response == 1){
+              setState(() {
+                UserData.firstName = value.data[0]["first_name"];
+                UserData.lastName = value.data[0]["last_name"];
+                UserData.email = value.data[0]["email"];
+                UserData.mobile = value.data[0]["mobile"];
+                UserData.gender = value.data[0]["gender"];
+                UserData.image = value.data[0]["image"];
+                image = value.data[0]["image"];
+              });
+              sharedPreferences.setString("userData", jsonEncode(value.data).toString());
+              setState(() => isSaving = false);
+              Fluttertoast.showToast(msg: value.message);
+            } else {
+              setState(() => isSaving = false);
+            }
+          });
+        } else {
+          setState(() => isSaving = false);
+          Fluttertoast.showToast(msg: "Invalid mobile number");
+        }
+      } else {
+        setState(() => isSaving = false);
+        Fluttertoast.showToast(msg: "Invalid email address");
+      }
+    }
   }
 }
 

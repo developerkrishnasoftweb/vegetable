@@ -20,4 +20,5 @@ class Urls{
   static String deleteAddress = "customer/delete_address";
   static String updateAddress = "customer/update_address";
   static String addAddress = "customer/add_address";
+  static String updateProfile = "customer/update_profile";
 }

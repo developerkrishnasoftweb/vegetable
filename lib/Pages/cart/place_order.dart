@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 import 'package:vegetable/Components/customButton.dart';
 import 'package:vegetable/Components/textinput.dart';
+import 'package:vegetable/Pages/address_management/address.dart';
 import 'package:vegetable/Pages/cart/cart.dart';
 import 'package:vegetable/Pages/cart/payment_method.dart';
 
@@ -113,6 +114,8 @@ class _PlaceOrderState extends State<PlaceOrder> {
             child: button(
                 context: context,
                 onPressed: (){
+
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => Address()));
                   Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentMethod(dateTime: DateFormat('yyyy/MM/dd').format(selectedDate).toString(), time: DateFormat.Hms().format(DateTime.now()).toString(), items: widget.items,)));
                 },
                 text: "CONTINUE",

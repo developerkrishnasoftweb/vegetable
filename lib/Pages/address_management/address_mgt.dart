@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/Components/textinput.dart';
-import 'package:vegetable/Pages/address_management/address.dart';
-import 'package:vegetable/services/services.dart';
+import '../../Components/textinput.dart';
+import '../../Pages/address_management/address.dart';
+import '../../services/services.dart';
 
 class ManageAddress extends StatefulWidget {
   final Addresses address;
@@ -417,8 +417,7 @@ class _ManageAddressState extends State<ManageAddress> {
         setState(() {
           delete = false;
         });
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Address()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Address()));
       } else {
         Fluttertoast.showToast(msg: value.message);
         setState(() {
