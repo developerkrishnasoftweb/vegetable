@@ -6,7 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vegetable/services/urls.dart';
 import '../../services/services.dart';
 import '../cart/cart.dart';
-import '../badges/badge.dart';
 
 class MyOrders extends StatefulWidget {
   @override

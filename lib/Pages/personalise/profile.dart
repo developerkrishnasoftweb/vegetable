@@ -1,11 +1,7 @@
 import 'dart:convert';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/Components/userdata.dart';
-import 'package:vegetable/services/services.dart';
 import 'dart:math';
 
 import 'package:vegetable/services/urls.dart';

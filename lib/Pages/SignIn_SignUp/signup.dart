@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:vegetable/Pages/SignIn_SignUp/signin.dart';
 import 'package:vegetable/services/services.dart';
-import '../../Pages/home1.dart';
 import '../../Components/customButton.dart';
 import '../../Components/textinput.dart';
 
@@ -21,7 +20,6 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    Orientation orientation = MediaQuery.of(context).orientation;
 
     return Scaffold(
       body: Container(

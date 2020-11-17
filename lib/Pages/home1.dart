@@ -70,7 +70,6 @@ class _HomeState extends State<HomeSecond> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    Orientation orientation = MediaQuery.of(context).orientation;
 
     return Scaffold(
       key: scaffoldKey,

@@ -53,8 +53,6 @@ class _SubCategoryState extends State<SubCategory> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return Scaffold(
         key: scaffoldKey,
         appBar: PreferredSize(

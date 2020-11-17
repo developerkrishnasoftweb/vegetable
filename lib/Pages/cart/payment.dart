@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vegetable/Components/customButton.dart';
 import 'cart.dart';
 

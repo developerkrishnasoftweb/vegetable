@@ -1,7 +1,5 @@
 import 'dart:convert';
 import 'package:dio/dio.dart' as dio;
-import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../services/urls.dart';
 import '../services/data.dart';
 class Services{
