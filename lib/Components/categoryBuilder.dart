@@ -37,10 +37,13 @@ GridView categoryBuilder({@required List<CategoryItems> items, double childAspec
                   fit: BoxFit.fill,
                 ),
               ),
-              Text(items[index].title,
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 14,),
+              Container(
+                child: Text(items[index].title,
+                  textAlign: TextAlign.center,
+                  softWrap: true,
+                  maxLines: 2,
+                  style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 14),
+                ),
               )
             ],
           ),
