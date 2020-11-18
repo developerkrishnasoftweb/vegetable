@@ -48,7 +48,7 @@ Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState
         }),
     DrawerItem(text: Strings.drawerAboutUs, onTap: () {
       scaffoldKey.currentState.openEndDrawer();
-      Navigator.push(context, CustomPageRoute(widget: Web(url: "https://www.google.com/")));
+      Navigator.push(context, CustomPageRoute(widget: Web(url: "https://www.saptkrishi.com/about.html")));
     }),
     DrawerItem(text: Strings.drawerPrivacyPolicy, onTap: () {}),
     DrawerItem(text: Strings.drawerTnC, onTap: () {}),
