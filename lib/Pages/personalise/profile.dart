@@ -9,7 +9,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vegetable/Components/userdata.dart';
 import 'package:vegetable/services/services.dart';
 import 'dart:math';
-
 import 'package:vegetable/services/urls.dart';
 
 class Profile extends StatefulWidget {
