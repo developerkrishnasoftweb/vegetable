@@ -72,7 +72,7 @@ class _ItemBuilderState extends State<ItemBuilder> {
                               ),
                               children: [
                                 TextSpan(
-                                  text: "\u20B9" + widget.items[index].displayPrice.toString().padRight(2, '0') + "\t",
+                                  text: "\u20B9" + widget.items[index].price.toString().padRight(2, '0') + "\t",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
@@ -80,7 +80,7 @@ class _ItemBuilderState extends State<ItemBuilder> {
                                   ),
                                 ),
                                 TextSpan(
-                                  text: "\u20B9" + widget.items[index].price.toString().padRight(2, '0'),
+                                  text: "\u20B9" + widget.items[index].displayPrice.toString().padRight(2, '0'),
                                   style: TextStyle(
                                       fontSize: 12,
                                       color: Colours.textLightColor,

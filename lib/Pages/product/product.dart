@@ -1,13 +1,16 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:vegetable/Components/itemBuilder.dart';
+import 'package:vegetable/Components/page_route.dart';
 import 'package:vegetable/Pages/product_description/productDesc.dart';
 import 'package:vegetable/services/services.dart';
 
 class Products extends StatefulWidget {
   final String title;
-  Products({this.title});
+  final String subCategoryId;
+  Products({this.title, this.subCategoryId});
   @override
   _ProductsState createState() => _ProductsState();
 }
@@ -18,7 +21,10 @@ class _ProductsState extends State<Products> {
 
   @override
   void initState() {
-    getProducts();
+    if(widget.subCategoryId == null)
+      getProducts();
+    else
+      getSubCategoryProducts();
     super.initState();
   }
 
@@ -28,6 +34,21 @@ class _ProductsState extends State<Products> {
         for(int i = 0; i < value.data.length; i++){
           setState(() {
             _item1 += [AddItems(title: value.data[i]["title"], id: value.data[i]["id"], price: value.data[i]["price"], displayPrice: value.data[i]["display_price"], image: NetworkImage("http://vegetable.krishnasoftweb.com/" + value.data[i]["image"]), onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDesc(id: value.data[i]["id"],))); })];
+          });
+        }
+      } else Fluttertoast.showToast(msg: value.message);
+    });
+    _item1.removeAt(0);
+  }
+  void getSubCategoryProducts() async {
+    FormData body = FormData.fromMap({
+      "sub_category_id" : widget.subCategoryId
+    });
+    await Services.getSubCategoryProducts(body).then((value) {
+      if(value.response == 1){
+        for(int i = 0; i < value.data.length; i++){
+          setState(() {
+            _item1 += [AddItems(title: value.data[i]["title"], id: value.data[i]["id"], price: value.data[i]["price"], displayPrice: value.data[i]["display_price"], image: NetworkImage("http://vegetable.krishnasoftweb.com/" + value.data[i]["image"]), onTap: (){ Navigator.push(context, CustomPageRoute(widget: ProductDesc(id: value.data[i]["id"],))); })];
           });
         }
       } else Fluttertoast.showToast(msg: value.message);
@@ -56,14 +77,14 @@ class _ProductsState extends State<Products> {
           },
           iconSize: 22,
         ),
-        actions: [
-          IconButton(
-              icon: ImageIcon(
-                AssetImage("assets/icons/shopping-cart.png"),
-                color: Colors.white70,
-              ),
-              onPressed: () {}),
-        ],
+        // actions: [
+        //   IconButton(
+        //       icon: ImageIcon(
+        //         AssetImage("assets/icons/shopping-cart.png"),
+        //         color: Colors.white70,
+        //       ),
+        //       onPressed: () {}),
+        // ],
       ),
       body: Container(
         height: size.height,

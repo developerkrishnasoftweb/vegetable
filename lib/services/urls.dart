@@ -21,4 +21,5 @@ class Urls{
   static String updateAddress = "customer/update_address";
   static String addAddress = "customer/add_address";
   static String updateProfile = "customer/update_profile";
+  static String subCategoryProducts = "product";
 }

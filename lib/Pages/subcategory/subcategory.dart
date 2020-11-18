@@ -1,13 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:vegetable/Components/categoryBuilder.dart';
-import 'package:vegetable/constant/colors.dart';
-import 'package:vegetable/services/services.dart';
+import 'package:vegetable/Pages/product/product.dart';
+import '../../Components/categoryBuilder.dart';
+import '../../Components/userdata.dart';
+import '../../constant/colors.dart';
+import '../../services/services.dart';
 
 class SubCategory extends StatefulWidget {
-  final String productId;
-  SubCategory({@required this.productId});
+  final String productId, title;
+  SubCategory({@required this.productId, @required this.title});
 
   @override
   _SubCategoryState createState() => _SubCategoryState();
@@ -37,8 +39,10 @@ class _SubCategoryState extends State<SubCategory> {
                   title: value.data[i]["title"],
                   id: value.data[i]["id"],
                   homeScreen: value.data[i]["home_screen"],
-                  onTap: () {},
-                  categoryId: value.data[i]["category_id"])
+                  categoryId: value.data[i]["category_id"],
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Products(title: value.data[i]["title"].toString(), subCategoryId: value.data[i]["id"].toString(),)));
+                  })
             ];
           });
         }
@@ -58,25 +62,22 @@ class _SubCategoryState extends State<SubCategory> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
             ),
-            title: Text("Hey, Lorem"),
+            title: Text("Hey, " + UserData.firstName),
             leading: IconButton(
-              icon: ImageIcon(
-                AssetImage("assets/icons/menu-hamburger.png"),
-                color: Colors.white70,
-              ),
+              icon: Icon(Icons.arrow_back_ios),
               onPressed: () {
-                scaffoldKey.currentState.openDrawer();
+                Navigator.pop(context);
               },
               iconSize: 22,
             ),
-            actions: [
-              IconButton(
-                  icon: ImageIcon(
-                    AssetImage("assets/icons/shopping-cart.png"),
-                    color: Colors.white70,
-                  ),
-                  onPressed: () {}),
-            ],
+            // actions: [
+            //   IconButton(
+            //       icon: ImageIcon(
+            //         AssetImage("assets/icons/shopping-cart.png"),
+            //         color: Colors.white70,
+            //       ),
+            //       onPressed: () {}),
+            // ],
           ),
         ),
         body: categories.length != 0
@@ -84,21 +85,10 @@ class _SubCategoryState extends State<SubCategory> {
                 children: [
                   ListTile(
                     contentPadding: EdgeInsets.only(left: 20, right: 2),
-                    onTap: () {},
                     title: Text(
-                      "Food & Groceries",
+                      widget.title,
                       style: Theme.of(context).textTheme.bodyText1.copyWith(
                           fontSize: 20, fontWeight: FontWeight.normal),
-                    ),
-                    trailing: FlatButton(
-                      child: Text(
-                        "SEE ALL",
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText1
-                            .copyWith(color: Colors.black45, fontSize: 14),
-                      ),
-                      onPressed: () {},
                     ),
                   ),
                   SizedBox(

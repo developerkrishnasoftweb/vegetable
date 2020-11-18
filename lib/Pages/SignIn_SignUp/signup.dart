@@ -192,6 +192,7 @@ class _SignUpState extends State<SignUp> {
                               "gender": null,
                               "password": password,
                             });
+                            print(formData.fields);
                             await Services.signUp(formData).then((value) {
                               if (value.response == 1) {
                                 Fluttertoast.showToast(msg: value.message);

@@ -83,7 +83,7 @@ class _ProductDescState extends State<ProductDesc> {
         setState(() {
           imageProvider =
               NetworkImage(Urls.imageBaseUrl + value.data[0]["image"]);
-          price = value.data[0]["display_price"];
+          price = value.data[0]["price"];
           measure = value.data[0]["unit"];
           shortInfo = value.data[0]["short_info"];
           longInfo = value.data[0]["long_info"];

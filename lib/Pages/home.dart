@@ -82,9 +82,9 @@ class _HomeState extends State<Home> {
                   onTap: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => SubCategory(
+                        CustomPageRoute(widget: SubCategory(
                                   productId: value.data[i]["id"],
+                                  title: value.data[i]["title"],
                                 )));
                   })
             ];
@@ -316,8 +316,7 @@ class _HomeState extends State<Home> {
                             onPressed: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Products(
+                                  CustomPageRoute(widget: Products(
                                             title: "Popular Products",
                                           )));
                             },
@@ -333,8 +332,7 @@ class _HomeState extends State<Home> {
                             onPressed: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Products(
+                                  CustomPageRoute(widget: Products(
                                             title: "Regular Products",
                                           )));
                             },

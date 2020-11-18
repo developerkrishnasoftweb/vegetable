@@ -11,10 +11,10 @@ class MyOrders extends StatefulWidget {
   @override
   _MyOrdersState createState() => _MyOrdersState();
 }
-
 class _MyOrdersState extends State<MyOrders> {
   int cartCount = 0;
   List<OrderDetail> orders = [];
+
   @override
   void initState() {
     getCartCount();
@@ -155,6 +155,8 @@ class _MyOrdersState extends State<MyOrders> {
                                 overflow: TextOverflow.ellipsis,
                                 softWrap: true,
                               ),
+                              Text("Rate this product", style: Theme.of(context).textTheme.bodyText1,),
+
                             ],
                           ),
                         ),

@@ -22,7 +22,7 @@ class _ProfileState extends State<Profile> {
   TextEditingController EMAIL = TextEditingController();
   TextEditingController MOBILE = TextEditingController();
   String fullName, email, mobile;
-  String gender = "Male", image;
+  String gender = "Select Gender", image;
   bool isLoading = true, isSaving = false;
   File _image;
   final ImagePicker imagePicker = ImagePicker();
@@ -56,7 +56,7 @@ class _ProfileState extends State<Profile> {
           fullName = userData[0]["first_name"] + " " + userData[0]["last_name"];
       EMAIL.text = email = userData[0]["email"];
       MOBILE.text = mobile = userData[0]["mobile"];
-      gender = userData[0]["gender"];
+      userData[0]["gender"] != null ? gender = userData[0]["gender"] : gender = "select gender";
       image = userData[0]["image"];
       isLoading = false;
     });
@@ -245,7 +245,7 @@ class _ProfileState extends State<Profile> {
                       padding: EdgeInsets.only(left: 20, right: 20),
                       child: DropdownButton(
                           isExpanded: true,
-                          items: ["Male", "Female"].map((gender) {
+                          items: ["Select Gender", "Male", "Female"].map((gender) {
                             return DropdownMenuItem(
                                 value: gender.toLowerCase(),
                                 child: Text(
