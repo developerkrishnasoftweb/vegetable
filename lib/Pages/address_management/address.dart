@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/constant/colors.dart';
+import 'package:vegetable/constant/strings.dart';
 import '../../Pages/address_management/address_mgt.dart';
 import '../../services/services.dart';
 
@@ -60,9 +62,9 @@ class _AddressState extends State<Address> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF81ae4f),
+        backgroundColor: Colours.primaryColor,
         title: Text(
-          "My Address",
+          Strings.drawerMyAddress,
           style: Theme.of(context)
               .textTheme
               .bodyText1
@@ -131,7 +133,7 @@ class _AddressState extends State<Address> {
                                           .bodyText1
                                           .copyWith(
                                           fontSize: 17,
-                                          color: Colors.black,
+                                          color: Colours.textColor,
                                           fontWeight: FontWeight.bold),
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -148,7 +150,7 @@ class _AddressState extends State<Address> {
                                             .bodyText1
                                             .copyWith(
                                             fontSize: 12,
-                                            color: Colors.black45,),
+                                            color: Colours.textLightColor,),
                                         overflow: TextOverflow.ellipsis,
                                       ),
                                     )
@@ -165,7 +167,7 @@ class _AddressState extends State<Address> {
                                     .bodyText1
                                     .copyWith(
                                     fontSize: 15,
-                                    color: Colors.black,
+                                    color: Colours.textColor,
                                     fontWeight: FontWeight.w500),
                                 overflow: TextOverflow.ellipsis,
                                 softWrap: true,
@@ -177,7 +179,7 @@ class _AddressState extends State<Address> {
                                     .textTheme
                                     .bodyText1
                                     .copyWith(
-                                      color: Colors.black54,
+                                      color: Colours.textColor,
                                       fontSize: 13
                                     ),
                                 overflow: TextOverflow.ellipsis,
@@ -203,7 +205,7 @@ class _AddressState extends State<Address> {
                 height: 30,
                 width: 30,
                 child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation(Colors.green),
+                  valueColor: AlwaysStoppedAnimation(Colours.primaryColor),
                   strokeWidth: 1.3,
                 ),
               ),

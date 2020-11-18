@@ -3,11 +3,12 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import '../../Components/page_route.dart';
+import '../../Pages/SignIn_SignUp/signup.dart';
 import '../../services/services.dart';
 import '../../Components/customButton.dart';
 import '../../Components/textinput.dart';
 import '../home.dart';
-import 'signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SignIn extends StatefulWidget {
@@ -40,7 +41,7 @@ class _SignInState extends State<SignIn> {
         alignment: Alignment.center,
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
-          padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+          padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, left: 20, right: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -124,7 +125,6 @@ class _SignInState extends State<SignIn> {
               button(
                   context: context,
                   onPressed: () async {
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => HomeSecond()));
                     setState(() {
                       loginStatus = true;
                     });
@@ -137,8 +137,8 @@ class _SignInState extends State<SignIn> {
                       await Services.signIn(formData).then((value) async {
                         if (value.response == 1) {
                           SharedPreferences sharedPreference = await SharedPreferences.getInstance();
-                          sharedPreference.setString("email", email);
-                          sharedPreference.setString("password", password);
+                          sharedPreference.setString("email", value.data[0]["email"]);
+                          sharedPreference.setString("password", value.data[0]["password"]);
                           sharedPreference.setString("id", value.data[0]["id"]);
                           sharedPreference.setString("userData", jsonEncode(value.data).toString());
                           setState(() {
@@ -146,7 +146,24 @@ class _SignInState extends State<SignIn> {
                           });
                           Navigator.pushAndRemoveUntil(
                               context,
-                              MaterialPageRoute(builder: (context) => Home()),
+                              PageRouteBuilder(
+                                  transitionDuration: Duration(milliseconds: 300),
+                                  transitionsBuilder: (context, animation, animationTime, child) {
+                                    animation = CurvedAnimation(parent: animation, curve: Curves.easeInOut);
+                                    return SlideTransition(
+                                      position:
+                                      Tween<Offset>(end: Offset(-1.0, 0.0), begin: Offset(1.0, 0.0))
+                                          .animate(animation),
+                                      child: SlideTransition(
+                                        position:
+                                        Tween<Offset>(end: Offset(-1.0, 0.0), begin: Offset(1.0, 0.0))
+                                            .animate(animationTime),
+                                        child: child,
+                                      ),
+                                    );
+                                  },
+                                  pageBuilder: (context, animation, animationTime) => Home()
+                              ),
                               (route) => false);
                         } else {
                           setState(() => loginStatus = false);
@@ -200,8 +217,7 @@ class _SignInState extends State<SignIn> {
                           onTap: () {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(
-                                    builder: (context) => SignUp()));
+                                CustomPageRoute(widget: SignUp()));
                           },
                         ))
                       ]),

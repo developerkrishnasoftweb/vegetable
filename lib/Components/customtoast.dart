@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vegetable/constant/colors.dart';
 
 class CustomToast{
   static showToast({String text,
@@ -22,14 +23,14 @@ class CustomToast{
       padding: padding != null ? padding : EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(60.0),
-        color: backgroundColor != null ? backgroundColor : Colors.black54,
+        color: backgroundColor != null ? backgroundColor : Colours.customToastBackgroundColor,
         boxShadow: boxShadow
       ),
       child: RichText(
         textAlign: TextAlign.center,
         text: TextSpan(children: [
           WidgetSpan(child: icon != null ? icon : Container(), alignment: PlaceholderAlignment.middle),
-          TextSpan(text: text != null ? "\t\t" + text : " ", style: TextStyle( color: color != null ? color : Colors.white),),
+          TextSpan(text: text != null ? "\t\t" + text : " ", style: TextStyle( color: color != null ? color : Colours.customToastTextColor),),
         ]),
       ),
     );

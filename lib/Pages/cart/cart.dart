@@ -1,16 +1,16 @@
 import 'dart:math';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/Components/customButton.dart';
-import 'package:vegetable/Pages/cart/place_order.dart';
-import 'package:vegetable/Pages/product_description/productDesc.dart';
-import 'package:vegetable/services/services.dart';
-import 'package:vegetable/services/urls.dart';
+import '../../constant/colors.dart';
+import '../../Components/customButton.dart';
+import '../../Pages/cart/place_order.dart';
+import '../../Pages/product_description/productDesc.dart';
+import '../../services/services.dart';
+import '../../services/urls.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -22,13 +22,6 @@ class _CartState extends State<Cart> {
   List<CartItem> items = [];
   double total = 0;
   bool isLoading = true, add = false, remove = false, isCartEmpty = false, removeOrAdd = false;
-  List<Color> colors = [
-    Color(0xff008744),
-    Color(0xff0057e7),
-    Color(0xffd62d20),
-    Color(0xffffa700),
-    Color(0xff0c1b32)
-  ];
 
   @override
   void initState() {
@@ -304,7 +297,7 @@ class _CartState extends State<Cart> {
                         )
                       ],
                     )
-                    : !isCartEmpty ? SizedBox(height: 30, width: 30, child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(colors[Random().nextInt(colors.length)]), strokeWidth: 1.5,)) : Text("Your cart is empty !!!", style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.black),)
+                    : !isCartEmpty ? SizedBox(height: 30, width: 30, child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colours.colors[Random().nextInt(Colours.colors.length)]), strokeWidth: 1.5,)) : Text("Your cart is empty !!!", style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.black),)
                   ),
                   height: 60),
             )
@@ -325,60 +318,9 @@ class _CartState extends State<Cart> {
         if(value.response == 1){
           getCartData();
           Fluttertoast.showToast(msg: value.message);
-          // Navigator.pop(context);
-          // Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
         }
       });
     } else Fluttertoast.showToast(msg: "Something went wrong !!!");
-  }
-
-  void removeQuantity(cartId, quantity) {
-    if(cartId != null){
-      setState(() {
-        removeOrAdd = true;
-        if(quantity > 1)
-          quantity -= 1;
-      });
-      FormData formData = FormData.fromMap({
-        "cart_id" : cartId,
-        "quantity" : quantity,
-      });
-      Services.updateQuantity(formData).then((value) {
-        if(value.response == 1){
-          setState(() {
-            removeOrAdd = false;
-          });
-        } else {
-          setState(() {
-            removeOrAdd = false;
-          });
-        }
-      });
-    }
-  }
-
-  void updateQuantity(cartId, quantity) {
-    if(cartId != null){
-      setState(() {
-        removeOrAdd = true;
-        quantity += 1;
-      });
-      FormData formData = FormData.fromMap({
-        "cart_id" : cartId,
-        "quantity" : quantity,
-      });
-      Services.updateQuantity(formData).then((value) {
-        if(value.response == 1){
-          setState(() {
-            removeOrAdd = false;
-          });
-        } else {
-          setState(() {
-            removeOrAdd = false;
-          });
-        }
-      });
-    }
   }
 }
 

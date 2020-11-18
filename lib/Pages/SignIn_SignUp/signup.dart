@@ -28,7 +28,7 @@ class _SignUpState extends State<SignUp> {
         alignment: Alignment.center,
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
-          padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+          padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, left: 20, right: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -37,7 +37,7 @@ class _SignUpState extends State<SignUp> {
                 alignment: Alignment.centerLeft,
                 width: size.width,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+                    const EdgeInsets.symmetric(vertical: 10),
                 child: IconButton(
                   icon: Icon(Icons.arrow_back_ios),
                   iconSize: 25,
@@ -50,7 +50,7 @@ class _SignUpState extends State<SignUp> {
                 alignment: Alignment.centerLeft,
                 width: size.width,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    const EdgeInsets.symmetric(vertical: 5),
                 child: Text(
                   "Let's get start!",
                   style: Theme.of(context).textTheme.bodyText1.copyWith(
@@ -62,8 +62,7 @@ class _SignUpState extends State<SignUp> {
               Container(
                 alignment: Alignment.centerLeft,
                 width: size.width,
-                padding: const EdgeInsets.only(
-                    right: 30, left: 30, top: 5, bottom: 20),
+                padding: const EdgeInsets.only(top: 5, bottom: 20),
                 child: Text(
                   "Create an account on to use all the features",
                   style: Theme.of(context).textTheme.bodyText1.copyWith(
@@ -138,7 +137,7 @@ class _SignUpState extends State<SignUp> {
               Container(
                 width: size.width,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 35, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 alignment: Alignment.centerLeft,
                 child: CheckboxListTile(
                     value: terms,

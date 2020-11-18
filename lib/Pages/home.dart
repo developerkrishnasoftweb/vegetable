@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/Components/page_route.dart';
+import 'package:vegetable/constant/colors.dart';
 import '../Components/userdata.dart';
 import '../Pages/badges/badge.dart';
 import '../Pages/cart/cart.dart';
@@ -199,7 +201,7 @@ class _HomeState extends State<Home> {
             height: size.height > 500 ? size.height * 0.3 : 180,
             width: size.width,
             decoration: BoxDecoration(
-              color: Color(0xFF81ae4f),
+              color: Colours.primaryColor,
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30),
                   bottomRight: Radius.circular(30)),
@@ -247,8 +249,7 @@ class _HomeState extends State<Home> {
                             onPressed: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Cart()));
+                                  CustomPageRoute(widget: Cart()));
                             }),
                         badgeValue: cartCount,
                         badgeColor: Colors.green,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:vegetable/constant/colors.dart';
 
 GridView categoryBuilder({@required List<CategoryItems> items}){
   if(items != null)
@@ -26,7 +27,7 @@ GridView categoryBuilder({@required List<CategoryItems> items}){
                 width: 90,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFFf7c5c5), width: 2),
+                    border: Border.all(color: Colours.categoryBorderColor, width: 2),
                     borderRadius: BorderRadius.circular(10)
                 ),
                 child: Image(

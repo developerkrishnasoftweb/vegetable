@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/constant/colors.dart';
 import 'package:vegetable/services/services.dart';
 
 class AddItems{
@@ -67,7 +68,7 @@ class _ItemBuilderState extends State<ItemBuilder> {
                               text: widget.items[index].title.toString() + "\n",
                               style: TextStyle(
                                   fontSize: 15,
-                                  color: Colors.black
+                                  color: Colours.textColor
                               ),
                               children: [
                                 TextSpan(
@@ -75,14 +76,14 @@ class _ItemBuilderState extends State<ItemBuilder> {
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.green
+                                      color: Colours.primaryColor
                                   ),
                                 ),
                                 TextSpan(
                                   text: "\u20B9" + widget.items[index].price.toString().padRight(2, '0'),
                                   style: TextStyle(
                                       fontSize: 12,
-                                      color: Colors.black45,
+                                      color: Colours.textLightColor,
                                       decoration: TextDecoration.lineThrough
                                   ),
                                 )
@@ -123,10 +124,10 @@ class _ItemBuilderState extends State<ItemBuilder> {
                                 });
                               } else {}
                             } : null,
-                            color: Colors.green,
+                            color: Colours.primaryColor,
                             child: widget.items[index].isPressed
-                                ? SizedBox(height: 20, width: 20, child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colors.green), strokeWidth: 1.5,),)
-                                : Icon(Icons.add, color: Colors.white,),),
+                                ? SizedBox(height: 20, width: 20, child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colours.primaryColor), strokeWidth: 1.5,),)
+                                : Icon(Icons.add, color: Colours.textDarkColor,),),
                         )
                       ],
                     ),

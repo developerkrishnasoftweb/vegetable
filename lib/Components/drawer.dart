@@ -1,48 +1,57 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/Components/userdata.dart';
-import 'package:vegetable/Pages/address_management/address.dart';
-import 'package:vegetable/Pages/home.dart';
+import '../Components/page_route.dart';
+import '../Components/userdata.dart';
+import '../Pages/address_management/address.dart';
+import '../Pages/home.dart';
+import '../constant/colors.dart';
+import '../constant/strings.dart';
+import 'package:vegetable/webview/webview.dart';
 import '../Pages/my_orders/my_orders.dart';
-import 'package:vegetable/services/urls.dart';
+import '../services/urls.dart';
 import '../Pages/personalise/profile.dart';
 import '../Pages/SignIn_SignUp/signin.dart';
+import 'page_route.dart';
 
 Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState> scaffoldKey}) {
   List<DrawerItem> items = [
-    DrawerItem(text: "Home", icon: Icon(Icons.home), onTap: () {
+    DrawerItem(text: Strings.drawerHome, icon: Icon(Icons.home), onTap: () {
+      scaffoldKey.currentState.openEndDrawer();
       Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
     }),
     DrawerItem(
-        text: "My Orders", icon: Icon(Icons.shopping_cart), onTap: () {
+        text: Strings.drawerMyOrders, icon: Icon(Icons.shopping_cart), onTap: () {
           scaffoldKey.currentState.openEndDrawer();
-          Navigator.push(context, MaterialPageRoute(builder: (context) => MyOrders()));
+          Navigator.push(context, CustomPageRoute(widget: MyOrders()));
     }),
-    DrawerItem(text: "My Address", icon: Icon(Icons.location_on), onTap: () {
+    DrawerItem(text: Strings.drawerMyAddress, icon: Icon(Icons.location_on), onTap: () {
       scaffoldKey.currentState.openEndDrawer();
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Address()));
+      Navigator.push(context, CustomPageRoute(widget: Address()));
     }),
-    DrawerItem(text: "My Profile", icon: Icon(Icons.person), onTap: () {
+    DrawerItem(text: Strings.drawerMyProfile, icon: Icon(Icons.person), onTap: () {
       scaffoldKey.currentState.openEndDrawer();
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Profile()));
+      Navigator.push(context, CustomPageRoute(widget: Profile()));
     }),
-    DrawerItem(text: "Feedback", icon: Icon(Icons.feedback), onTap: () {}),
+    DrawerItem(text: Strings.drawerFeedback, icon: Icon(Icons.feedback), onTap: () {}),
     DrawerItem(
-        text: "Contact Us", icon: Icon(Icons.contact_phone), onTap: () {}),
-    DrawerItem(text: "Share", icon: Icon(Icons.share), onTap: () {}),
+        text: Strings.drawerContactUs, icon: Icon(Icons.contact_phone), onTap: () {}),
+    DrawerItem(text: Strings.drawerShare, icon: Icon(Icons.share), onTap: () {}),
     DrawerItem(
-        text: "Logout",
+        text: Strings.drawerLogout,
         icon: Icon(Icons.exit_to_app),
         onTap: () async {
           SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
           String email = sharedPreferences.getString("email");
           sharedPreferences.clear();
-          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => SignIn(email : email)), (route) => false);
+          Navigator.pushAndRemoveUntil(context, CustomPageRoute(widget: SignIn(email : email)), (route) => false);
         }),
-    DrawerItem(text: "About Us", onTap: () {}),
-    DrawerItem(text: "Privacy Policy", onTap: () {}),
-    DrawerItem(text: "Terms & Condition", onTap: () {}),
+    DrawerItem(text: Strings.drawerAboutUs, onTap: () {
+      scaffoldKey.currentState.openEndDrawer();
+      Navigator.push(context, CustomPageRoute(widget: Web(url: "https://www.google.com/")));
+    }),
+    DrawerItem(text: Strings.drawerPrivacyPolicy, onTap: () {}),
+    DrawerItem(text: Strings.drawerTnC, onTap: () {}),
   ];
   return Drawer(
     child: Column(
@@ -115,7 +124,7 @@ Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState
               ],
             ),
             decoration: BoxDecoration(
-              color: Color(0xfffff852),
+              color: Colours.primaryAccentColor,
             ),
           ),
         ),

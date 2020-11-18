@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:vegetable/Components/customButton.dart';
+import '../../Components/customButton.dart';
 import 'cart.dart';
 import 'payment.dart';
 

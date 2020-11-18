@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/constant/colors.dart';
 import '../../Components/textinput.dart';
 import '../../Pages/address_management/address.dart';
 import '../../services/services.dart';
@@ -140,7 +141,7 @@ class _ManageAddressState extends State<ManageAddress> {
                       color: Colors.white,
                     )),
         ],
-        backgroundColor: Color(0xFF81ae4f),
+        backgroundColor: Colours.primaryColor,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(left: 20, right: 20, bottom: 30),

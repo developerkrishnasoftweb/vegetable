@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vegetable/constant/colors.dart';
 
 Widget input({@required BuildContext context, InputDecoration decoration, TextStyle style, GestureTapCallback onTap, TextEditingController controller, bool obscureText, ValueChanged<String> onChanged, String text, TextInputType keyboardType, bool readOnly, EdgeInsetsGeometry padding, double width, TextStyle labelStyle}){
   Size size = MediaQuery.of(context).size;
@@ -9,7 +10,7 @@ Widget input({@required BuildContext context, InputDecoration decoration, TextSt
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(text ?? " ",
-          style: labelStyle ?? Theme.of(context).textTheme.bodyText1.copyWith(color: Color(0xffA8A8A8), fontSize: 12, fontWeight: FontWeight.bold),
+          style: labelStyle ?? Theme.of(context).textTheme.bodyText1.copyWith(color: Colours.inputLabelColor, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 10,),
         TextField(

@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:vegetable/constant/colors.dart';
 
 class Carousel extends StatefulWidget {
   final List<CarouselItems> items;
@@ -35,25 +36,6 @@ class _CarouselState extends State<Carousel> {
                     ),
                     borderRadius: widget.borderRadius ?? null,
                   ),
-                  /*child: Stack(
-                    children: [
-                      Align(
-                        child: RichText(
-                          text: TextSpan(
-                              text: item.title != null ? item.title : "",
-                              style: TextStyle(fontSize: 25, color: Colors.grey),
-                              children: [
-                                TextSpan(
-                                    text: item.category != null
-                                        ? "\n" + item.category
-                                        : "",
-                                    style: TextStyle(fontSize: 15, color: Colors.grey)),
-                              ]),
-                        ),
-                        alignment: Alignment.topLeft,
-                      ),
-                    ],
-                  ),*/
                 ),
                 onTap: item.onTap,
               );
@@ -86,8 +68,8 @@ class _CarouselState extends State<Carousel> {
                   height: 10,
                   width: _index == index ? 25 : 10,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xff81AE4F), width: 2),
-                    color: Colors.white,
+                    border: Border.all(color: Colours.primaryColor, width: 2),
+                    color: Colours.backgroundColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                 );

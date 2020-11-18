@@ -36,6 +36,7 @@ dependencies:
   intl:
   razorpay_flutter: 1.2.2
   image_picker: ^0.6.7+14
+  webview_flutter:
 
 dev_dependencies:
   flutter_test:

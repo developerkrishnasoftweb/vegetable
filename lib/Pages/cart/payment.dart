@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
-import 'package:vegetable/Components/customButton.dart';
+import '../../Components/customButton.dart';
+import '../../Components/userdata.dart';
 import 'cart.dart';
 
 class PaymentConfirm extends StatefulWidget {
@@ -66,11 +67,11 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
     var options = {
       "key" : "rzp_test_PwpFtLmDKvQqI7",
       "amount" : grandTotal.toString(),
-      "name" : "Gaurav",
+      "name" : UserData.firstName,
       "description" : "Payment for products",
       "prefill" : {
-        "contact" : "8758431418",
-        "email" : "gaurav@gmail.com",
+        "contact" : UserData.mobile,
+        "email" : UserData.mobile,
       },
       "external" : {
         "wallets" : ["paytm"],
