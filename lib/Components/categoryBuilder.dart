@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:vegetable/constant/colors.dart';
 
-GridView categoryBuilder({@required List<CategoryItems> items}){
+GridView categoryBuilder({@required List<CategoryItems> items, double childAspectRatio}){
   if(items != null)
     return GridView.builder(
       physics: BouncingScrollPhysics(),
@@ -10,7 +10,7 @@ GridView categoryBuilder({@required List<CategoryItems> items}){
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
-          childAspectRatio: 1.2,
+          childAspectRatio: childAspectRatio ?? 0.9,
           mainAxisSpacing: 15,
           crossAxisSpacing: 10
       ),
@@ -23,7 +23,7 @@ GridView categoryBuilder({@required List<CategoryItems> items}){
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                height: 67,
+                height: 70,
                 width: 90,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
@@ -38,7 +38,7 @@ GridView categoryBuilder({@required List<CategoryItems> items}){
                 ),
               ),
               Text(items[index].title,
-                softWrap: true,
+                textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
                 style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 14,),
               )

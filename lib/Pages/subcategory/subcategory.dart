@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:vegetable/Components/categoryBuilder.dart';
+import 'package:vegetable/constant/colors.dart';
 import 'package:vegetable/services/services.dart';
 
 class SubCategory extends StatefulWidget {
@@ -16,7 +16,6 @@ class SubCategory extends StatefulWidget {
 class _SubCategoryState extends State<SubCategory> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   List<CategoryItems> categories = [];
-  bool hasData = false;
   bool found = false;
 
   @override
@@ -29,7 +28,6 @@ class _SubCategoryState extends State<SubCategory> {
     FormData formData = FormData.fromMap({"category_id": widget.productId});
     await Services.getSubCategory(formData).then((value) {
       if (value.response == 1) {
-        setState(() => hasData = true);
         for (int i = 0; i < value.data.length; i++) {
           setState(() {
             categories += [
@@ -44,10 +42,7 @@ class _SubCategoryState extends State<SubCategory> {
             ];
           });
         }
-      } else {
-        Fluttertoast.showToast(msg: value.message);
-        setState(() => found = true);
-      }
+      } else setState(() => found = true);
     });
   }
 
@@ -84,7 +79,7 @@ class _SubCategoryState extends State<SubCategory> {
             ],
           ),
         ),
-        body: hasData
+        body: categories.length != 0
             ? Column(
                 children: [
                   ListTile(
@@ -125,12 +120,6 @@ class _SubCategoryState extends State<SubCategory> {
                         image: AssetImage("assets/images/empty-cart.png"),
                         fit: BoxFit.fill,
                       )
-                    // : CircularProgressIndicator(
-                    //     valueColor: AlwaysStoppedAnimation(Colors.green),
-                    //   )
-                    : Image(
-                        image: AssetImage("assets/images/loading.gif"),
-                        fit: BoxFit.fill,
-                      )));
+                    : SizedBox(height: 30, width: 30, child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colours.primaryColor), strokeWidth: 1.5,),)));
   }
 }
