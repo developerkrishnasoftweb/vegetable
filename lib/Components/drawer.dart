@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../Pages/contact_us/contact_us.dart';
+import '../Pages/feedback/feedback.dart';
 import '../Components/page_route.dart';
 import '../Components/userdata.dart';
 import '../Pages/address_management/address.dart';
@@ -33,10 +35,18 @@ Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState
       scaffoldKey.currentState.openEndDrawer();
       Navigator.push(context, CustomPageRoute(widget: Profile()));
     }),
-    DrawerItem(text: Strings.drawerFeedback, icon: Icon(Icons.feedback), onTap: () {}),
+    DrawerItem(text: Strings.drawerFeedback, icon: Icon(Icons.feedback), onTap: () {
+      scaffoldKey.currentState.openEndDrawer();
+      Navigator.push(context, CustomPageRoute(widget: FeedBack()));
+    }),
     DrawerItem(
-        text: Strings.drawerContactUs, icon: Icon(Icons.contact_phone), onTap: () {}),
-    DrawerItem(text: Strings.drawerShare, icon: Icon(Icons.share), onTap: () {}),
+        text: Strings.drawerContactUs, icon: Icon(Icons.contact_phone), onTap: () {
+      scaffoldKey.currentState.openEndDrawer();
+      Navigator.push(context, CustomPageRoute(widget: Contact()));
+    }),
+    DrawerItem(text: Strings.drawerShare, icon: Icon(Icons.share), onTap: () {
+      scaffoldKey.currentState.openEndDrawer();
+    }),
     DrawerItem(
         text: Strings.drawerLogout,
         icon: Icon(Icons.exit_to_app),

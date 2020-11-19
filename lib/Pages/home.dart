@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/Components/page_route.dart';
-import 'package:vegetable/constant/colors.dart';
+import '../Components/page_route.dart';
+import '../constant/colors.dart';
 import '../Components/userdata.dart';
 import '../Pages/badges/badge.dart';
 import '../Pages/cart/cart.dart';
@@ -55,7 +55,6 @@ class _HomeState extends State<Home> {
     setUserData();
     super.initState();
   }
-
   String greeting() {
     int hour = DateTime.now().hour;
     if (hour < 12) {
