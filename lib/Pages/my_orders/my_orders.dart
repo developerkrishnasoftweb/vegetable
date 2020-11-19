@@ -80,7 +80,7 @@ class _MyOrdersState extends State<MyOrders> {
                     totalPrice: value.data[i]["total_price"].toString(),
                     transactionType:
                         value.data[i]["transaction_type"].toString(),
-                    products: value.data[i]["products"][j]["products"],
+                    products: value.data[i]["products"],
                     deliveryStatus: "Delivery expected by Sat, Nov 12")
               ];
             });
@@ -92,7 +92,7 @@ class _MyOrdersState extends State<MyOrders> {
 
   @override
   Widget build(BuildContext context) {
-    print(orders[0].totalPrice);
+    print(orders[0].products);
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -272,4 +272,9 @@ class OrderDetail {
     this.totalPrice,
     this.transactionType,
   });
+}
+
+class ProductInfo{
+  String productId, title, shortInfo, image, quantity, total;
+  ProductInfo({this.shortInfo, this.total, this.quantity, this.productId, this.image, this.title});
 }
