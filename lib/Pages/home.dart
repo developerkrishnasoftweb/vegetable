@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/Components/appbar.dart';
+import '../Components/appbar.dart';
 import '../Components/page_route.dart';
 import '../constant/colors.dart';
 import '../Components/userdata.dart';
@@ -109,7 +109,11 @@ class _HomeState extends State<Home> {
                   image:
                       NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]),
                   title: value.data[i]["title"],
-                  category: value.data[i]["category_id"])
+                  category: value.data[i]["category"],
+                  categoryId: value.data[i]["category_id"],
+                  onTap: (){
+                    Navigator.push(context, CustomPageRoute(widget: SubCategory(productId: value.data[i]["category_id"], title: value.data[i]["category"])));
+                  })
             ];
           });
         }
