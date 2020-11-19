@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/services/urls.dart';
+import '../../services/urls.dart';
 import '../../services/services.dart';
 import '../cart/cart.dart';
 
@@ -11,6 +11,7 @@ class MyOrders extends StatefulWidget {
   @override
   _MyOrdersState createState() => _MyOrdersState();
 }
+
 class _MyOrdersState extends State<MyOrders> {
   int cartCount = 0;
   List<OrderDetail> orders = [];
@@ -55,6 +56,31 @@ class _MyOrdersState extends State<MyOrders> {
                     desc: value.data[i]["products"][j]["short_info"].toString(),
                     orderProgress: value.data[i]["order_progress"].toString(),
                     orderId: value.data[i]["id"].toString(),
+                    name: value.data[i]["name"].toString(),
+                    email: value.data[i]["email"].toString(),
+                    address1: value.data[i]["address1"].toString(),
+                    address2: value.data[i]["address2"].toString(),
+                    addressType: value.data[i]["type"].toString(),
+                    customerId: value.data[i]["customer_id"].toString(),
+                    paymentMode: value.data[i]["payment_mode"].toString(),
+                    state: value.data[i]["state"].toString(),
+                    area: value.data[i]["area"].toString(),
+                    city: value.data[i]["city"].toString(),
+                    convertedAmount:
+                        value.data[i]["converted_amount"].toString(),
+                    currency: value.data[i]["currency"].toString(),
+                    landmark: value.data[i]["landmark"].toString(),
+                    mobile: value.data[i]["mobile"].toString(),
+                    orderDate: value.data[i]["order_date"].toString(),
+                    orderNo: value.data[i]["order_no"].toString(),
+                    orderTime: value.data[i]["order_time"].toString(),
+                    orderType: value.data[i]["order_type"].toString(),
+                    pinCode: value.data[i]["pincode"].toString(),
+                    referenceNo: value.data[i]["reference_no"].toString(),
+                    totalPrice: value.data[i]["total_price"].toString(),
+                    transactionType:
+                        value.data[i]["transaction_type"].toString(),
+                    products: value.data[i]["products"][j]["products"],
                     deliveryStatus: "Delivery expected by Sat, Nov 12")
               ];
             });
@@ -66,6 +92,7 @@ class _MyOrdersState extends State<MyOrders> {
 
   @override
   Widget build(BuildContext context) {
+    print(orders[0].totalPrice);
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -155,8 +182,10 @@ class _MyOrdersState extends State<MyOrders> {
                                 overflow: TextOverflow.ellipsis,
                                 softWrap: true,
                               ),
-                              Text("Rate this product", style: Theme.of(context).textTheme.bodyText1,),
-
+                              Text(
+                                "Rate this product",
+                                style: Theme.of(context).textTheme.bodyText1,
+                              ),
                             ],
                           ),
                         ),
@@ -185,11 +214,62 @@ class _MyOrdersState extends State<MyOrders> {
 }
 
 class OrderDetail {
-  final String image, desc, orderProgress, orderId, deliveryStatus;
-  OrderDetail(
-      {this.image,
-      this.orderProgress,
-      this.desc,
-      this.orderId,
-      this.deliveryStatus});
+  final String image,
+      desc,
+      orderProgress,
+      orderId,
+      deliveryStatus,
+      orderNo,
+      customerId,
+      name,
+      email,
+      mobile,
+      address1,
+      address2,
+      landmark,
+      area,
+      pinCode,
+      state,
+      city,
+      addressType,
+      orderDate,
+      orderTime,
+      totalPrice,
+      convertedAmount,
+      currency,
+      orderType,
+      paymentMode,
+      transactionType,
+      referenceNo;
+  List products;
+  OrderDetail({
+    this.image,
+    this.orderProgress,
+    this.desc,
+    this.orderId,
+    this.deliveryStatus,
+    this.email,
+    this.name,
+    this.mobile,
+    this.city,
+    this.area,
+    this.addressType,
+    this.state,
+    this.pinCode,
+    this.landmark,
+    this.customerId,
+    this.address1,
+    this.address2,
+    this.convertedAmount,
+    this.currency,
+    this.orderDate,
+    this.orderNo,
+    this.orderTime,
+    this.orderType,
+    this.paymentMode,
+    this.products,
+    this.referenceNo,
+    this.totalPrice,
+    this.transactionType,
+  });
 }
