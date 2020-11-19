@@ -78,13 +78,16 @@ class _HomeState extends State<Home> {
                   title: value.data[i]["title"],
                   id: value.data[i]["id"],
                   homeScreen: value.data[i]["home_screen"],
+                  totalSubCategory: value.data[i]["total_sub_category"],
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        CustomPageRoute(widget: SubCategory(
-                                  productId: value.data[i]["id"],
-                                  title: value.data[i]["title"],
-                                )));
+                    if(int.parse(value.data[i]["total_sub_category"]) > 0){
+                      Navigator.push(
+                          context,
+                          CustomPageRoute(widget: SubCategory(
+                            productId: value.data[i]["id"],
+                            title: value.data[i]["title"],
+                          )));
+                    } else scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("No items found !!!"),));
                   })
             ];
           });
@@ -160,8 +163,8 @@ class _HomeState extends State<Home> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => ProductDesc(
-                                  id: value.data[i]["id"],
-                                )));
+                              id: value.data[i]["id"],
+                            )));
                   })
             ];
           });

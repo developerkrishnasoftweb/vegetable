@@ -59,6 +59,6 @@ class CategoryItems{
   final ImageProvider image;
   final String title;
   final GestureTapCallback onTap;
-  final String homeScreen;
-  CategoryItems({this.image, this.title, this.onTap, this.id, this.homeScreen, this.categoryId});
+  final String homeScreen, totalSubCategory;
+  CategoryItems({this.image, this.title, this.onTap, this.id, this.homeScreen, this.categoryId, this.totalSubCategory});
 }
