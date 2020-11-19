@@ -1,5 +1,11 @@
+import 'dart:math';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vegetable/Components/userdata.dart';
+import 'package:vegetable/services/services.dart';
 import '../../Components/appbar.dart';
 import '../../constant/colors.dart';
 
@@ -9,6 +15,7 @@ class FeedBack extends StatefulWidget {
 }
 
 class _FeedbackState extends State<FeedBack> {
+  TextEditingController message = TextEditingController();
   List<String> improveList = [
     "Overall Service",
     "Customer Support",
@@ -17,6 +24,9 @@ class _FeedbackState extends State<FeedBack> {
     "Pickup and Delivery Service",
     "Transparency"
   ];
+  String msg;
+  bool isSending = false;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -89,6 +99,7 @@ class _FeedbackState extends State<FeedBack> {
               ),
               SizedBox(height: 40,),
               TextField(
+                controller: message,
                 maxLines: 7,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(5), borderSide: BorderSide(color: Colors.grey)),
@@ -100,8 +111,13 @@ class _FeedbackState extends State<FeedBack> {
                   contentPadding: EdgeInsets.symmetric(
                     horizontal: 20,
                     vertical: 15
-                  )
+                  ),
                 ),
+                onChanged: (value){
+                  setState(() {
+                    msg = value;
+                  });
+                },
               ),
             ],
           ),
@@ -116,19 +132,38 @@ class _FeedbackState extends State<FeedBack> {
           height: 50,
           width: size.width * 0.8,
           child: FlatButton(
-            onPressed: (){},
-            color: Colors.grey[100],
-            textColor: Colors.white,
-            child: Text(
+            onPressed: msg != null ? msg.length > 0 ? addFeedBack : null : null,
+            color: msg != null ? msg.length > 0 ? Colours.primaryColor : Colors.grey[100] : Colors.grey[100],
+            child: isSending
+              ? SizedBox(height: 30, width: 30, child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(Colours.colors[Random().nextInt(Colours.colors.length)]), strokeWidth: 1.5,),)
+              : Text(
               "Submit",
               style: Theme.of(context)
                   .textTheme
                   .bodyText1
-                  .copyWith(fontSize: 16, color: Colors.grey, fontWeight: FontWeight.bold, letterSpacing: 1),
+                  .copyWith(fontSize: 16, color: msg != null ? msg.length > 0 ? Color(0xffFFffff) : Colors.grey : Colors.grey, fontWeight: FontWeight.bold, letterSpacing: 1),
             ),
           ),
         ),
       ),
     );
+  }
+
+  void addFeedBack() {
+    setState(() => isSending = true);
+    FormData formData = FormData.fromMap({
+      "name" : UserData.firstName,
+      "mobile" : UserData.mobile,
+      "email" : UserData.email,
+      "feedback" : msg
+    });
+    Services.addFeedBack(formData).then((value) {
+      if(value.response == 1){
+        Fluttertoast.showToast(msg: value.message);
+        setState(() => isSending = false);
+      } else {
+        Fluttertoast.showToast(msg: value.message);
+        setState(() => isSending = false);}
+    });
   }
 }

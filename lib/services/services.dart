@@ -715,4 +715,36 @@ class Services{
       return data;
     }
   }
+
+  /*
+  * add feedback
+  * */
+
+  static Future<Data> addFeedBack(body) async{
+    String url = Urls.baseUrl + Urls.addFeedback;
+    try{
+      dio.Response response;
+      response = await dio.Dio().post(url, data: body);
+      if(response.statusCode == 200){
+        Data data = Data();
+        final jsonResponse = jsonDecode(response.data);
+        data.message = jsonResponse["message"];
+        data.response = jsonResponse["status"];
+        data.data = jsonResponse["data"];
+        return data;
+      }
+      return null;
+    } on dio.DioError catch (e) {
+      if(dio.DioErrorType.DEFAULT == e.type){
+        Data data = Data(message: "No internet connection !!!", response: null, data: null);
+        return data;
+      } else {
+        Data data = Data(message: e.toString(), response: null, data: null);
+        return data;
+      }
+    } catch (e) {
+      Data data = Data(message: e.toString(), response: null, data: null);
+      return data;
+    }
+  }
 }
