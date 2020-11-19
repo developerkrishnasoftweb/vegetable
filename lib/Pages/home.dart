@@ -87,7 +87,7 @@ class _HomeState extends State<Home> {
                             productId: value.data[i]["id"],
                             title: value.data[i]["title"],
                           )));
-                    } else scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("No items found !!!"),));
+                    }
                   })
             ];
           });

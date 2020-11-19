@@ -18,33 +18,51 @@ GridView categoryBuilder({@required List<CategoryItems> items, double childAspec
         return InkWell(
           borderRadius: BorderRadius.circular(10),
           onTap: items[index].onTap,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          child: Stack(
+            alignment: Alignment.center,
             children: [
-              Container(
-                height: 70,
-                width: 90,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colours.categoryBorderColor, width: 2),
-                    borderRadius: BorderRadius.circular(10)
-                ),
-                child: Image(
-                  image: items[index].image,
-                  height: 40,
-                  width: 40,
-                  fit: BoxFit.fill,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 70,
+                    width: 90,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colours.categoryBorderColor, width: 2),
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Image(
+                      image: items[index].image,
+                      height: 40,
+                      width: 40,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Container(
+                    child: Text(items[index].title,
+                      textAlign: TextAlign.center,
+                      softWrap: true,
+                      maxLines: 2,
+                      style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 14),
+                    ),
+                  )
+                ],
+              ),
+              Align(
+                alignment: Alignment(1.0, -1.0),
+                child: Container(
+                  height: 18,
+                  width: 18,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(items[index].totalSubCategory != null ? items[index].totalSubCategory : items[index].totalProduct, style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12),),
                 ),
               ),
-              Container(
-                child: Text(items[index].title,
-                  textAlign: TextAlign.center,
-                  softWrap: true,
-                  maxLines: 2,
-                  style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 14),
-                ),
-              )
             ],
           ),
         );
@@ -59,6 +77,6 @@ class CategoryItems{
   final ImageProvider image;
   final String title;
   final GestureTapCallback onTap;
-  final String homeScreen, totalSubCategory;
-  CategoryItems({this.image, this.title, this.onTap, this.id, this.homeScreen, this.categoryId, this.totalSubCategory});
+  final String homeScreen, totalSubCategory, totalProduct;
+  CategoryItems({this.image, this.title, this.onTap, this.id, this.homeScreen, this.categoryId, this.totalSubCategory, this.totalProduct});
 }

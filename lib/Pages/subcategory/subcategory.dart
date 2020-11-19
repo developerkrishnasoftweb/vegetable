@@ -40,6 +40,7 @@ class _SubCategoryState extends State<SubCategory> {
                   id: value.data[i]["id"],
                   homeScreen: value.data[i]["home_screen"],
                   categoryId: value.data[i]["category_id"],
+                  totalProduct: value.data[i]["total_product"],
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Products(title: value.data[i]["title"].toString(), subCategoryId: value.data[i]["id"].toString(),)));
                   })
