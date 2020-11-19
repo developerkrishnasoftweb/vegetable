@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/constant/colors.dart';
+import '../../Components/appbar.dart';
 import '../../Components/textinput.dart';
 import '../../Pages/address_management/address.dart';
 import '../../services/services.dart';
@@ -80,21 +80,9 @@ class _ManageAddressState extends State<ManageAddress> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back),
-        ),
-        title: Text(
-          "Edit Address",
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1
-              .copyWith(color: Colors.white, fontSize: 18),
-        ),
+      appBar: appBar(
+        context: context,
+        title: "Edit Address",
         actions: [
           IconButton(
               splashRadius: 20,
@@ -141,7 +129,6 @@ class _ManageAddressState extends State<ManageAddress> {
                       color: Colors.white,
                     )),
         ],
-        backgroundColor: Colours.primaryColor,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(left: 20, right: 20, bottom: 30),

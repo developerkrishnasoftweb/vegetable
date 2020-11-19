@@ -2,8 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/constant/colors.dart';
-import 'package:vegetable/constant/strings.dart';
+import '../../Components/appbar.dart';
+import '../../constant/colors.dart';
+import '../../constant/strings.dart';
 import '../../Pages/address_management/address_mgt.dart';
 import '../../services/services.dart';
 
@@ -61,15 +62,9 @@ class _AddressState extends State<Address> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colours.primaryColor,
-        title: Text(
-          Strings.drawerMyAddress,
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1
-              .copyWith(color: Colors.white, fontSize: 16),
-        ),
+      appBar: appBar(
+        context: context,
+        title: Strings.drawerMyAddress,
         actions: [
           IconButton(
             onPressed: () {

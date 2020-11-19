@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:vegetable/constant/colors.dart';
+import 'package:vegetable/Components/appbar.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 const String kNavigationExamplePage = '''
@@ -41,9 +41,9 @@ class _WebState extends State<Web> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colours.primaryColor,
-          title: const Text('About Us'),
+        appBar: appBar(
+          context: context,
+          title: 'About Us',
           actions: <Widget>[
             NavigationControls(_controller.future),
             // SampleMenu(_controller.future),

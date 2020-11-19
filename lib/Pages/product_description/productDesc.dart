@@ -5,13 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/Components/customButton.dart';
-import 'package:vegetable/Components/itemBuilder.dart';
-import 'package:vegetable/Pages/badges/badge.dart';
-import 'package:vegetable/Pages/cart/cart.dart';
-import 'package:vegetable/Pages/home.dart';
-import 'package:vegetable/services/services.dart';
-import 'package:vegetable/services/urls.dart';
+import '../../Components/appbar.dart';
+import '../../Components/customButton.dart';
+import '../../Components/itemBuilder.dart';
+import '../../Pages/badges/badge.dart';
+import '../../Pages/cart/cart.dart';
+import '../../Pages/home.dart';
+import '../../services/services.dart';
+import '../../services/urls.dart';
 
 class ProductDesc extends StatefulWidget {
   final String id;
@@ -123,18 +124,14 @@ class _ProductDescState extends State<ProductDesc> {
     getCartCount();
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
+      appBar: appBar(
+        context: context,
         backgroundColor: Colors.transparent,
-        elevation: 0,
         leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
+          icon: Icon(Icons.arrow_back_ios, color: Colors.black,),
           onPressed: () {
             Navigator.pop(context);
           },
-          iconSize: 22,
         ),
         actions: [
           badge(
@@ -158,7 +155,7 @@ class _ProductDescState extends State<ProductDesc> {
             width: size.width,
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
-              padding: EdgeInsets.only(bottom: 70, left: 20, right: 20),
+              padding: EdgeInsets.only(bottom: 70, left: 20, right: 20, top: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -178,8 +175,7 @@ class _ProductDescState extends State<ProductDesc> {
                             BoxShadow(
                                 color: Colors.white,
                                 blurRadius: 7,
-                                spreadRadius: -3,
-                                offset: Offset(-2, -2))
+                                spreadRadius: -1,)
                           ]),
                       child: imageProvider == null
                           ? SizedBox(

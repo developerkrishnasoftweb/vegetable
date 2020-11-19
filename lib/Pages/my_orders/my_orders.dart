@@ -3,6 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../Components/appbar.dart';
+import '../../Components/page_route.dart';
+import '../../Pages/my_orders/order_details.dart';
 import '../../services/urls.dart';
 import '../../services/services.dart';
 import '../cart/cart.dart';
@@ -56,6 +59,9 @@ class _MyOrdersState extends State<MyOrders> {
                     desc: value.data[i]["products"][j]["short_info"].toString(),
                     orderProgress: value.data[i]["order_progress"].toString(),
                     orderId: value.data[i]["id"].toString(),
+                    /*
+                    * api
+                    * */
                     name: value.data[i]["name"].toString(),
                     email: value.data[i]["email"].toString(),
                     address1: value.data[i]["address1"].toString(),
@@ -80,7 +86,21 @@ class _MyOrdersState extends State<MyOrders> {
                     totalPrice: value.data[i]["total_price"].toString(),
                     transactionType:
                         value.data[i]["transaction_type"].toString(),
-                    products: value.data[i]["products"],
+                    products: [
+                      ProductInfo(
+                          total:
+                              value.data[i]["products"][j]["total"].toString(),
+                          shortInfo: value.data[i]["products"][j]["short_info"]
+                              .toString(),
+                          quantity: value.data[i]["products"][j]["quantity"]
+                              .toString(),
+                          productId: value.data[i]["products"][j]["product_id"]
+                              .toString(),
+                          title:
+                              value.data[i]["products"][j]["title"].toString(),
+                          image:
+                              value.data[i]["products"][j]["image"].toString())
+                    ],
                     deliveryStatus: "Delivery expected by Sat, Nov 12")
               ];
             });
@@ -92,18 +112,11 @@ class _MyOrdersState extends State<MyOrders> {
 
   @override
   Widget build(BuildContext context) {
-    print(orders[0].products);
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF81ae4f),
-        title: Text(
-          "My Orders",
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1
-              .copyWith(color: Colors.white, fontSize: 16),
-        ),
+      appBar: appBar(
+        context: context,
+        title: "My Orders",
         actions: [
           IconButton(
             onPressed: () {},
@@ -130,7 +143,9 @@ class _MyOrdersState extends State<MyOrders> {
               itemCount: orders.length,
               itemBuilder: (BuildContext context, int index) {
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, CustomPageRoute(widget: OrderDesc(order: orders[index],)));
+                  },
                   child: Container(
                     height: 150,
                     width: size.width,
@@ -146,7 +161,7 @@ class _MyOrdersState extends State<MyOrders> {
                           height: size.width * 0.25,
                           width: size.width * 0.25,
                           image: NetworkImage(
-                              Urls.imageBaseUrl + orders[index].image),
+                              Urls.imageBaseUrl + orders[index].products[0].image),
                           fit: BoxFit.fill,
                         ),
                         Container(
@@ -172,7 +187,7 @@ class _MyOrdersState extends State<MyOrders> {
                                 height: 10,
                               ),
                               Text(
-                                orders[index].desc,
+                                orders[index].products[0].title,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText1
@@ -241,7 +256,7 @@ class OrderDetail {
       paymentMode,
       transactionType,
       referenceNo;
-  List products;
+  List<ProductInfo> products;
   OrderDetail({
     this.image,
     this.orderProgress,
@@ -274,7 +289,13 @@ class OrderDetail {
   });
 }
 
-class ProductInfo{
+class ProductInfo {
   String productId, title, shortInfo, image, quantity, total;
-  ProductInfo({this.shortInfo, this.total, this.quantity, this.productId, this.image, this.title});
+  ProductInfo(
+      {this.shortInfo,
+      this.total,
+      this.quantity,
+      this.productId,
+      this.image,
+      this.title});
 }

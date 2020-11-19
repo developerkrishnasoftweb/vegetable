@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
+import '../../Components/appbar.dart';
 import '../../Components/customButton.dart';
 import '../../Components/textinput.dart';
 import '../../Pages/cart/cart.dart';
@@ -44,15 +45,14 @@ class _PlaceOrderState extends State<PlaceOrder> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
-        child: AppBar(
-          backgroundColor: Color(0xFF81ae4f),
-          elevation: 0,
+        child: appBar(
+          context: context,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
           ),
-          title: Text("Place Order"),
+          title: "Place Order",
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios, color: Colors.white70,),
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
             onPressed: () {
               Navigator.pop(context);
             },

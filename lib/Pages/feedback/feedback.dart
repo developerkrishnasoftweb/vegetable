@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:vegetable/constant/colors.dart';
+import '../../Components/appbar.dart';
+import '../../constant/colors.dart';
 
 class FeedBack extends StatefulWidget {
   @override
@@ -20,17 +21,10 @@ class _FeedbackState extends State<FeedBack> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "FeedBack",
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1
-              .copyWith(color: Colours.textColor, fontSize: 16),
-        ),
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colours.backgroundColor,
-        elevation: 0,
+      appBar: appBar(
+        context: context,
+        title: "FeedBack",
+        backgroundColor: Colours.primaryColor,
       ),
       backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/Components/appbar.dart';
 import '../Components/page_route.dart';
 import '../constant/colors.dart';
 import '../Components/userdata.dart';
@@ -214,9 +215,8 @@ class _HomeState extends State<Home> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 8, right: 8),
-                  child: AppBar(
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
+                  child: appBar(
+                    context: context,
                     leading: IconButton(
                       icon: ImageIcon(
                         AssetImage("assets/icons/menu-hamburger.png"),

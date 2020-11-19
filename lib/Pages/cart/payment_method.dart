@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import '../../Components/appbar.dart';
 import '../../Components/customButton.dart';
 import 'cart.dart';
 import 'payment.dart';
@@ -28,15 +29,14 @@ class _PaymentMethodState extends State<PaymentMethod> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
-        child: AppBar(
-          backgroundColor: Color(0xFF81ae4f),
-          elevation: 0,
+        child: appBar(
+          context: context,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
           ),
-          title: Text("Payment Method"),
+          title: "Payment Method",
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios, color: Colors.white70,),
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
             onPressed: () {
               Navigator.pop(context);
             },

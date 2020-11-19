@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../Components/appbar.dart';
 import '../../constant/colors.dart';
 import '../../Components/customButton.dart';
 import '../../Pages/cart/place_order.dart';
@@ -70,19 +71,17 @@ class _CartState extends State<Cart> {
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(70),
-          child: AppBar(
-            backgroundColor: Color(0xFF81ae4f),
-            elevation: 0,
+          child: appBar(
+            context: context,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
             ),
-            title: Text("Cart"),
+            title: "Cart",
             leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios, color: Colors.white70,),
+              icon: Icon(Icons.arrow_back_ios, color: Colors.white,),
               onPressed: () {
                 Navigator.pop(context);
               },
-              iconSize: 22,
             ),
           ),
         ),

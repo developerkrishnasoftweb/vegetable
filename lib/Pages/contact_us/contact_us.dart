@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:vegetable/Components/textinput.dart';
-import 'package:vegetable/constant/colors.dart';
+import '../../Components/appbar.dart';
+import '../../Components/textinput.dart';
+import '../../constant/colors.dart';
 
 class Contact extends StatefulWidget {
   @override
@@ -23,17 +24,10 @@ class _FeedbackState extends State<Contact> {
   Widget build(BuildContext context) {
     changeSendButtonColor();
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Contact Us",
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1
-              .copyWith(color: Colours.textColor, fontSize: 16),
-        ),
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colours.backgroundColor,
-        elevation: 0,
+      appBar: appBar(
+        context: context,
+        title: "Contact Us",
+        backgroundColor: Colours.primaryColor,
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
+import '../../Components/appbar.dart';
 import '../../Components/customButton.dart';
 import '../../Components/userdata.dart';
 import 'cart.dart';
@@ -91,13 +92,12 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(70),
-          child: AppBar(
-            backgroundColor: Color(0xFF81ae4f),
-            elevation: 0,
+          child: appBar(
+            context: context,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
             ),
-            title: Text("Payment Confirm"),
+            title: "Payment Confirm",
             leading: IconButton(
               icon: Icon(Icons.arrow_back_ios, color: Colors.white70,),
               onPressed: () {

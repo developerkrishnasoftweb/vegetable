@@ -6,10 +6,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/Components/userdata.dart';
-import 'package:vegetable/services/services.dart';
+import '../../Components/appbar.dart';
+import '../../Components/userdata.dart';
+import '../../services/services.dart';
 import 'dart:math';
-import 'package:vegetable/services/urls.dart';
+import '../../services/urls.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -65,21 +66,9 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.arrow_back),
-          ),
-          title: Text(
-            "Edit Profile",
-            style: Theme.of(context)
-                .textTheme
-                .bodyText1
-                .copyWith(color: Colors.white, fontSize: 18),
-          ),
+        appBar: appBar(
+          context: context,
+          title: "Edit Profile",
           centerTitle: true,
           actions: [
             FlatButton.icon(
@@ -128,7 +117,7 @@ class _ProfileState extends State<Profile> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: 300,
+                      height: 250,
                       width: size.width,
                       alignment: Alignment.center,
                       color: Color(0xff0c1b32),

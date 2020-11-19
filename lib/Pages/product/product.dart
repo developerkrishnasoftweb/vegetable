@@ -2,10 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:vegetable/Components/itemBuilder.dart';
-import 'package:vegetable/Components/page_route.dart';
-import 'package:vegetable/Pages/product_description/productDesc.dart';
-import 'package:vegetable/services/services.dart';
+import '../../Components/appbar.dart';
+import '../../Components/itemBuilder.dart';
+import '../../Components/page_route.dart';
+import '../../Pages/product_description/productDesc.dart';
+import '../../services/services.dart';
 
 class Products extends StatefulWidget {
   final String title;
@@ -60,13 +61,12 @@ class _ProductsState extends State<Products> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF81ae4f),
-        elevation: 0,
+      appBar: appBar(
+        context: context,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
         ),
-        title: Text(widget.title),
+        title: widget.title,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_ios,
