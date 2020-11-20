@@ -224,7 +224,7 @@ class _HomeState extends State<Home> {
                     leading: IconButton(
                       icon: ImageIcon(
                         AssetImage("assets/icons/menu-hamburger.png"),
-                        color: Colors.white70,
+                        color: Colors.white,
                       ),
                       onPressed: () {
                         scaffoldKey.currentState.openDrawer();
@@ -237,7 +237,7 @@ class _HomeState extends State<Home> {
                         iconButton: IconButton(
                             icon: ImageIcon(
                               AssetImage("assets/icons/bell.png"),
-                              color: Colors.white70,
+                              color: Colors.white,
                             ),
                             onPressed: () {
                             }),
@@ -250,7 +250,7 @@ class _HomeState extends State<Home> {
                         iconButton: IconButton(
                             icon: ImageIcon(
                               AssetImage("assets/icons/shopping-cart.png"),
-                              color: Colors.white70,
+                              color: Colors.white,
                             ),
                             onPressed: () {
                               Navigator.push(

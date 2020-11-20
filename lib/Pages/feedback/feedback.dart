@@ -152,6 +152,7 @@ class _FeedbackState extends State<FeedBack> {
   void addFeedBack() {
     setState(() => isSending = true);
     FormData formData = FormData.fromMap({
+      "customer_id" : UserData.id,
       "name" : UserData.firstName,
       "mobile" : UserData.mobile,
       "email" : UserData.email,
