@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
+import '../../Pages/address_management/address.dart';
 import '../../Components/appbar.dart';
 import '../../Components/customButton.dart';
 import '../../Components/textinput.dart';
 import '../../Pages/cart/cart.dart';
-import '../../Pages/cart/payment_method.dart';
 
 class PlaceOrder extends StatefulWidget {
   final List<CartItem> items;
@@ -114,7 +114,8 @@ class _PlaceOrderState extends State<PlaceOrder> {
                 context: context,
                 onPressed: (){
                   // Navigator.push(context, MaterialPageRoute(builder: (context) => Address()));
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentMethod(dateTime: DateFormat('yyyy/MM/dd').format(selectedDate).toString(), time: DateFormat.Hms().format(DateTime.now()).toString(), items: widget.items,)));
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentMethod(dateTime: DateFormat('yyyy/MM/dd').format(selectedDate).toString(), time: DateFormat.Hms().format(DateTime.now()).toString(), items: widget.items,)));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Address(items: widget.items,)));
                 },
                 text: "CONTINUE",
                 height: 60),

@@ -305,7 +305,8 @@ class _CartState extends State<Cart> {
   }
 
   void placeOrder(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => PlaceOrder(items: items),));
+    // Navigator.push(context, MaterialPageRoute(builder: (context) => PlaceOrder(items: items),));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => PlaceOrder(items: items,),));
   }
 
   void removeFromCart({@required String cartId}) {

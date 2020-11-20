@@ -1,7 +1,13 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:intl/intl.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
+import '../../Components/page_route.dart';
+import '../../Pages/address_management/address.dart';
+import '../../Pages/home.dart';
+import '../../services/services.dart';
 import '../../Components/appbar.dart';
 import '../../Components/customButton.dart';
 import '../../Components/userdata.dart';
@@ -10,7 +16,8 @@ import 'cart.dart';
 class PaymentConfirm extends StatefulWidget {
   final String paymentMethod;
   final List<CartItem> items;
-  PaymentConfirm({this.paymentMethod, @required this.items});
+  final Addresses address;
+  PaymentConfirm({this.paymentMethod, @required this.items, @required this.address});
 
   @override
   _PaymentConfirmState createState() => _PaymentConfirmState();
@@ -200,6 +207,46 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
   }
 
   void cashOnDelivery() {
-    // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+    String productsId = "", quantity = "", price = "";
+    for(int i = 0; i < widget.items.length; i++){
+      setState(() {
+        productsId += (widget.items[i].productId).toString() + (i < widget.items.length-1 ? "," : "").toString();
+        quantity += (widget.items[i].quantity).toString() + (i < widget.items.length-1 ? "," : "").toString();
+        price += (widget.items[i].price).toString() + (i < widget.items.length-1 ? "," : "").toString();
+      });
+    }
+    FormData body = FormData.fromMap({
+      "customer_id" : UserData.id,
+      "name" : widget.address.name,
+      "mobile" : widget.address.mobile,
+      "email" : widget.address.email,
+      "address1" : widget.address.address1,
+      "address2" : widget.address.address2,
+      "landmark" : widget.address.landmark,
+      "area" : widget.address.area,
+      "pincode" : widget.address.pinCode,
+      "state" : widget.address.state,
+      "city" : widget.address.city,
+      "type" : widget.address.type,
+      "total_price" : grandTotal,
+      "order_type" : "Home Delivery",
+      "payment_mode" : "COD",
+      "payment_status" : "pending",
+      "transaction_type" : "CASH",
+      "reference_no" : "COD",
+      "transaction_date" : DateFormat("yyyy-M-dd").format(DateTime.now()).toString(),
+      "transaction_time" : DateFormat("HH:mm:s").format(DateTime.now()).toString(),
+      "product_id" : productsId,
+      "quantity" : quantity,
+      "price" : price,
+    });
+    Services.addOrder(body).then((value) {
+      if(value.response == 1){
+        Navigator.pushAndRemoveUntil(context, CustomPageRoute(widget: Home()), (route) => false);
+        Fluttertoast.showToast(msg: value.message);
+      } else {
+        Fluttertoast.showToast(msg: value.message);
+      }
+    });
   }
 }

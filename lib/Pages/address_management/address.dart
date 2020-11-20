@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/Pages/cart/cart.dart';
+import 'package:vegetable/Pages/cart/payment_method.dart';
 import '../../Components/appbar.dart';
 import '../../constant/colors.dart';
 import '../../constant/strings.dart';
@@ -9,6 +11,8 @@ import '../../Pages/address_management/address_mgt.dart';
 import '../../services/services.dart';
 
 class Address extends StatefulWidget {
+  final List<CartItem> items;
+  Address({this.items});
   @override
   _AddressState createState() => _AddressState();
 }
@@ -205,6 +209,21 @@ class _AddressState extends State<Address> {
                 ),
               ),
             ),
+      bottomSheet: widget.items != null ? Container(
+        height: 50,
+        width: size.width,
+        color: Colours.primaryColor,
+        child: FlatButton(
+          child: Text("DELIVER HERE", style: Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.white),),
+          onPressed: (){
+            for(int i = 0; i < addressList.length; i++) {
+              if (selectedAddress == int.parse(addressList[i].id)) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentMethod(items: widget.items, address: addressList[i],)));
+              }
+            }
+          },
+        ),
+      ) : null,
     );
   }
 }

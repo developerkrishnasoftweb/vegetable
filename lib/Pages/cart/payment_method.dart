@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:vegetable/Pages/address_management/address.dart';
 import '../../Components/appbar.dart';
 import '../../Components/customButton.dart';
 import 'cart.dart';
@@ -9,7 +10,8 @@ import 'payment.dart';
 class PaymentMethod extends StatefulWidget {
   final String time, dateTime;
   final List<CartItem> items;
-  PaymentMethod({this.dateTime, this.time, @required this.items});
+  final Addresses address;
+  PaymentMethod({this.dateTime, this.time, @required this.items, @required this.address});
   @override
   _PaymentMethodState createState() => _PaymentMethodState();
 }
@@ -92,7 +94,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                   if(paymentMethod == null)
                     Fluttertoast.showToast(msg: "Please select payment options");
                   else
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentConfirm(paymentMethod: paymentMethod, items: widget.items,)));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentConfirm(paymentMethod: paymentMethod, items: widget.items, address: widget.address,)));
                 },
                 text: "PLACE ORDER",
                 height: 60),

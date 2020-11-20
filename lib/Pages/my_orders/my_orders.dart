@@ -8,7 +8,6 @@ import 'package:vegetable/Components/userdata.dart';
 import '../../Components/appbar.dart';
 import '../../Components/page_route.dart';
 import '../../Pages/my_orders/order_details.dart';
-import '../../services/urls.dart';
 import '../../services/services.dart';
 import '../cart/cart.dart';
 
@@ -53,43 +52,36 @@ class _MyOrdersState extends State<MyOrders> {
     Services.myOrders(body).then((value) {
       if (value.response == 1) {
         for (int i = 0; i < value.data.length; i++) {
-          for (int j = 0; j < value.data[i]["products"].length; j++) {
-            setState(() {
-              orders += [
-                OrderDetail(
-                    // image: value.data[i]["products"][j]["image"].toString(),
-                    // desc: value.data[i]["products"][j]["short_info"].toString(),
-                    // orderProgress: value.data[i]["order_progress"].toString(),
-                    orderId: value.data[i]["id"].toString(),
-                    orderNo: value.data[i]["order_no"].toString(),
-                    customerId: value.data[i]["customer_id"].toString(),
-                    name: value.data[i]["name"].toString(),
-                    email: value.data[i]["email"].toString(),
-                    mobile: value.data[i]["mobile"].toString(),
-                    address1: value.data[i]["address1"].toString(),
-                    address2: value.data[i]["address2"].toString(),
-                    landmark: value.data[i]["landmark"].toString(),
-                    area: value.data[i]["area"].toString(),
-                    pinCode: value.data[i]["pincode"].toString(),
-                    state: value.data[i]["state"].toString(),
-                    city: value.data[i]["city"].toString(),
-                    addressType: value.data[i]["type"].toString(),
-                    orderDate: value.data[i]["order_date"].toString(),
-                    orderTime: value.data[i]["order_time"].toString(),
-                    totalPrice: value.data[i]["total_price"].toString(),
-                    convertedAmount:
-                    value.data[i]["converted_amount"].toString(),
-                    currency: value.data[i]["currency"].toString(),
-                    orderType: value.data[i]["order_type"].toString(),
-                    paymentMode: value.data[i]["payment_mode"].toString(),
-                    transactionType:
-                    value.data[i]["transaction_type"].toString(),
-                    referenceNo: value.data[i]["reference_no"].toString(),
-                    products: value.data[i]["products"],
-                    deliveryStatus: "Delivery expected by Sat, Nov 12")
-              ];
-            });
-          }
+          setState(() {
+            orders += [
+              OrderDetail(
+                  orderId: value.data[i]["id"].toString(),
+                  orderNo: value.data[i]["order_no"].toString(),
+                  customerId: value.data[i]["customer_id"].toString(),
+                  name: value.data[i]["name"].toString(),
+                  email: value.data[i]["email"].toString(),
+                  mobile: value.data[i]["mobile"].toString(),
+                  address1: value.data[i]["address1"].toString(),
+                  address2: value.data[i]["address2"].toString(),
+                  landmark: value.data[i]["landmark"].toString(),
+                  area: value.data[i]["area"].toString(),
+                  pinCode: value.data[i]["pincode"].toString(),
+                  state: value.data[i]["state"].toString(),
+                  city: value.data[i]["city"].toString(),
+                  addressType: value.data[i]["type"].toString(),
+                  orderDate: value.data[i]["order_date"].toString(),
+                  orderTime: value.data[i]["order_time"].toString(),
+                  totalPrice: value.data[i]["total_price"].toString(),
+                  convertedAmount: value.data[i]["converted_amount"].toString(),
+                  currency: value.data[i]["currency"].toString(),
+                  orderType: value.data[i]["order_type"].toString(),
+                  paymentMode: value.data[i]["payment_mode"].toString(),
+                  transactionType: value.data[i]["transaction_type"].toString(),
+                  referenceNo: value.data[i]["reference_no"].toString(),
+                  products: value.data[i]["products"],
+                  deliveryStatus: "Delivery expected by Sat, Nov 12")
+            ];
+          });
         }
       }
     });
@@ -117,14 +109,12 @@ class _MyOrdersState extends State<MyOrders> {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  Navigator.push(
-                      context, CustomPageRoute(widget: Cart()));
+                  Navigator.push(context, CustomPageRoute(widget: Cart()));
                 }),
             badgeValue: UserData.cartCount,
             badgeColor: Colors.green,
             badgeSize: Size(15, 15),
           ),
-
         ],
       ),
       body: orders.length != 0
@@ -135,7 +125,12 @@ class _MyOrdersState extends State<MyOrders> {
               itemBuilder: (BuildContext context, int index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.push(context, CustomPageRoute(widget: OrderDesc(order: orders[index],)));
+                    Navigator.push(
+                        context,
+                        CustomPageRoute(
+                            widget: OrderDesc(
+                          order: orders[index],
+                        )));
                   },
                   child: Container(
                     height: 150,
@@ -148,16 +143,9 @@ class _MyOrdersState extends State<MyOrders> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image(
-                          height: size.width * 0.25,
-                          width: size.width * 0.25,
-                          image: NetworkImage(
-                              Urls.imageBaseUrl + orders[index].products[0]["image"]),
-                          fit: BoxFit.fill,
-                        ),
                         Container(
                           height: 150,
-                          width: size.width * 0.75 - 60,
+                          width: size.width - 30,
                           padding: EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
                           child: Column(
@@ -170,28 +158,28 @@ class _MyOrdersState extends State<MyOrders> {
                                     .textTheme
                                     .bodyText1
                                     .copyWith(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
                                 overflow: TextOverflow.ellipsis,
                               ),
                               SizedBox(
                                 height: 10,
                               ),
-                              Text(
-                                orders[index].products[0]["title"],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyText1
-                                    .copyWith(
-                                      color: Colors.black54,
-                                    ),
-                                overflow: TextOverflow.ellipsis,
-                                softWrap: true,
+                              text(text: orders[index].name, context: context),
+                              Container(
+                                margin: EdgeInsets.only(top: 5.0, bottom: 3),
+                                padding: EdgeInsets.only(top: 1.0, bottom: 1.0, left: 3, right: 3),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(4),
+                                    border: Border.all(color: Colors.blue)
+                                ),
+                                child: Text(
+                                  orders[index].addressType.toUpperCase(),
+                                  style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 10, color: Colors.blue),
+                                ),
                               ),
-                              Text(
-                                "Rate this product",
-                                style: Theme.of(context).textTheme.bodyText1,
-                              ),
+                              text(text: orders[index].address1, context: context),
+                              text(text: orders[index].orderDate, context: context)
                             ],
                           ),
                         ),
@@ -217,6 +205,12 @@ class _MyOrdersState extends State<MyOrders> {
             ),
     );
   }
+}
+
+Widget text({BuildContext context, String text}){
+  return Text(text,
+    style: Theme.of(context).textTheme.bodyText1,
+  );
 }
 
 class OrderDetail {
