@@ -156,12 +156,14 @@ class _FeedbackState extends State<FeedBack> {
       "name" : UserData.firstName,
       "mobile" : UserData.mobile,
       "email" : UserData.email,
-      "feedback" : msg
+      "feedback" : msg,
+      "rating" : "2",
     });
     Services.addFeedBack(formData).then((value) {
       if(value.response == 1){
         Fluttertoast.showToast(msg: value.message);
         setState(() => isSending = false);
+        message.clear();
       } else {
         Fluttertoast.showToast(msg: value.message);
         setState(() => isSending = false);}

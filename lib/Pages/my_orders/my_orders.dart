@@ -57,52 +57,35 @@ class _MyOrdersState extends State<MyOrders> {
             setState(() {
               orders += [
                 OrderDetail(
-                    image: value.data[i]["products"][j]["image"].toString(),
-                    desc: value.data[i]["products"][j]["short_info"].toString(),
-                    orderProgress: value.data[i]["order_progress"].toString(),
+                    // image: value.data[i]["products"][j]["image"].toString(),
+                    // desc: value.data[i]["products"][j]["short_info"].toString(),
+                    // orderProgress: value.data[i]["order_progress"].toString(),
                     orderId: value.data[i]["id"].toString(),
-                    /*
-                    * api
-                    * */
+                    orderNo: value.data[i]["order_no"].toString(),
+                    customerId: value.data[i]["customer_id"].toString(),
                     name: value.data[i]["name"].toString(),
                     email: value.data[i]["email"].toString(),
+                    mobile: value.data[i]["mobile"].toString(),
                     address1: value.data[i]["address1"].toString(),
                     address2: value.data[i]["address2"].toString(),
-                    addressType: value.data[i]["type"].toString(),
-                    customerId: value.data[i]["customer_id"].toString(),
-                    paymentMode: value.data[i]["payment_mode"].toString(),
-                    state: value.data[i]["state"].toString(),
-                    area: value.data[i]["area"].toString(),
-                    city: value.data[i]["city"].toString(),
-                    convertedAmount:
-                        value.data[i]["converted_amount"].toString(),
-                    currency: value.data[i]["currency"].toString(),
                     landmark: value.data[i]["landmark"].toString(),
-                    mobile: value.data[i]["mobile"].toString(),
-                    orderDate: value.data[i]["order_date"].toString(),
-                    orderNo: value.data[i]["order_no"].toString(),
-                    orderTime: value.data[i]["order_time"].toString(),
-                    orderType: value.data[i]["order_type"].toString(),
+                    area: value.data[i]["area"].toString(),
                     pinCode: value.data[i]["pincode"].toString(),
-                    referenceNo: value.data[i]["reference_no"].toString(),
+                    state: value.data[i]["state"].toString(),
+                    city: value.data[i]["city"].toString(),
+                    addressType: value.data[i]["type"].toString(),
+                    orderDate: value.data[i]["order_date"].toString(),
+                    orderTime: value.data[i]["order_time"].toString(),
                     totalPrice: value.data[i]["total_price"].toString(),
+                    convertedAmount:
+                    value.data[i]["converted_amount"].toString(),
+                    currency: value.data[i]["currency"].toString(),
+                    orderType: value.data[i]["order_type"].toString(),
+                    paymentMode: value.data[i]["payment_mode"].toString(),
                     transactionType:
-                        value.data[i]["transaction_type"].toString(),
-                    products: [
-                      ProductInfo(
-                          total:
-                              value.data[i]["products"][j]["total"].toString(),
-                          shortInfo: value.data[i]["products"][j]["short_info"]
-                              .toString(),
-                          quantity: value.data[i]["products"][j]["quantity"]
-                              .toString(),
-                          productId: value.data[i]["products"][j]["product_id"]
-                              .toString(),
-                          title:
-                              value.data[i]["products"][j]["title"].toString(),
-                          image:
-                              value.data[i]["products"][j]["image"].toString())
-                    ],
+                    value.data[i]["transaction_type"].toString(),
+                    referenceNo: value.data[i]["reference_no"].toString(),
+                    products: value.data[i]["products"],
                     deliveryStatus: "Delivery expected by Sat, Nov 12")
               ];
             });
@@ -169,7 +152,7 @@ class _MyOrdersState extends State<MyOrders> {
                           height: size.width * 0.25,
                           width: size.width * 0.25,
                           image: NetworkImage(
-                              Urls.imageBaseUrl + orders[index].products[0].image),
+                              Urls.imageBaseUrl + orders[index].products[0]["image"]),
                           fit: BoxFit.fill,
                         ),
                         Container(
@@ -195,7 +178,7 @@ class _MyOrdersState extends State<MyOrders> {
                                 height: 10,
                               ),
                               Text(
-                                orders[index].products[0].title,
+                                orders[index].products[0]["title"],
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText1
@@ -264,7 +247,7 @@ class OrderDetail {
       paymentMode,
       transactionType,
       referenceNo;
-  List<ProductInfo> products;
+  List products;
   OrderDetail({
     this.image,
     this.orderProgress,
