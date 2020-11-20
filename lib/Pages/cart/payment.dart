@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import '../../Components/appbar.dart';
 import '../../Components/customButton.dart';
@@ -16,7 +17,7 @@ class PaymentConfirm extends StatefulWidget {
 }
 
 class _PaymentConfirmState extends State<PaymentConfirm> {
-  Razorpay razorPay;
+  Razorpay _razorpay;
   List<CartItem> items = [];
   double total;
   double tax = 6;
@@ -42,44 +43,45 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
       items = widget.items;
     });
     super.initState();
-    razorPay = Razorpay();
-    razorPay.on(Razorpay.EVENT_PAYMENT_SUCCESS, paymentSuccess);
-    razorPay.on(Razorpay.EVENT_PAYMENT_ERROR, paymentError);
-    razorPay.on(Razorpay.EVENT_EXTERNAL_WALLET, paymentWallet);
+    _razorpay = Razorpay();
+    _razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, paymentSuccess);
+    _razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, paymentError);
+    _razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, paymentWallet);
   }
 
   @override
   void dispose() {
     super.dispose();
-    razorPay.clear();
+    _razorpay.clear();
   }
 
-  void paymentSuccess(){
-    print("Success");
+  void paymentSuccess(PaymentSuccessResponse response){
+    Fluttertoast.showToast(msg: "Success" + response.paymentId);
   }
-  void paymentError(){
-    print("Error");
+  void paymentError(PaymentFailureResponse response){
+    print(response.message);
+    Fluttertoast.showToast(msg: "Success" + response.message);
   }
-  void paymentWallet(){
-    print("Wallet");
+  void paymentWallet(ExternalWalletResponse response){
+    Fluttertoast.showToast(msg: response.walletName);
   }
 
   void checkOut(){
     var options = {
-      "key" : "rzp_test_PwpFtLmDKvQqI7",
-      "amount" : grandTotal.toString(),
-      "name" : UserData.firstName,
-      "description" : "Payment for products",
-      "prefill" : {
-        "contact" : UserData.mobile,
-        "email" : UserData.mobile,
+      'key' : 'rzp_test_PwpFtLmDKvQqI7',
+      'amount' : grandTotal * 100,
+      'name' : UserData.firstName,
+      'description' : 'Payment for products',
+      'prefill' : {
+        'contact' : UserData.mobile,
+        'email' : UserData.email,
       },
-      "external" : {
-        "wallets" : ["paytm"],
+      'external' : {
+        'wallets' : ['paytm'],
       }
     };
     try{
-      razorPay.open(options);
+      _razorpay.open(options);
     }catch (e){
       print(e.toString());
     }
