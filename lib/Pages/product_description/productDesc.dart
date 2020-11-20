@@ -1,16 +1,16 @@
-import 'dart:convert';
 import 'dart:ui';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../Components/page_route.dart';
+import '../../Components/userdata.dart';
 import '../../Components/appbar.dart';
 import '../../Components/customButton.dart';
 import '../../Components/itemBuilder.dart';
-import '../../Pages/badges/badge.dart';
+import '../../Components/badge.dart';
 import '../../Pages/cart/cart.dart';
-import '../../Pages/home.dart';
 import '../../services/services.dart';
 import '../../services/urls.dart';
 
@@ -23,7 +23,7 @@ class ProductDesc extends StatefulWidget {
 }
 
 class _ProductDescState extends State<ProductDesc> {
-  int quantity = 0, cartCount = 0;
+  int quantity = 0;
   String measure = "--";
   List<AddItems> _item1 = [
     AddItems(
@@ -59,10 +59,11 @@ class _ProductDescState extends State<ProductDesc> {
                   image:
                       NetworkImage(Urls.imageBaseUrl + value.data[i]["image"]),
                   onTap: () {
+                    Navigator.pop(context);
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => ProductDesc(
+                        CustomPageRoute(
+                            widget: ProductDesc(
                                   id: value.data[i]["id"],
                                 )));
                   })
@@ -141,8 +142,8 @@ class _ProductDescState extends State<ProductDesc> {
                   AssetImage("assets/icons/shopping-cart.png"),
                   color: Colors.black,
                 ),
-                onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));}),
-            badgeValue: cartCount,
+                onPressed: () {Navigator.pop(context); Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));}),
+            badgeValue: UserData.cartCount,
             badgeColor: Colors.green,
             badgeSize: Size(15, 15),
           ),
@@ -372,10 +373,7 @@ class _ProductDescState extends State<ProductDesc> {
       Services.addToCart(formData).then((value) {
         print(value.message);
         if (value.response == 1) {
-          Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(builder: (context) => Home()),
-              (route) => false);
+          initState();
           Fluttertoast.showToast(msg: value.message);
         } else
           Fluttertoast.showToast(msg: value.message);
@@ -392,7 +390,7 @@ class _ProductDescState extends State<ProductDesc> {
         if(value.response == 1){
           Fluttertoast.showToast(msg: value.message);
           Navigator.pop(context);
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDesc(id: widget.id)));
+          Navigator.push(context, CustomPageRoute(widget: ProductDesc(id: widget.id)));
         }
       });
     } else Fluttertoast.showToast(msg: "Something went wrong !!!");
@@ -462,15 +460,14 @@ class _ProductDescState extends State<ProductDesc> {
     }
   }
 
-  void getCartCount() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  void getCartCount() {
     FormData body = FormData.fromMap({
-      "customer_id" : int.parse(jsonDecode(sharedPreferences.getString("userData"))[0]["id"]).toString()
+      "customer_id" : UserData.id
     });
     Services.getCartCount(body).then((value) {
       if(value.response == 1)
         setState(() {
-          cartCount = int.parse(value.data[0]["total"]);
+          UserData.cartCount = int.parse(value.data[0]["total"]);
         });
     });
   }

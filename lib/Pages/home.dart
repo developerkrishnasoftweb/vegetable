@@ -8,7 +8,7 @@ import '../Components/appbar.dart';
 import '../Components/page_route.dart';
 import '../constant/colors.dart';
 import '../Components/userdata.dart';
-import '../Pages/badges/badge.dart';
+import '../Components/badge.dart';
 import '../Pages/cart/cart.dart';
 import '../Pages/product/product.dart';
 import '../Pages/product_description/productDesc.dart';
@@ -45,7 +45,6 @@ class _HomeState extends State<Home> {
         id: null)
   ];
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-  int cartCount = 0;
 
   @override
   void initState() {
@@ -55,6 +54,17 @@ class _HomeState extends State<Home> {
     getProducts();
     setUserData();
     super.initState();
+  }
+  void getCartCount() {
+    FormData body = FormData.fromMap({
+      "customer_id" : UserData.id
+    });
+    Services.getCartCount(body).then((value) {
+      if(value.response == 1)
+        setState(() {
+          UserData.cartCount = int.parse(value.data[0]["total"]);
+        });
+    });
   }
   String greeting() {
     int hour = DateTime.now().hour;
@@ -137,8 +147,8 @@ class _HomeState extends State<Home> {
                   onTap: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => ProductDesc(
+                        CustomPageRoute(
+                            widget: ProductDesc(
                                   id: value.data[i]["id"],
                                 )));
                   })
@@ -166,8 +176,8 @@ class _HomeState extends State<Home> {
                   onTap: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => ProductDesc(
+                        CustomPageRoute(
+                            widget: ProductDesc(
                               id: value.data[i]["id"],
                             )));
                   })
@@ -192,11 +202,12 @@ class _HomeState extends State<Home> {
       UserData.id = userData[0]["id"];
     });
   }
+  ScaffoldState scaffoldState = ScaffoldState();
 
   @override
   Widget build(BuildContext context) {
-    getCartCount();
     Size size = MediaQuery.of(context).size;
+    getCartCount();
     return Scaffold(
       key: scaffoldKey,
       drawer: SafeArea(
@@ -257,7 +268,7 @@ class _HomeState extends State<Home> {
                                   context,
                                   CustomPageRoute(widget: Cart()));
                             }),
-                        badgeValue: cartCount,
+                        badgeValue: UserData.cartCount,
                         badgeColor: Colors.green,
                         badgeSize: Size(15, 15),
                       ),
@@ -359,21 +370,6 @@ class _HomeState extends State<Home> {
         ],
       ),
     );
-  }
-
-  void getCartCount() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    FormData body = FormData.fromMap({
-      "customer_id": int.parse(
-              jsonDecode(sharedPreferences.getString("userData"))[0]["id"])
-          .toString()
-    });
-    Services.getCartCount(body).then((value) {
-      if (value.response == 1)
-        setState(() {
-          cartCount = int.parse(value.data[0]["total"]);
-        });
-    });
   }
 }
 

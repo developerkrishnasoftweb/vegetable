@@ -3,6 +3,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/Components/badge.dart';
+import 'package:vegetable/Components/userdata.dart';
 import '../../Components/appbar.dart';
 import '../../Components/page_route.dart';
 import '../../Pages/my_orders/order_details.dart';
@@ -123,17 +125,23 @@ class _MyOrdersState extends State<MyOrders> {
             icon: Icon(Icons.search),
             splashRadius: 25,
           ),
-          IconButton(
-              splashRadius: 25,
-              icon: ImageIcon(
-                AssetImage("assets/icons/shopping-cart.png"),
-                color: Colors.white,
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Cart()));
-              })
+          badge(
+            context: context,
+            iconButton: IconButton(
+                splashRadius: 25,
+                icon: ImageIcon(
+                  AssetImage("assets/icons/shopping-cart.png"),
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context, CustomPageRoute(widget: Cart()));
+                }),
+            badgeValue: UserData.cartCount,
+            badgeColor: Colors.green,
+            badgeSize: Size(15, 15),
+          ),
+
         ],
       ),
       body: orders.length != 0

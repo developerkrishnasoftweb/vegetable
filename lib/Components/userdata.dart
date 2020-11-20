@@ -6,4 +6,5 @@ class UserData {
   static dynamic mobile;
   static dynamic gender;
   static dynamic image;
+  static int cartCount = 0;
 }

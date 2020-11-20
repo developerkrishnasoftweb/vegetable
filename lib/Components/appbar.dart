@@ -9,6 +9,7 @@ AppBar appBar(
     Widget leading,
     bool centerTitle,
     Color backgroundColor,
+    EdgeInsets padding,
     Color leadingColor}) {
   return AppBar(
     backgroundColor: backgroundColor ?? Colours.primaryColor,
