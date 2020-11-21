@@ -103,17 +103,17 @@ class _AddressState extends State<Address> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Radio(
+                        widget.items != null ? Radio(
                             value: int.parse(addressList[index].id),
                             groupValue: selectedAddress,
                             onChanged: (value) {
                               setState(() {
                                 selectedAddress = value;
                               });
-                            }),
+                            }) : SizedBox.shrink(),
                         Container(
                           height: 150,
-                          width: size.width - 100,
+                          width: size.width - (widget.items != null ? 100 : 50),
                           padding: EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
                           child: Column(
