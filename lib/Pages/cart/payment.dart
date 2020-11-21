@@ -1,10 +1,13 @@
+import 'dart:math';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
-import 'package:vegetable/Components/text_textrow.dart';
+import 'package:vegetable/constant/colors.dart';
+import '../../Components/text_textrow.dart';
 import '../../Components/page_route.dart';
 import '../../Pages/address_management/address.dart';
 import '../../Pages/home.dart';
@@ -27,12 +30,14 @@ class PaymentConfirm extends StatefulWidget {
 class _PaymentConfirmState extends State<PaymentConfirm> {
   Razorpay _razorpay;
   List<CartItem> items = [];
-  double total;
+  double total = 0;
   double tax = 0;
-  double grandTotal;
+  double grandTotal = 0;
   double deliveryCharge = 0;
   double discount = 0;
-  double taxAmount;
+  double taxAmount = 0;
+  bool orderStatus = false;
+
   void getTotalAmount(){
     setState(() => total = 0);
     for(int i = 0; i < items.length; i++)
@@ -171,7 +176,7 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
               bottom: 10,
               child: button(
                   context: context,
-                  onPressed: (){
+                  onPressed: !orderStatus ? (){
                     switch(widget.paymentMethod){
                       case "0":
                           checkOut();
@@ -186,8 +191,10 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
                         print("Something went wrong");
                         break;
                     }
-                  },
-                  text: "PLACE ORDER",
+                  }
+                  : null,
+                  text: !orderStatus ? "PLACE ORDER" : null,
+                  child: SizedBox(height: 30, width: 30, child: CircularProgressIndicator(strokeWidth: 1.5, valueColor: AlwaysStoppedAnimation(Colours.colors[Random().nextInt(Colours.colors.length)]),),),
                   height: 60),
             )
           ],
@@ -196,6 +203,7 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
 
 
   void cashOnDelivery() {
+    setState(() => orderStatus = true);
     String productsId = "", quantity = "", price = "";
     for(int i = 0; i < widget.items.length; i++){
       setState(() {
@@ -231,9 +239,11 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
     });
     Services.addOrder(body).then((value) {
       if(value.response == 1){
+        setState(() => orderStatus = false);
         Navigator.pushAndRemoveUntil(context, CustomPageRoute(widget: Home()), (route) => false);
         Fluttertoast.showToast(msg: value.message);
       } else {
+        setState(() => orderStatus = false);
         Fluttertoast.showToast(msg: value.message);
       }
     });
