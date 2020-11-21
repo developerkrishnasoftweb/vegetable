@@ -159,7 +159,7 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                     input(
-                        margin: EdgeInsets.only(top: 20, bottom: 20),
+                        margin: EdgeInsets.only(top: 10, bottom: 10),
                         padding: EdgeInsets.only(left: 20, right: 20),
                         context: context,
                         title: "Full Name",
@@ -175,7 +175,7 @@ class _ProfileState extends State<Profile> {
                         },
                         textEditingController: FULLNAME),
                     input(
-                        margin: EdgeInsets.only(top: 20, bottom: 20),
+                        margin: EdgeInsets.only(top: 10, bottom: 10),
                         padding: EdgeInsets.only(left: 20, right: 20),
                         context: context,
                         title: "Email",
@@ -197,7 +197,7 @@ class _ProfileState extends State<Profile> {
                         },
                         keyboardType: TextInputType.emailAddress),
                     input(
-                        margin: EdgeInsets.only(top: 20, bottom: 20),
+                        margin: EdgeInsets.only(top: 10, bottom: 10),
                         padding: EdgeInsets.only(left: 20, right: 20),
                         context: context,
                         title: "Mobile",

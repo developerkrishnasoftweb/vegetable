@@ -69,7 +69,13 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
   }
 
   void paymentSuccess(PaymentSuccessResponse response){
-    Fluttertoast.showToast(msg: response.paymentId);
+    makeOrder(
+        orderType: "Razor Pay",
+        transactionType: "ONLINE",
+        referenceNo: response.paymentId,
+        paymentMode: "ONLINE",
+        paymentStatus: "pending",
+    );
   }
   void paymentError(PaymentFailureResponse response){
     Fluttertoast.showToast(msg: response.message);
@@ -182,7 +188,13 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
                           checkOut();
                         break;
                       case "1":
-                          cashOnDelivery();
+                          makeOrder(
+                            orderType: "Home Delivery",
+                            transactionType: "CASH",
+                            referenceNo: "COD",
+                            paymentMode: "COD",
+                            paymentStatus: "pending"
+                          );
                         break;
                       case "2":
 
@@ -202,7 +214,7 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
   }
 
 
-  void cashOnDelivery() {
+  void makeOrder({String orderType, String paymentMode, String paymentStatus, String transactionType, String referenceNo}) {
     setState(() => orderStatus = true);
     String productsId = "", quantity = "", price = "";
     for(int i = 0; i < widget.items.length; i++){
@@ -226,17 +238,18 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
       "city" : widget.address.city,
       "type" : widget.address.type,
       "total_price" : grandTotal,
-      "order_type" : "Home Delivery",
-      "payment_mode" : "COD",
-      "payment_status" : "pending",
-      "transaction_type" : "CASH",
-      "reference_no" : "COD",
+      "order_type" : orderType,
+      "payment_mode" : paymentMode,
+      "payment_status" : paymentStatus,
+      "transaction_type" : transactionType,
+      "reference_no" : referenceNo,
       "transaction_date" : DateFormat("yyyy-M-dd").format(DateTime.now()).toString(),
       "transaction_time" : DateFormat("HH:mm:s").format(DateTime.now()).toString(),
       "product_id" : productsId,
       "quantity" : quantity,
       "price" : price,
     });
+    print(body.fields);
     Services.addOrder(body).then((value) {
       if(value.response == 1){
         setState(() => orderStatus = false);

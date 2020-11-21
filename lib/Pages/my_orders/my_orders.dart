@@ -94,7 +94,6 @@ class _MyOrdersState extends State<MyOrders> {
 
   @override
   Widget build(BuildContext context) {
-    print(orders.length);
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: appBar(
