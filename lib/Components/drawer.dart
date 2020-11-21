@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../Pages/contact_us/contact_us.dart';
 import '../Pages/feedback/feedback.dart';
@@ -46,6 +47,7 @@ Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState
     }),
     DrawerItem(text: Strings.drawerShare, icon: Icon(Icons.share), onTap: () {
       scaffoldKey.currentState.openEndDrawer();
+      Share.share("https://www.google.com/");
     }),
     DrawerItem(
         text: Strings.drawerLogout,
