@@ -28,9 +28,9 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
   Razorpay _razorpay;
   List<CartItem> items = [];
   double total;
-  double tax = 6;
+  double tax = 0;
   double grandTotal;
-  double deliveryCharge = 25;
+  double deliveryCharge = 0;
   double discount = 0;
   double taxAmount;
   void getTotalAmount(){
