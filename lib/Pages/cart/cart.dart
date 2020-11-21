@@ -5,10 +5,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vegetable/Pages/address_management/address.dart';
 import '../../Components/appbar.dart';
 import '../../constant/colors.dart';
 import '../../Components/customButton.dart';
-import '../../Pages/cart/place_order.dart';
 import '../../Pages/product_description/productDesc.dart';
 import '../../services/services.dart';
 import '../../services/urls.dart';
@@ -305,8 +305,8 @@ class _CartState extends State<Cart> {
   }
 
   void placeOrder(){
-    // Navigator.push(context, MaterialPageRoute(builder: (context) => PlaceOrder(items: items),));
-    Navigator.push(context, MaterialPageRoute(builder: (context) => PlaceOrder(items: items,),));
+    // Navigator.push(context, MaterialPageRoute(builder: (context) => PlaceOrder(items: items,),));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Address(items: items,)));
   }
 
   void removeFromCart({@required String cartId}) {
