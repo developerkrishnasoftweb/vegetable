@@ -77,7 +77,7 @@ class _SignInState extends State<SignIn> {
                 context: context,
                 decoration: InputDecoration(
                   contentPadding:
-                      EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                      EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Color(0xffA8A8A8))),
@@ -94,7 +94,7 @@ class _SignInState extends State<SignIn> {
                   context: context,
                   decoration: InputDecoration(
                     contentPadding:
-                        EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                    EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: Color(0xffA8A8A8))),
@@ -176,7 +176,7 @@ class _SignInState extends State<SignIn> {
                           msg: "Please enter username & password");
                     }
                   },
-                  height: 65,
+                  height: 55,
                   child: loginStatus
                       ? SizedBox(
                           child: CircularProgressIndicator(

@@ -75,7 +75,7 @@ class _SignUpState extends State<SignUp> {
                   context: context,
                   decoration: InputDecoration(
                     contentPadding:
-                        EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                        EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: Color(0xffA8A8A8))),
@@ -91,7 +91,7 @@ class _SignUpState extends State<SignUp> {
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     contentPadding:
-                        EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                        EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: Color(0xffA8A8A8))),
@@ -107,7 +107,7 @@ class _SignUpState extends State<SignUp> {
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     contentPadding:
-                        EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                        EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: Color(0xffA8A8A8))),
@@ -122,7 +122,7 @@ class _SignUpState extends State<SignUp> {
                   context: context,
                   decoration: InputDecoration(
                     contentPadding:
-                        EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                        EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(color: Color(0xffA8A8A8))),
@@ -217,7 +217,7 @@ class _SignUpState extends State<SignUp> {
                       Fluttertoast.showToast(msg: "All fields are required!");
                     }
                   },
-                  height: 65,
+                  height: 55,
                   child: signUpStatus
                       ? SizedBox(
                           height: 30,
