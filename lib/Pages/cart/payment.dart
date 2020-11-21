@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:vegetable/Components/text_textrow.dart';
 import '../../Components/page_route.dart';
 import '../../Pages/address_management/address.dart';
 import '../../Pages/home.dart';
@@ -30,7 +31,7 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
   double tax = 6;
   double grandTotal;
   double deliveryCharge = 25;
-  double discount = 50;
+  double discount = 0;
   double taxAmount;
   void getTotalAmount(){
     setState(() => total = 0);
@@ -156,12 +157,12 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
                     SizedBox(height: 30,),
                     Text("Billing Details :", style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),),
                     SizedBox(height: 10,),
-                    descList(title: "Total", amount: (total).toString()),
-                    descList(title: "Delivery Charge", amount: (deliveryCharge).toString(), lead: "+"),
-                    descList(title: "Service Tax (${tax.toString()}%)", amount: taxAmount.toStringAsFixed(2), lead: "+"),
-                    descList(title: "Discount", amount: discount.toString(), lead: "-"),
+                    descList(title: "Total", amount: (total).toString(), context: context, showRupeeSymbol: "\u20B9"),
+                    descList(title: "Delivery Charge", amount: (deliveryCharge).toString(), lead: "+", context: context, showRupeeSymbol: "\u20B9"),
+                    descList(title: "Service Tax (${tax.toString()}%)", amount: taxAmount.toStringAsFixed(2), lead: "+", context: context, showRupeeSymbol: "\u20B9"),
+                    descList(title: "Discount", amount: discount.toString(), lead: "-", context: context, showRupeeSymbol: "\u20B9"),
                     Divider(color: Colors.black, thickness: 2,),
-                    descList(title: "Total Payable", amount: grandTotal.toStringAsFixed(2)),
+                    descList(title: "Total Payable", amount: grandTotal.toStringAsFixed(2), context: context, showRupeeSymbol: "\u20B9"),
                   ],
                 ),
               ),
@@ -193,18 +194,6 @@ class _PaymentConfirmState extends State<PaymentConfirm> {
         ));
   }
 
-  Widget descList({String title, String amount, String lead}) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(title + " :", style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 16, color: Colors.black54, fontWeight: FontWeight.bold),),
-          Text((lead != null ? lead : "") + " \u20B9 " + amount, style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold),),
-        ],
-      ),
-    );
-  }
 
   void cashOnDelivery() {
     String productsId = "", quantity = "", price = "";

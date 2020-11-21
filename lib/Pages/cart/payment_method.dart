@@ -94,7 +94,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                   if(paymentMethod == null)
                     Fluttertoast.showToast(msg: "Please select payment options");
                   else
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentConfirm(paymentMethod: paymentMethod, items: widget.items, address: widget.address,)));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentConfirm(paymentMethod: paymentMethod, items: widget.items, address: widget.address)));
                 },
                 text: "PLACE ORDER",
                 height: 60),

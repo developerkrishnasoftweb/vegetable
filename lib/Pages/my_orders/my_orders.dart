@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vegetable/Components/badge.dart';
+import 'package:vegetable/Components/text_textrow.dart';
 import 'package:vegetable/Components/userdata.dart';
 import '../../Components/appbar.dart';
 import '../../Components/page_route.dart';
@@ -205,12 +206,6 @@ class _MyOrdersState extends State<MyOrders> {
             ),
     );
   }
-}
-
-Widget text({BuildContext context, String text}){
-  return Text(text,
-    style: Theme.of(context).textTheme.bodyText1,
-  );
 }
 
 class OrderDetail {
