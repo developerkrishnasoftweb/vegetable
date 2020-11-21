@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,12 +29,7 @@ class PaymentConfirm extends StatefulWidget {
 class _PaymentConfirmState extends State<PaymentConfirm> {
   Razorpay _razorpay;
   List<CartItem> items = [];
-  double total = 0;
-  double tax = 0;
-  double grandTotal = 0;
-  double deliveryCharge = 0;
-  double discount = 0;
-  double taxAmount = 0;
+  double total = 0, tax = 0, grandTotal = 0, deliveryCharge = 0, discount = 0, taxAmount = 0;
   bool orderStatus = false;
 
   void getTotalAmount(){

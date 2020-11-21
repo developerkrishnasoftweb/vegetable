@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vegetable/Pages/address_management/address.dart';
+import '../../Pages/address_management/address.dart';
 import '../../Components/appbar.dart';
 import '../../constant/colors.dart';
 import '../../Components/customButton.dart';
