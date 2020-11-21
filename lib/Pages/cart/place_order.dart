@@ -17,14 +17,9 @@ class _PlaceOrderState extends State<PlaceOrder> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   DateTime selectedDate = DateTime.now();
   Color selectedColor = Colors.black54;
-  List<DeliverBy> deliverDates = [
-    DeliverBy(date: "9:00 AM - 10:30 AM", color: Colors.black54),
-    DeliverBy(date: "9:00 AM - 10:30 AM", color: Colors.black54),
-    DeliverBy(date: "9:00 AM - 10:30 AM", color: Colors.black54),
-    DeliverBy(date: "9:00 AM - 10:30 AM", color: Colors.black54),
-    DeliverBy(date: "9:00 AM - 10:30 AM", color: Colors.black54),
-    DeliverBy(date: "9:00 AM - 10:30 AM", color: Colors.black54),
-  ];
+  List<DeliverBy> deliverDates = List.generate(8, (index) {
+    return DeliverBy(date: "9:00 AM - 10:30 AM", color: Colors.black54);
+  });
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
