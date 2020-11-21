@@ -168,10 +168,10 @@ class _FeedbackState extends State<FeedBack> {
     });
     Services.addFeedBack(formData).then((value) {
       if(value.response == 1){
-        Fluttertoast.showToast(msg: value.message);
         setState(() => isSending = false);
         message.clear();
         Navigator.pop(context);
+        Fluttertoast.showToast(msg: value.message);
       } else {
         Fluttertoast.showToast(msg: value.message);
         setState(() => isSending = false);}
