@@ -21,7 +21,7 @@ Drawer drawer({@required BuildContext context, @required GlobalKey<ScaffoldState
   List<DrawerItem> items = [
     DrawerItem(text: Strings.drawerHome, icon: Icon(Icons.home), onTap: () {
       scaffoldKey.currentState.openEndDrawer();
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+      Navigator.pushAndRemoveUntil(context, CustomPageRoute(widget: Home()), (route) => false);
     }),
     DrawerItem(
         text: Strings.drawerMyOrders, icon: Icon(Icons.shopping_cart), onTap: () {
