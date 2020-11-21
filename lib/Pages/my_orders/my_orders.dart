@@ -84,127 +84,153 @@ class _MyOrdersState extends State<MyOrders> {
             ];
           });
         }
+      } else {
+        setState(() {
+          orders = null;
+        });
       }
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    print(orders.length);
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: appBar(
-        context: context,
-        title: "My Orders",
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search),
-            splashRadius: 25,
-          ),
-          badge(
-            context: context,
-            iconButton: IconButton(
-                splashRadius: 25,
-                icon: ImageIcon(
-                  AssetImage("assets/icons/shopping-cart.png"),
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  Navigator.push(context, CustomPageRoute(widget: Cart()));
-                }),
-            badgeValue: UserData.cartCount,
-            badgeColor: Colors.green,
-            badgeSize: Size(15, 15),
-          ),
-        ],
-      ),
-      body: orders.length != 0
-          ? ListView.builder(
-              physics: BouncingScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: orders.length,
-              itemBuilder: (BuildContext context, int index) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        CustomPageRoute(
-                            widget: OrderDesc(
-                          order: orders[index],
-                        )));
-                  },
-                  child: Container(
-                    height: 150,
-                    width: size.width,
-                    decoration: BoxDecoration(
-                        border: Border(
-                            bottom: BorderSide(
-                                color: Colors.grey[200], width: 1.5))),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
+        appBar: appBar(
+          context: context,
+          title: "My Orders",
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.search),
+              splashRadius: 25,
+            ),
+            badge(
+              context: context,
+              iconButton: IconButton(
+                  splashRadius: 25,
+                  icon: ImageIcon(
+                    AssetImage("assets/icons/shopping-cart.png"),
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.push(context, CustomPageRoute(widget: Cart()));
+                  }),
+              badgeValue: UserData.cartCount,
+              badgeColor: Colors.green,
+              badgeSize: Size(15, 15),
+            ),
+          ],
+        ),
+        body: orders != null
+            ? orders.length != 0
+                ? ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: orders.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              CustomPageRoute(
+                                  widget: OrderDesc(
+                                order: orders[index],
+                              )));
+                        },
+                        child: Container(
                           height: 150,
-                          width: size.width - 30,
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 10),
-                          child: Column(
+                          width: size.width,
+                          decoration: BoxDecoration(
+                              border: Border(
+                                  bottom: BorderSide(
+                                      color: Colors.grey[200], width: 1.5))),
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text(
-                                orders[index].deliveryStatus,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyText1
-                                    .copyWith(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              text(text: orders[index].name, context: context),
                               Container(
-                                margin: EdgeInsets.only(top: 5.0, bottom: 3),
-                                padding: EdgeInsets.only(top: 1.0, bottom: 1.0, left: 3, right: 3),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(4),
-                                    border: Border.all(color: Colors.blue)
-                                ),
-                                child: Text(
-                                  orders[index].addressType.toUpperCase(),
-                                  style: Theme.of(context).textTheme.bodyText1.copyWith(fontSize: 10, color: Colors.blue),
+                                height: 150,
+                                width: size.width - 30,
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      orders[index].deliveryStatus,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyText1
+                                          .copyWith(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    text(
+                                        text: orders[index].name,
+                                        context: context),
+                                    Container(
+                                      margin:
+                                          EdgeInsets.only(top: 5.0, bottom: 3),
+                                      padding: EdgeInsets.only(
+                                          top: 1.0,
+                                          bottom: 1.0,
+                                          left: 3,
+                                          right: 3),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(4),
+                                          border:
+                                              Border.all(color: Colors.blue)),
+                                      child: Text(
+                                        orders[index].addressType.toUpperCase(),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyText1
+                                            .copyWith(
+                                                fontSize: 10,
+                                                color: Colors.blue),
+                                      ),
+                                    ),
+                                    text(
+                                        text: orders[index].address1,
+                                        context: context),
+                                    text(
+                                        text: orders[index].orderDate,
+                                        context: context)
+                                  ],
                                 ),
                               ),
-                              text(text: orders[index].address1, context: context),
-                              text(text: orders[index].orderDate, context: context)
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.grey,
+                                size: 20,
+                              ),
                             ],
                           ),
                         ),
-                        Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.grey,
-                          size: 20,
-                        ),
-                      ],
+                      );
+                    })
+                : Center(
+                    child: SizedBox(
+                      height: 30,
+                      width: 30,
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation(Colors.green),
+                        strokeWidth: 1.4,
+                      ),
                     ),
-                  ),
-                );
-              })
-          : Center(
-              child: SizedBox(
-                height: 30,
-                width: 30,
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation(Colors.green),
-                  strokeWidth: 1.4,
-                ),
-              ),
-            ),
-    );
+                  )
+            : Center(
+                child: text(
+                    context: context, text: "You haven't placed any order :)"),
+              ));
   }
 }
 

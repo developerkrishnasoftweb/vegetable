@@ -68,7 +68,6 @@ class _FeedbackState extends State<FeedBack> {
               RatingBuilder(
                 onChanged: (value){
                   setState(() {
-                    print(value);
                     feedback = value;
                   });
                 },
