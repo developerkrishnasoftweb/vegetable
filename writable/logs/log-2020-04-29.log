@@ -1,0 +1,88 @@
+CRITICAL - 2020-04-29 16:03:38 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''y' or mobile='deepakprn78@gmail.com' and password='deeps' and status='y'' at line 1
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('select * from a...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from a...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from a...')
+#3 C:\xampp\htdocs\skillshare\system\Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from a...')
+#4 C:\xampp\htdocs\skillshare\app\Controllers\Cpanel.php(20): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Cpanel->check_login()
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cpanel))
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-04-29 16:06:31 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''y' or mobile='deepakprn78@gmail.com' and password='deeps' and status='y'' at line 1
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('select * from a...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from a...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from a...')
+#3 C:\xampp\htdocs\skillshare\system\Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from a...')
+#4 C:\xampp\htdocs\skillshare\app\Controllers\Cpanel.php(20): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Cpanel->check_login()
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cpanel))
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-04-29 16:14:27 --> Table 'my3skill.student' doesn't exist
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\skillshare\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\skillshare\system\Model.php(445): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\skillshare\app\Controllers\Student.php(21): CodeIgniter\Model->findAll()
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Student->index()
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#8 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-04-29 16:14:54 --> Table 'my3skill.student' doesn't exist
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\skillshare\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\skillshare\system\Model.php(445): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\skillshare\app\Controllers\Student.php(21): CodeIgniter\Model->findAll()
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Student->index()
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#8 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-04-29 16:15:13 --> Table 'my3skill.student' doesn't exist
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\skillshare\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\skillshare\system\Model.php(445): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\skillshare\app\Controllers\Student.php(21): CodeIgniter\Model->findAll()
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Student->index()
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#8 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-04-29 16:15:18 --> Table 'my3skill.student' doesn't exist
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\skillshare\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\skillshare\system\Model.php(445): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\skillshare\app\Controllers\Student.php(21): CodeIgniter\Model->findAll()
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Student->index()
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#8 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-04-29 16:15:20 --> Table 'my3skill.student' doesn't exist
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT *\nFROM `...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\skillshare\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\skillshare\system\Model.php(445): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\skillshare\app\Controllers\Student.php(21): CodeIgniter\Model->findAll()
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Student->index()
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#8 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-04-29 16:21:37 --> Call to a member function post() on null
+#0 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Cpanel->check_login()
+#1 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cpanel))
+#2 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

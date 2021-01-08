@@ -1,0 +1,91 @@
+CRITICAL - 2020-08-11 02:38:33 --> Expected 1 '.' in the input between the postcard and the payload
+#0 /home/u716350106/domains/my3skills.com/public_html/app/Libraries/vendor/facebook/graph-sdk/src/Facebook/FacebookResponse.php(210): Facebook\Exceptions\FacebookResponseException::create(Object(Facebook\FacebookResponse))
+#1 /home/u716350106/domains/my3skills.com/public_html/app/Libraries/vendor/facebook/graph-sdk/src/Facebook/FacebookResponse.php(255): Facebook\FacebookResponse->makeException()
+#2 /home/u716350106/domains/my3skills.com/public_html/app/Libraries/vendor/facebook/graph-sdk/src/Facebook/FacebookResponse.php(82): Facebook\FacebookResponse->decodeBody()
+#3 /home/u716350106/domains/my3skills.com/public_html/app/Libraries/vendor/facebook/graph-sdk/src/Facebook/FacebookClient.php(224): Facebook\FacebookResponse->__construct(Object(Facebook\FacebookRequest), '{"error":{"mess...', 400, Array)
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Libraries/vendor/facebook/graph-sdk/src/Facebook/Facebook.php(469): Facebook\FacebookClient->sendRequest(Object(Facebook\FacebookRequest))
+#5 /home/u716350106/domains/my3skills.com/public_html/app/Libraries/vendor/facebook/graph-sdk/src/Facebook/Facebook.php(341): Facebook\Facebook->sendRequest('GET', '/me?fields=name...', Array, 'ya29.a0AfH6SMB8...', NULL, 'v2.10')
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Auth.php(46): Facebook\Facebook->get('/me?fields=name...', 'ya29.a0AfH6SMB8...')
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Auth->facebook()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-08-11 02:38:33 --> Uncaught CodeIgniter\HTTP\Exceptions\HTTPException: Unknown HTTP status code provided with no message: 190 in /home/u716350106/domains/my3skills.com/public_html/system/HTTP/Exceptions/HTTPException.php:180
+Stack trace:
+#0 /home/u716350106/domains/my3skills.com/public_html/system/HTTP/Response.php(320): CodeIgniter\HTTP\Exceptions\HTTPException::forUnkownStatusCode(190)
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Debug/Exceptions.php(159): CodeIgniter\HTTP\Response->setStatusCode(190)
+#2 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Facebook\Exceptions\FacebookResponseException))
+#3 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-08-11 20:14:28 --> file_get_contents(https://www.my3skills.com/assets/mails/welcome_mail.html): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/u71635010...', 219, Array)
+#1 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(219): file_get_contents('https://www.my3...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->submit_register()
+#3 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#4 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-08-11 20:15:54 --> file_get_contents(https://www.my3skills.com/assets/mails/welcome_mail.html): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/u71635010...', 219, Array)
+#1 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(219): file_get_contents('https://www.my3...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->submit_register()
+#3 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#4 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-08-11 20:19:36 --> Class 'App\Models\Videos_model' not found
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\teachersection\Questions->get_video('3')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\teachersection\Questions))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-11 20:27:55 --> file_get_contents(https://www.my3skills.com/assets/mails/welcome_mail.html): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'file_get_conten...', '/home/u71635010...', 219, Array)
+#1 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(219): file_get_contents('https://www.my3...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->submit_register()
+#3 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#4 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-08-11 20:36:16 --> Class 'App\Models\Videos_model' not found
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\teachersection\Questions->get_video('1')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\teachersection\Questions))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-11 20:36:33 --> Class 'App\Models\Videos_model' not found
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\teachersection\Questions->get_video('2')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\teachersection\Questions))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-11 20:36:42 --> Class 'App\Models\Videos_model' not found
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\teachersection\Questions->get_video('1')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\teachersection\Questions))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-11 20:36:54 --> Class 'App\Models\Videos_model' not found
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\teachersection\Questions->get_video('1')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\teachersection\Questions))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-11 20:53:25 --> Class 'App\Models\Videos_model' not found
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\teachersection\Questions->teacher_edit_question('1')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\teachersection\Questions))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-11 20:54:29 --> Class 'App\Models\Videos_model' not found
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\teachersection\Questions->teacher_edit_question('1')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\teachersection\Questions))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}

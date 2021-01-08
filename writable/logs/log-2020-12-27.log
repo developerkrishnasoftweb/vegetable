@@ -1,0 +1,18 @@
+CRITICAL - 2020-12-27 10:58:11 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-27 10:58:14 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-27 10:58:17 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}

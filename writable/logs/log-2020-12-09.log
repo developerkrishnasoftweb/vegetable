@@ -1,0 +1,17 @@
+CRITICAL - 2020-12-09 17:28:50 --> Class 'App\Models\Department_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->departments()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-12-09 17:37:02 --> Unknown column 'c.department_id' in 'where clause'
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select d.title ...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select d.title ...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select d.title ...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select d.title ...')
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Category.php(23): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Category->index()
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Category))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}

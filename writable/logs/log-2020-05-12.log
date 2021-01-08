@@ -1,0 +1,9 @@
+CRITICAL - 2020-05-12 00:09:13 --> {0, string} route cannot be found while reverse-routing.
+#0 C:\xampp\htdocs\skillshare\system\HTTP\RedirectResponse.php(92): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\skillshare\system\Common.php(798): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\skillshare\app\Controllers\Teacherzone.php(33): redirect('http://localhos...')
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Teacherzone->login()
+#4 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Teacherzone))
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}

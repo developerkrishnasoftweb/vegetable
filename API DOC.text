@@ -1,0 +1,370 @@
+E-Commerce APIs
+
+Base URL : http://vegetable.krishnasoftweb.com/api/
+
+Country API :
+  1) Get all country list
+    URL : /country
+    Method : GET
+
+  2) Get Specific Country data
+    URL : /country
+    Method : POST
+    Params Type: FormData
+    Params : country_id
+
+
+State API :
+  1) Get all state list
+    URL : /state
+    Method : GET
+
+  2) Get Specific state data
+    URL : /state
+    Method : POST
+    Params Type: FormData
+    Params : state_id
+
+
+City API :
+  1) Get all city list
+    URL : /city
+    Method : GET
+
+  2) Get Specific city data
+    URL : /city
+    Method : POST
+    Params Type: FormData
+    Params : city_id
+
+
+Area API :
+  1) Get all area list
+    URL : /area
+    Method : GET
+
+  2) Get Specific area data
+    URL : /area
+    Method : POST
+    Params Type: FormData
+    Params : area_id
+
+
+Category API :
+  1) Get all category list
+    URL : /category
+    Method : GET
+
+  2) Get Specific category data
+    URL : /category
+    Method : POST
+    Params Type: FormData
+    Params : category_id
+
+
+Sub Category API :
+  1) Get all sub category list
+    URL : /sub_category
+    Method : GET
+
+  2) Get Specific sub category data
+    URL : /sub_category
+    Method : POST
+    Params Type: FormData
+    Params : sub_category_id
+
+  3) Get all sub category list of category 
+    URL : /sub_category
+    Method : POST
+    Params Type: FormData
+    Params : category_id
+
+
+Banner API :
+  1) Get all banner list
+    URL : /banner
+    Method : GET
+
+  2) Get Specific banner data
+    URL : /banner
+    Method : POST
+    Params Type: FormData
+    Params : banner_id
+
+
+Customer API :
+  1) Login customer
+    URL : /customer/login
+    Method : POST
+    Params Type: FormData
+    Params : email, password
+
+  2) Register customer
+    URL : /customer/signup
+    Method : POST
+    Params Type: FormData
+    Params : first_name, last_name, email, mobile, gender, password
+
+  3) Add address
+    URL : /customer/add_address
+    Method : POST
+    Params Type: FormData
+    Params : customer_id, name, email, mobile, address1, address2, landmark, area, pincode, state, city, type
+
+  4) Update address
+    URL : /customer/update_address
+    Method : POST
+    Params Type: FormData
+    Params : address_id, customer_id, name, email, mobile, address1, address2, landmark, area, pincode, state, city, type
+
+  5) Delete address
+    URL : /customer/delete_address
+    Method : POST
+    Params Type: FormData
+    Params : address_id
+
+  6) Get address
+    URL : /customer/get_address
+    Method : POST
+    Params Type: FormData
+    Params : customer_id
+
+  7) Get Profile
+    URL : /customer/get_profile
+    Method : POST
+    Params Type: FormData
+    Params : customer_id
+
+  8) Change Password
+    URL : /customer/change_password
+    Method : POST
+    Params Type: FormData
+    Params : customer_id, old_password, new_password
+
+  9) Update Profile
+    URL : /customer/update_profile
+    Method : POST
+    Params Type: FormData
+    Params : customer_id, first_name, last_name, email, mobile, gender
+
+
+Check API :
+  1) Check email address
+    URL : /check/email
+    Method : POST
+    Params Type: FormData
+    Params : email
+
+  2) Check mobile number
+    URL : /check/mobile
+    Method : POST
+    Params Type: FormData
+    Params : mobile
+
+
+Feedback API :
+  1) Send feedback
+    URL : /feedback
+    Method : POST
+    Params Type: FormData
+    Params : name, email, mobile, feedback, rating
+
+
+Product API :
+  1) Get all product list
+    URL : /product
+    Method : GET
+
+  2) Get Specific product data
+    URL : /product
+    Method : POST
+    Params Type: FormData
+    Params : product_id
+
+  3) Get product data of sub category
+    URL : /product
+    Method : POST
+    Params Type: FormData
+    Params : sub_category_id
+
+
+Popular Product API :
+  1) Get all product list
+    URL : /popular_product
+    Method : GET
+
+  2) Get Specific product data
+    URL : /popular_product
+    Method : POST
+    Params Type: FormData
+    Params : product_id
+
+  3) Get product data of sub category
+    URL : /popular_product
+    Method : POST
+    Params Type: FormData
+    Params : sub_category_id
+
+
+Order API :
+  1) Place new order
+    URL : /order/new
+    Method : POST
+    Params Type : FormData
+    Params : product_id, quantity, customer_id, name, email, mobile, address1, address2, landmark, area, pincode, state, city, type, order_date, order_time, total_price, total, converted_amount, currency, order_type, payment_mode, payment_status, transaction_type, reference_no, transaction_date, transaction_time
+
+  2) Get All order data
+    URL : /order/view
+    Method : POST
+    Params Type: FormData
+    Params : customer_id
+
+  3) Get Specific order data
+    URL : /order/view_order
+    Method : POST
+    Params Type: FormData
+    Params : customer_id, order_id, product_id
+
+
+Rating API :
+  1) Add new rating
+    URL : /rating/new
+    Method : POST
+    Params Type : FormData
+    Params : customer_id, product_id, score, comment
+
+  2) Get Specific rating data
+    URL : /rating/view
+    Method : POST
+    Params Type: FormData
+    Params : product_id
+
+
+About US API :
+  1) Get About Us
+    URL : /about_us
+    Method : GET
+
+
+Terms and Condition API :
+  1) Get Terms and Condition
+    URL : /terms_and_condition
+    Method : GET
+
+
+Privacy Policy API :
+  1) Get Privacy Policy
+    URL : /privacy_policy
+    Method : GET
+
+
+Cart API :
+  1) Add to cart
+    URL : /cart/add
+    Method : POST
+    Params Type : FormData
+    Params : customer_id, product_id, quantity
+
+  2) View cart
+    URL : /cart/view
+    Method : POST
+    Params Type: FormData
+    Params : customer_id
+
+  3) Update quantity
+    URL : /cart/update_quantity
+    Method : POST
+    Params Type: FormData
+    Params : cart_id, quantity
+
+  4) Check Product added to cart or not
+    URL : /cart/check
+    Method : POST
+    Params Type: FormData
+    Params : customer_id, product_id
+
+  5) Delete product from cart
+    URL : /cart/delete
+    Method : POST
+    Params Type: FormData
+    Params : cart_id
+
+  6) Get total cart count
+    URL : /cart/count
+    Method : POST
+    Params Type: FormData
+    Params : customer_id
+
+  5) Delete all product from cart
+    URL : /cart/delete_all
+    Method : POST
+    Params Type: FormData
+    Params : customer_id
+
+
+
+
+
+# Delivery Boy APIs
+
+
+Delivery Boy API :
+  1) Login delivery boy
+    URL : /delivery_boy/login
+    Method : POST
+    Params Type: FormData
+    Params : email, password
+
+  2) Register delivery boy
+    URL : /delivery_boy/signup
+    Method : POST
+    Params Type: FormData
+    Params : first_name, last_name, email, mobile, gender, password
+
+  3) Get Profile
+    URL : /delivery_boy/get_profile
+    Method : POST
+    Params Type: FormData
+    Params : delivery_boy_id
+
+  4) Change Password
+    URL : /customer/change_password
+    Method : POST
+    Params Type: FormData
+    Params : delivery_boy_id, old_password, new_password
+
+  5) Update Profile
+    URL : /delivery_boy/update_profile
+    Method : POST
+    Params Type: FormData
+    Params : delivery_boy_id, first_name, last_name, email, mobile, gender
+
+  6) Update Delivery Boy Status
+    URL : /delivery_boy/update_status
+    Method : POST
+    Params Type: FormData
+    Params : delivery_boy_id, available
+
+  7) Get All pending and ongoing orders
+    URL : /order/all_order
+    Method : POST
+    Params Type: FormData
+    Params : delivery_boy_id
+
+  8) Get All delivered orders
+    URL : /order/delivered_order
+    Method : POST
+    Params Type: FormData
+    Params : delivery_boy_id
+
+  9) Deliver order
+    URL : /order/deliver_order
+    Method : POST
+    Params Type: FormData
+    Params : order_id
+
+  10) Get all notification
+    URL : /delivery_boy/get_notification
+    Method : POST
+    Params Type: FormData
+    Params : delivery_boy_id

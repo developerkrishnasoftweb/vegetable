@@ -1,0 +1,35 @@
+CRITICAL - 2020-12-14 12:52:06 --> Column 'category_id' cannot be null
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `pr...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Product.php(61): CodeIgniter\Model->save(Array)
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Product->insert()
+#8 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#9 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-12-14 12:52:58 --> Column 'category_id' cannot be null
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `pr...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Product.php(61): CodeIgniter\Model->save(Array)
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Product->insert()
+#8 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#9 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-12-14 15:30:43 --> Invalid file: admin/reset_password.php
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/reset_pas...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Common.php(1071): CodeIgniter\View\View->render('admin/reset_pas...', Array, true)
+#2 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(1092): view('admin/reset_pas...', Array)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->reset_password('Z2F1cmF2cGFuZGV...', 'dx32oT09utBkhy4...')
+#4 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#7 {main}

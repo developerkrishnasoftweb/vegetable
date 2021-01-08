@@ -1,0 +1,12 @@
+CRITICAL - 2020-11-13 16:20:13 --> Call to a member function query() on null
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->order('view')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-13 16:21:43 --> Call to a member function query() on null
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->order('view')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}

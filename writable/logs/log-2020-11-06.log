@@ -1,0 +1,13 @@
+CRITICAL - 2020-11-06 17:16:29 --> Unknown column 'category_id' in 'field list'
+#0 /home/whoami/Projects/e-commerce/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/e-commerce/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/e-commerce/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/whoami/Projects/e-commerce/system/Model.php(550): CodeIgniter\Model->insert()
+#6 /home/whoami/Projects/e-commerce/app/Controllers/Product.php(60): CodeIgniter\Model->save()
+#7 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Product->insert()
+#8 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#9 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}

@@ -1,0 +1,34 @@
+CRITICAL - 2020-08-27 16:15:31 --> session_start(): Cannot start session when headers already sent
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_start()...', 'C:\\xampp\\htdocs...', 20, Array)
+#1 C:\xampp\htdocs\my3skill\app\Controllers\Courses.php(20): session_start()
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(882): App\Controllers\Courses->__construct()
+#3 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\my3skill\index.php(53): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-08-27 16:15:31 --> Uncaught ErrorException: Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\my3skill\app\Config\Events.php:27) in C:\xampp\htdocs\my3skill\system\Debug\Exceptions.php:161
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'C:\\xampp\\htdocs...', 161, Array)
+#1 C:\xampp\htdocs\my3skill\system\Debug\Exceptions.php(161): header('HTTP/1.1 500 In...', true, 500)
+#2 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#3 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-08-27 16:15:44 --> session_start(): Cannot start session when headers already sent
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_start()...', 'C:\\xampp\\htdocs...', 20, Array)
+#1 C:\xampp\htdocs\my3skill\app\Controllers\Courses.php(20): session_start()
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(882): App\Controllers\Courses->__construct()
+#3 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\my3skill\index.php(53): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-08-27 16:15:44 --> Uncaught ErrorException: Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\my3skill\app\Config\Events.php:27) in C:\xampp\htdocs\my3skill\system\Debug\Exceptions.php:161
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'C:\\xampp\\htdocs...', 161, Array)
+#1 C:\xampp\htdocs\my3skill\system\Debug\Exceptions.php(161): header('HTTP/1.1 500 In...', true, 500)
+#2 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#3 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}

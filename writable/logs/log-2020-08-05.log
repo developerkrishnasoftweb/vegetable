@@ -1,0 +1,18 @@
+CRITICAL - 2020-08-05 11:16:01 --> Call to undefined method Utilities::get_balance()
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Configuration->get_sms_balance()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Configuration))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-05 11:16:11 --> Call to undefined method Utilities::get_balance()
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Configuration->get_sms_balance()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Configuration))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-05 11:16:29 --> Call to undefined method Utilities::get_balance()
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Configuration->get_sms_balance()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Configuration))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}

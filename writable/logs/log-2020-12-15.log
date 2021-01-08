@@ -1,0 +1,36 @@
+CRITICAL - 2020-12-15 10:14:12 --> Invalid file: admin/reset_password.php
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/reset_pas...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Common.php(1071): CodeIgniter\View\View->render('admin/reset_pas...', Array, true)
+#2 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(1092): view('admin/reset_pas...', Array)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->reset_password('QWJoaXNoZWtyLmF...', 'dx32oT09utBkhy4...')
+#4 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-12-15 11:06:22 --> Invalid file: admin/reset_password.php
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/reset_pas...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Common.php(1071): CodeIgniter\View\View->render('admin/reset_pas...', Array, true)
+#2 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(1092): view('admin/reset_pas...', Array)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->reset_password('QWJoaXNoZWtyLmF...', 'dx32oT09utBkhy4...')
+#4 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-12-15 12:14:47 --> Invalid file: admin/hits.php
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/hits.php')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Common.php(1071): CodeIgniter\View\View->render('admin/hits', Array, true)
+#2 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Dashboard.php(41): view('admin/hits', Array)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Dashboard->web_hits()
+#4 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-12-15 13:36:13 --> Invalid file: admin/reset_password.php
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/reset_pas...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Common.php(1071): CodeIgniter\View\View->render('admin/reset_pas...', Array, true)
+#2 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(1092): view('admin/reset_pas...', Array)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->reset_password('ZGVlcGFrcHJuNzh...', 'dx32oT09utBkhy4...')
+#4 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#7 {main}

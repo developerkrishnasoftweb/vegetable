@@ -1,0 +1,23 @@
+CRITICAL - 2020-05-01 12:29:54 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\skillshare\app\Views\admin\country.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 121, Array)
+#1 C:\xampp\htdocs\skillshare\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\skillshare\system\Common.php(1071): CodeIgniter\View\View->render('admin/country', Array, true)
+#3 C:\xampp\htdocs\skillshare\app\Controllers\Country.php(24): view('admin/country', Array)
+#4 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Country->index()
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Country))
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-05-01 23:35:28 --> Column 'device_type' cannot be null
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('INSERT INTO `st...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `st...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `st...')
+#3 C:\xampp\htdocs\skillshare\system\Database\BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `st...', Array, false)
+#4 C:\xampp\htdocs\skillshare\system\Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\skillshare\system\Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 C:\xampp\htdocs\skillshare\app\Controllers\Services.php(30): CodeIgniter\Model->save(Array)
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Services->register_student()
+#8 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#9 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}

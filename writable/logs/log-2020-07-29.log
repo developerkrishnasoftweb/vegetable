@@ -1,0 +1,6 @@
+CRITICAL - 2020-07-29 01:22:46 --> Call to undefined method Utilities::get_balance()
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Configuration->get_sms_balance()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Configuration))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}

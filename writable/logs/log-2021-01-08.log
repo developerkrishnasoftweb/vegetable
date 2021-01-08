@@ -1,0 +1,33 @@
+CRITICAL - 2021-01-08 11:05:12 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'acs' at line 1
+#0 /home/whoami/Projects/vegetable/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/vegetable/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/vegetable/app/Controllers/Api.php(159): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/vegetable/system/CodeIgniter.php(910): App\Controllers\Api->banner()
+#6 /home/whoami/Projects/vegetable/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/vegetable/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/vegetable/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-08 11:05:53 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'acs' at line 1
+#0 /home/whoami/Projects/vegetable/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/vegetable/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/vegetable/app/Controllers/Api.php(159): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/vegetable/system/CodeIgniter.php(910): App\Controllers\Api->banner()
+#6 /home/whoami/Projects/vegetable/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/vegetable/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/vegetable/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-08 11:08:33 --> Unknown column 'position' in 'order clause'
+#0 /home/whoami/Projects/vegetable/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/vegetable/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/vegetable/app/Controllers/Api.php(774): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/vegetable/system/CodeIgniter.php(910): App\Controllers\Api->product()
+#6 /home/whoami/Projects/vegetable/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/vegetable/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/vegetable/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}

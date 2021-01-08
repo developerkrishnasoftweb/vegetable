@@ -1,0 +1,22 @@
+CRITICAL - 2020-07-19 09:32:17 --> Unknown column 'featured' in 'where clause'
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('select * from c...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from c...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from c...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from c...')
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(40): CodeIgniter\Model->__call('query', Array)
+#5 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(882): App\Controllers\Web->__construct()
+#6 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-07-19 09:33:07 --> Unknown column 'status' in 'where clause'
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('select * from m...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from m...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from m...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from m...')
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(54): CodeIgniter\Model->__call('query', Array)
+#5 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->index()
+#6 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}

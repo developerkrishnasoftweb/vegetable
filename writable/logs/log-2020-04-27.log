@@ -1,0 +1,72 @@
+CRITICAL - 2020-04-27 01:41:36 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'select * from users order by id desc
+FROM `users`' at line 1
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT select *...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT select *...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT select *...')
+#3 C:\xampp\htdocs\skillshare\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT select *...', Array, false)
+#4 C:\xampp\htdocs\skillshare\system\Model.php(1702): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(41): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->edit('1')
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#8 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2020-04-27 01:42:19 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'select * from users order by id desc
+FROM `users`' at line 1
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT select *...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT select *...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT select *...')
+#3 C:\xampp\htdocs\skillshare\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT select *...', Array, false)
+#4 C:\xampp\htdocs\skillshare\system\Model.php(1702): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(40): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->edit('1')
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#8 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2020-04-27 01:45:21 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'select * from users order by id desc
+FROM `users`' at line 1
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT select *...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT select *...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT select *...')
+#3 C:\xampp\htdocs\skillshare\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT select *...', Array, false)
+#4 C:\xampp\htdocs\skillshare\system\Model.php(1702): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(41): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->edit('1')
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#8 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2020-04-27 01:45:50 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'select * from users order by id desc
+FROM `users`' at line 1
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('SELECT select *...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT select *...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT select *...')
+#3 C:\xampp\htdocs\skillshare\system\Database\BaseBuilder.php(1819): CodeIgniter\Database\BaseConnection->query('SELECT select *...', Array, false)
+#4 C:\xampp\htdocs\skillshare\system\Model.php(1702): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(41): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->edit('1')
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#8 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2020-04-27 02:06:19 --> syntax error, unexpected ')'
+#0 C:\xampp\htdocs\skillshare\system\Router\Router.php(192): CodeIgniter\Router\Router->autoRoute('student')
+#1 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(785): CodeIgniter\Router\Router->handle('student')
+#2 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2020-04-27 08:49:04 --> unlink(assets/images/20200427084815.png): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(assets/i...', 'C:\\xampp\\htdocs...', 73, Array)
+#1 C:\xampp\htdocs\skillshare\app\Controllers\Student.php(73): unlink('assets/images/2...')
+#2 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Student->delete('4')
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student))
+#4 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}

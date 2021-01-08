@@ -1,0 +1,12 @@
+CRITICAL - 2020-05-22 08:44:54 --> Call to undefined function App\Controllers\library()
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Cpanel->send()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cpanel))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-22 08:46:12 --> Call to a member function library() on null
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Cpanel->send()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cpanel))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

@@ -1,0 +1,52 @@
+CRITICAL - 2020-07-01 13:12:51 --> Illegal string offset 'id'
+#0 /home/u716350106/domains/my3skills.com/public_html/app/Views/web/header.php(305): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/home/u71635010...', 305, Array)
+#1 /home/u716350106/domains/my3skills.com/public_html/system/View/View.php(236): include('/home/u71635010...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Common.php(1071): CodeIgniter\View\View->render('web/header', Array, true)
+#3 /home/u716350106/domains/my3skills.com/public_html/app/Views/web/home.php(3): view('web/header')
+#4 /home/u716350106/domains/my3skills.com/public_html/system/View/View.php(236): include('/home/u71635010...')
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Common.php(1071): CodeIgniter\View\View->render('web/home', Array, true)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(41): view('web/home', Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->index()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-07-01 13:36:13 --> Illegal string offset 'id'
+#0 /home/u716350106/domains/my3skills.com/public_html/app/Views/web/header.php(305): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/home/u71635010...', 305, Array)
+#1 /home/u716350106/domains/my3skills.com/public_html/system/View/View.php(236): include('/home/u71635010...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Common.php(1071): CodeIgniter\View\View->render('web/header', Array, true)
+#3 /home/u716350106/domains/my3skills.com/public_html/app/Views/web/home.php(3): view('web/header')
+#4 /home/u716350106/domains/my3skills.com/public_html/system/View/View.php(236): include('/home/u71635010...')
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Common.php(1071): CodeIgniter\View\View->render('web/home', Array, true)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(41): view('web/home', Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->index()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-07-01 13:50:50 --> Illegal string offset 'id'
+#0 /home/u716350106/domains/my3skills.com/public_html/app/Views/web/header.php(305): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/home/u71635010...', 305, Array)
+#1 /home/u716350106/domains/my3skills.com/public_html/system/View/View.php(236): include('/home/u71635010...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Common.php(1071): CodeIgniter\View\View->render('web/header', Array, true)
+#3 /home/u716350106/domains/my3skills.com/public_html/app/Views/web/home.php(3): view('web/header')
+#4 /home/u716350106/domains/my3skills.com/public_html/system/View/View.php(236): include('/home/u71635010...')
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Common.php(1071): CodeIgniter\View\View->render('web/home', Array, true)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(41): view('web/home', Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->index()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-07-01 20:44:37 --> A non-numeric value encountered
+#0 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(868): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', '/home/u71635010...', 868, Array)
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->make_payment('student', 'course', 'amount')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#3 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-07-01 20:44:59 --> Too few arguments to function App\Controllers\Services::make_payment(), 0 passed in /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php on line 910 and exactly 3 expected
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->make_payment()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}

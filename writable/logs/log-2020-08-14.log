@@ -1,0 +1,55 @@
+CRITICAL - 2020-08-14 01:00:36 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and student_id=' at line 1
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('delete from car...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('delete from car...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('delete from car...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('delete from car...')
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(1666): CodeIgniter\Model->__call('query', Array)
+#5 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->remove_cart()
+#6 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-08-14 01:00:57 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and student_id=' at line 1
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('delete from car...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('delete from car...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('delete from car...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('delete from car...')
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(1666): CodeIgniter\Model->__call('query', Array)
+#5 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->remove_cart()
+#6 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-08-14 01:01:23 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and student_id=' at line 1
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('delete from car...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('delete from car...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('delete from car...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('delete from car...')
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(1666): CodeIgniter\Model->__call('query', Array)
+#5 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->remove_cart()
+#6 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-08-14 01:01:56 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and student_id=11' at line 1
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('delete from car...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('delete from car...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('delete from car...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('delete from car...')
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(1666): CodeIgniter\Model->__call('query', Array)
+#5 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->remove_cart()
+#6 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-08-14 22:33:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and status='y'' at line 1
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('select * from t...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from t...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from t...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from t...')
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(232): CodeIgniter\Model->__call('query', Array)
+#5 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->get_topics()
+#6 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}

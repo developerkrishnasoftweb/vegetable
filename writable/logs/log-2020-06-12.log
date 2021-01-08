@@ -1,0 +1,87 @@
+CRITICAL - 2020-06-12 14:29:03 --> Class 'App\ThirdParty\BaseController' not found
+#0 C:\xampp\htdocs\my3skill\system\Router\Router.php(549): include_once()
+#1 C:\xampp\htdocs\my3skill\system\Router\Router.php(192): CodeIgniter\Router\Router->autoRoute('/web/payment')
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(785): CodeIgniter\Router\Router->handle('/web/payment')
+#3 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(358): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-06-12 14:29:24 --> Class 'Stripe\Product' not found
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->payment()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-12 14:32:05 --> Class 'Stripe\Product' not found
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->payment()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-12 14:37:27 --> Class 'Stripe\Product' not found
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->payment()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-12 14:39:18 --> Class 'Stripe\Product' not found
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->payment()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-12 14:41:06 --> Class 'Stripe\Stripe' not found
+#0 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(320): Stripe_lib->__construct()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->payment()
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#3 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-12 14:42:14 --> Class 'Stripe_lib' not found
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->payment()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-12 14:42:46 --> Undefined constant 'Stripe\Stripe'
+#0 C:\xampp\htdocs\my3skill\system\Autoloader\Autoloader.php(365): require_once()
+#1 C:\xampp\htdocs\my3skill\system\Autoloader\Autoloader.php(340): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\my3skill\system\Autoloader\Autoloader.php(264): CodeIgniter\Autoloader\Autoloader->loadLegacy('Stripe_lib.php')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('Stripe_lib')
+#4 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(320): spl_autoload_call('Stripe_lib')
+#5 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->payment()
+#6 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#7 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-12 14:42:54 --> Undefined constant 'Stripe'
+#0 C:\xampp\htdocs\my3skill\system\Autoloader\Autoloader.php(365): require_once()
+#1 C:\xampp\htdocs\my3skill\system\Autoloader\Autoloader.php(340): CodeIgniter\Autoloader\Autoloader->requireFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\my3skill\system\Autoloader\Autoloader.php(264): CodeIgniter\Autoloader\Autoloader->loadLegacy('Stripe_lib.php')
+#3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('Stripe_lib')
+#4 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(320): spl_autoload_call('Stripe_lib')
+#5 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->payment()
+#6 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#7 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-06-12 14:42:59 --> Class 'Stripe_lib' not found
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->payment()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-12 14:43:07 --> Class 'Stripe\Stripe' not found
+#0 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(320): Stripe_lib->__construct()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->payment()
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#3 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-06-12 14:43:18 --> Class 'Stripe\Product' not found
+#0 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(321): Stripe_lib->getProduct()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->payment()
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#3 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

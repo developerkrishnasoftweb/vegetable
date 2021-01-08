@@ -1,0 +1,13 @@
+CRITICAL - 2020-10-13 22:19:10 --> Column 'city_id' cannot be null
+#0 /home/kriishna/beauty.kriishnacab.com/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `us...')
+#1 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 /home/kriishna/beauty.kriishnacab.com/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/kriishna/beauty.kriishnacab.com/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/kriishna/beauty.kriishnacab.com/app/Controllers/Web.php(365): CodeIgniter\Model->save(Array)
+#7 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(910): App\Controllers\Web->register_user()
+#8 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/kriishna/beauty.kriishnacab.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}

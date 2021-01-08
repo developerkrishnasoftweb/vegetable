@@ -1,0 +1,58 @@
+CRITICAL - 2020-08-18 00:57:17 --> Column 'course_id' cannot be null
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `wi...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `wi...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `wi...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `wi...', Array, false)
+#4 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(545): CodeIgniter\Model->save(Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->add_wishlist()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-08-18 00:57:52 --> Column 'course_id' cannot be null
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `wi...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `wi...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `wi...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `wi...', Array, false)
+#4 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(545): CodeIgniter\Model->save(Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->add_wishlist()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-08-18 00:59:30 --> Column 'course_id' cannot be null
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `wi...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `wi...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `wi...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `wi...', Array, false)
+#4 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(545): CodeIgniter\Model->save(Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->add_wishlist()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-08-18 00:59:56 --> Column 'course_id' cannot be null
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `wi...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `wi...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `wi...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `wi...', Array, false)
+#4 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(545): CodeIgniter\Model->save(Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->add_wishlist()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-08-18 23:51:08 --> Too few arguments to function App\Controllers\Services::check_mobile_teacher(), 0 passed in /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->check_mobile_teacher()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}

@@ -1,0 +1,54 @@
+CRITICAL - 2020-11-03 11:07:37 --> Invalid argument supplied for foreach()
+#0 /home/whoami/Projects/e-commerce/app/Views/admin/order_progress.php(130): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/whoami/Projects/e-commerce/system/View/View.php(236): include('/home/whoami/Pr...')
+#2 /home/whoami/Projects/e-commerce/system/Common.php(1071): CodeIgniter\View\View->render()
+#3 /home/whoami/Projects/e-commerce/app/Controllers/Order_progress.php(26): view()
+#4 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Order_progress->index()
+#5 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#6 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-11-03 16:41:16 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home/whoami/Projects/e-commerce/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
+#1 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-03 16:41:30 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home/whoami/Projects/e-commerce/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
+#1 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-03 16:41:44 --> Invalid file: {0}
+#0 /home/whoami/Projects/e-commerce/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /home/whoami/Projects/e-commerce/system/Common.php(1071): CodeIgniter\View\View->render()
+#2 /home/whoami/Projects/e-commerce/app/Controllers/Product.php(128): view()
+#3 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
+#4 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#5 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-11-03 16:42:27 --> Invalid argument supplied for foreach()
+#0 /home/whoami/Projects/e-commerce/app/Views/admin/product_gallery.php(120): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/whoami/Projects/e-commerce/system/View/View.php(236): include('/home/whoami/Pr...')
+#2 /home/whoami/Projects/e-commerce/system/Common.php(1071): CodeIgniter\View\View->render()
+#3 /home/whoami/Projects/e-commerce/app/Controllers/Product.php(128): view()
+#4 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
+#5 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#6 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-11-03 16:59:12 --> Column 'customer_id' cannot be null
+#0 /home/whoami/Projects/e-commerce/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/e-commerce/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/e-commerce/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/whoami/Projects/e-commerce/system/Model.php(550): CodeIgniter\Model->insert()
+#6 /home/whoami/Projects/e-commerce/app/Controllers/Api.php(377): CodeIgniter\Model->save()
+#7 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Api->rating()
+#8 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#9 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}

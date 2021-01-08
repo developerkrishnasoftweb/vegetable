@@ -1,0 +1,23 @@
+CRITICAL - 2020-09-23 00:39:13 --> Column 'type' cannot be null
+#0 C:\xampp\htdocs\ether\system\Database\MySQLi\Connection.php(330): mysqli->query('INSERT INTO `fa...')
+#1 C:\xampp\htdocs\ether\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `fa...')
+#2 C:\xampp\htdocs\ether\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `fa...')
+#3 C:\xampp\htdocs\ether\system\Database\BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `fa...', Array, false)
+#4 C:\xampp\htdocs\ether\system\Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\ether\system\Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 C:\xampp\htdocs\ether\app\Controllers\Faq.php(42): CodeIgniter\Model->save(Array)
+#7 C:\xampp\htdocs\ether\system\CodeIgniter.php(910): App\Controllers\Faq->insert()
+#8 C:\xampp\htdocs\ether\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Faq))
+#9 C:\xampp\htdocs\ether\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ether\index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-09-23 01:48:06 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\ether\app\Views\web\topup.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 43, Array)
+#1 C:\xampp\htdocs\ether\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\ether\system\Common.php(1071): CodeIgniter\View\View->render('web/topup', Array, true)
+#3 C:\xampp\htdocs\ether\app\Controllers\Web.php(42): view('web/topup', Array)
+#4 C:\xampp\htdocs\ether\system\CodeIgniter.php(910): App\Controllers\Web->topup()
+#5 C:\xampp\htdocs\ether\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#6 C:\xampp\htdocs\ether\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ether\index.php(53): CodeIgniter\CodeIgniter->run()
+#8 {main}

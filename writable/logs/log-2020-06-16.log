@@ -1,0 +1,15 @@
+CRITICAL - 2020-06-16 21:06:28 --> Object of class stdClass could not be converted to string
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(882): App\Controllers\Web->__construct()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-16 21:09:33 --> count(): Parameter must be an array or an object that implements Countable
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'count(): Parame...', 'C:\\xampp\\htdocs...', 13, Array)
+#1 C:\xampp\htdocs\my3skill\app\Models\Currency_model.php(13): count(Object(CodeIgniter\Database\MySQLi\Result))
+#2 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(18): App\Models\Currency_model->getCurrency('IN')
+#3 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(882): App\Controllers\Web->__construct()
+#4 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#5 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}

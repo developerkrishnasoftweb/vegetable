@@ -1,0 +1,33 @@
+CRITICAL - 2020-07-02 23:22:52 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and token=''' at line 1
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('delete from dev...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('delete from dev...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('delete from dev...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('delete from dev...')
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(355): CodeIgniter\Model->__call('query', Array)
+#5 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->logout_student('5')
+#6 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-07-02 23:23:00 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and token=''' at line 1
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('delete from dev...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('delete from dev...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('delete from dev...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('delete from dev...')
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(355): CodeIgniter\Model->__call('query', Array)
+#5 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->logout_student('5')
+#6 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-07-02 23:23:06 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and token=''' at line 1
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('delete from dev...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('delete from dev...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('delete from dev...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('delete from dev...')
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(355): CodeIgniter\Model->__call('query', Array)
+#5 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->logout_student('5')
+#6 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}

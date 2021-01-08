@@ -1,0 +1,107 @@
+CRITICAL - 2020-04-26 00:30:35 --> Too few arguments to function App\Controllers\Home::test(), 0 passed in C:\xampp\htdocs\skillshare\system\CodeIgniter.php on line 910 and exactly 1 expected
+#0 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Home->test()
+#1 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2020-04-26 00:30:53 --> Too few arguments to function App\Controllers\Home::test(), 0 passed in C:\xampp\htdocs\skillshare\system\CodeIgniter.php on line 910 and exactly 1 expected
+#0 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Home->test()
+#1 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2020-04-26 09:15:02 --> Call to a member function orderBy() on null
+#0 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->index()
+#1 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#2 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2020-04-26 09:17:08 --> Allowed fields must be specified for model: {0}
+#0 C:\xampp\htdocs\skillshare\system\Model.php(1218): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\Data...')
+#1 C:\xampp\htdocs\skillshare\system\Model.php(702): CodeIgniter\Model->doProtectFields(Array)
+#2 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(28): CodeIgniter\Model->insert(Array)
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->store()
+#4 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2020-04-26 09:20:26 --> Allowed fields must be specified for model: {0}
+#0 C:\xampp\htdocs\skillshare\system\Model.php(1218): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\Data...')
+#1 C:\xampp\htdocs\skillshare\system\Model.php(702): CodeIgniter\Model->doProtectFields(Array)
+#2 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(28): CodeIgniter\Model->insert(Array)
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->store()
+#4 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2020-04-26 09:21:51 --> Allowed fields must be specified for model: {0}
+#0 C:\xampp\htdocs\skillshare\system\Model.php(1218): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\Data...')
+#1 C:\xampp\htdocs\skillshare\system\Model.php(702): CodeIgniter\Model->doProtectFields(Array)
+#2 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(28): CodeIgniter\Model->insert(Array)
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->store()
+#4 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2020-04-26 09:21:58 --> Allowed fields must be specified for model: {0}
+#0 C:\xampp\htdocs\skillshare\system\Model.php(1218): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\Data...')
+#1 C:\xampp\htdocs\skillshare\system\Model.php(702): CodeIgniter\Model->doProtectFields(Array)
+#2 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(28): CodeIgniter\Model->insert(Array)
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->store()
+#4 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2020-04-26 09:27:32 --> Allowed fields must be specified for model: {0}
+#0 C:\xampp\htdocs\skillshare\system\Model.php(1218): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\Data...')
+#1 C:\xampp\htdocs\skillshare\system\Model.php(702): CodeIgniter\Model->doProtectFields(Array)
+#2 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(28): CodeIgniter\Model->insert(Array)
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->store()
+#4 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2020-04-26 09:44:37 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::insert()
+#0 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(28): App\Models\Data_model->add_data(Array)
+#1 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->store()
+#2 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2020-04-26 09:45:29 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::insert()
+#0 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(28): App\Models\Data_model->add_data(Array)
+#1 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->store()
+#2 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2020-04-26 10:22:46 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\skillshare\system\Model.php(1190): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\skillshare\system\Model.php(1700): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(16): CodeIgniter\Model->__call('orderBy', Array)
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->index()
+#4 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2020-04-26 10:23:07 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\skillshare\system\Model.php(1190): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\skillshare\system\Model.php(1700): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\skillshare\app\Controllers\Second.php(16): CodeIgniter\Model->__call('orderBy', Array)
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Second->index()
+#4 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Second))
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\skillshare\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\skillshare\system\Commands\Server\rewrite.php(34): require_once('C:\\xampp\\htdocs...')
+#8 {main}

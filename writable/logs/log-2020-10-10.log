@@ -1,0 +1,37 @@
+CRITICAL - 2020-10-10 07:22:41 --> Unknown column 'staus' in 'where clause'
+#0 /home/kriishna/beauty.kriishnacab.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select * from c...')
+#1 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from c...')
+#2 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from c...')
+#3 /home/kriishna/beauty.kriishnacab.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from c...')
+#4 /home/kriishna/beauty.kriishnacab.com/app/Controllers/Business.php(323): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(910): App\Controllers\Business->services()
+#6 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Business))
+#7 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/beauty.kriishnacab.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-10-10 08:11:28 --> Illegal string offset 'id'
+#0 /home/kriishna/beauty.kriishnacab.com/app/Views/web/pages/footer.php(92): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/home/kriishna/...', 92, Array)
+#1 /home/kriishna/beauty.kriishnacab.com/system/View/View.php(236): include('/home/kriishna/...')
+#2 /home/kriishna/beauty.kriishnacab.com/system/Common.php(1071): CodeIgniter\View\View->render('web/pages/foote...', Array, true)
+#3 /home/kriishna/beauty.kriishnacab.com/app/Views/web/check_out.php(210): view('web/pages/foote...')
+#4 /home/kriishna/beauty.kriishnacab.com/system/View/View.php(236): include('/home/kriishna/...')
+#5 /home/kriishna/beauty.kriishnacab.com/system/Common.php(1071): CodeIgniter\View\View->render('web/check_out', Array, true)
+#6 /home/kriishna/beauty.kriishnacab.com/app/Controllers/Web.php(192): view('web/check_out', Array)
+#7 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(910): App\Controllers\Web->checkOut()
+#8 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/kriishna/beauty.kriishnacab.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-10-10 13:15:22 --> Unknown column 'opening_days' in 'field list'
+#0 /home/kriishna/beauty.kriishnacab.com/system/Database/MySQLi/Connection.php(330): mysqli->query('UPDATE `busines...')
+#1 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `busines...')
+#2 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `busines...')
+#3 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseBuilder.php(2410): CodeIgniter\Database\BaseConnection->query('UPDATE `busines...', Array, false)
+#4 /home/kriishna/beauty.kriishnacab.com/system/Model.php(851): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/kriishna/beauty.kriishnacab.com/system/Model.php(546): CodeIgniter\Model->update(Array, Array)
+#6 /home/kriishna/beauty.kriishnacab.com/app/Controllers/Business.php(134): CodeIgniter\Model->save(Array)
+#7 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(910): App\Controllers\Business->update_business_profile()
+#8 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Business))
+#9 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/kriishna/beauty.kriishnacab.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}

@@ -1,0 +1,161 @@
+CRITICAL - 2020-06-29 11:54:43 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\my3skill\app\Views\admin\hits.php(101): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 101, Array)
+#1 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('admin/hits', Array, true)
+#3 C:\xampp\htdocs\my3skill\app\Controllers\Dashboard.php(35): view('admin/hits')
+#4 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Dashboard->web_hits()
+#5 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#6 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-06-29 12:00:40 --> Call to a member function post() on null
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Dashboard->get_hits()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-29 12:00:56 --> Call to a member function post() on null
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Dashboard->get_hits()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-29 12:02:28 --> Call to a member function post() on null
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Dashboard->get_hits()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-29 12:02:35 --> Call to a member function post() on null
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Dashboard->get_hits()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-29 12:03:01 --> Call to a member function view() on null
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Dashboard->get_hits()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-29 12:03:12 --> Call to a member function view() on null
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Dashboard->get_hits()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-29 12:03:18 --> Call to a member function view() on null
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Dashboard->get_hits()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-06-29 23:05:07 --> Illegal string offset 'id'
+#0 C:\xampp\htdocs\my3skill\app\Views\web\header.php(305): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 305, Array)
+#1 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/header', Array, true)
+#3 C:\xampp\htdocs\my3skill\app\Views\web\teacher.php(1): view('web/header')
+#4 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/teacher', Array, true)
+#6 C:\xampp\htdocs\my3skill\app\Controllers\Teacherzone.php(43): view('web/teacher', Array)
+#7 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Teacherzone->index()
+#8 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Teacherzone))
+#9 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-06-29 23:06:21 --> Illegal string offset 'id'
+#0 C:\xampp\htdocs\my3skill\app\Views\web\header.php(305): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 305, Array)
+#1 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/header', Array, true)
+#3 C:\xampp\htdocs\my3skill\app\Views\web\home.php(3): view('web/header')
+#4 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/home', Array, true)
+#6 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(39): view('web/home', Array)
+#7 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->index()
+#8 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-06-29 23:06:38 --> Illegal string offset 'id'
+#0 C:\xampp\htdocs\my3skill\app\Views\web\header.php(305): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 305, Array)
+#1 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/header', Array, true)
+#3 C:\xampp\htdocs\my3skill\app\Views\web\home.php(3): view('web/header')
+#4 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/home', Array, true)
+#6 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(39): view('web/home', Array)
+#7 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->index()
+#8 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-06-29 23:11:22 --> Illegal string offset 'id'
+#0 C:\xampp\htdocs\my3skill\app\Views\web\header.php(306): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 306, Array)
+#1 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/header', Array, true)
+#3 C:\xampp\htdocs\my3skill\app\Views\web\home.php(3): view('web/header')
+#4 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/home', Array, true)
+#6 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(39): view('web/home', Array)
+#7 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->index()
+#8 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-06-29 23:11:30 --> Illegal string offset 'id'
+#0 C:\xampp\htdocs\my3skill\app\Views\web\header.php(306): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 306, Array)
+#1 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/header', Array, true)
+#3 C:\xampp\htdocs\my3skill\app\Views\web\home.php(3): view('web/header')
+#4 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/home', Array, true)
+#6 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(39): view('web/home', Array)
+#7 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->index()
+#8 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-06-29 23:13:39 --> Illegal string offset 'id'
+#0 C:\xampp\htdocs\my3skill\app\Views\web\header.php(306): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 306, Array)
+#1 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/header', Array, true)
+#3 C:\xampp\htdocs\my3skill\app\Views\web\home.php(3): view('web/header')
+#4 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/home', Array, true)
+#6 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(39): view('web/home', Array)
+#7 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->index()
+#8 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-06-29 23:15:38 --> Illegal string offset 'id'
+#0 C:\xampp\htdocs\my3skill\app\Views\web\header.php(305): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 305, Array)
+#1 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/header', Array, true)
+#3 C:\xampp\htdocs\my3skill\app\Views\web\home.php(3): view('web/header')
+#4 C:\xampp\htdocs\my3skill\system\View\View.php(236): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\my3skill\system\Common.php(1071): CodeIgniter\View\View->render('web/home', Array, true)
+#6 C:\xampp\htdocs\my3skill\app\Controllers\Web.php(39): view('web/home', Array)
+#7 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Web->index()
+#8 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-06-29 23:47:35 --> Class 'Kint\Kint' not found
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(224): require_once()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(193): CodeIgniter\CodeIgniter->initializeKint()
+#2 /home/u716350106/domains/my3skills.com/public_html/system/bootstrap.php(168): CodeIgniter\CodeIgniter->initialize()
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(36): require('/home/u71635010...')
+#4 {main}
+CRITICAL - 2020-06-29 23:48:06 --> Class 'Kint\Kint' not found
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(224): require_once()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(193): CodeIgniter\CodeIgniter->initializeKint()
+#2 /home/u716350106/domains/my3skills.com/public_html/system/bootstrap.php(168): CodeIgniter\CodeIgniter->initialize()
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(36): require('/home/u71635010...')
+#4 {main}
+CRITICAL - 2020-06-29 23:48:45 --> Class 'Kint\Kint' not found
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(224): require_once()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(193): CodeIgniter\CodeIgniter->initializeKint()
+#2 /home/u716350106/domains/my3skills.com/public_html/system/bootstrap.php(168): CodeIgniter\CodeIgniter->initialize()
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(36): require('/home/u71635010...')
+#4 {main}

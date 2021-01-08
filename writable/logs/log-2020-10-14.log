@@ -1,0 +1,26 @@
+CRITICAL - 2020-10-14 03:14:43 --> Column 'user_id' cannot be null
+#0 /home/kriishna/beauty.kriishnacab.com/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `bo...')
+#1 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bo...')
+#2 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bo...')
+#3 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bo...', Array, false)
+#4 /home/kriishna/beauty.kriishnacab.com/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/kriishna/beauty.kriishnacab.com/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/kriishna/beauty.kriishnacab.com/app/Controllers/Web.php(320): CodeIgniter\Model->save(Array)
+#7 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(910): App\Controllers\Web->payment_success()
+#8 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/kriishna/beauty.kriishnacab.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-10-14 09:06:14 --> Unknown column 'transaction_id' in 'field list'
+#0 /home/kriishna/beauty.kriishnacab.com/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `bu...')
+#1 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `bu...')
+#2 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `bu...')
+#3 /home/kriishna/beauty.kriishnacab.com/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `bu...', Array, false)
+#4 /home/kriishna/beauty.kriishnacab.com/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/kriishna/beauty.kriishnacab.com/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/kriishna/beauty.kriishnacab.com/app/Controllers/Business.php(572): CodeIgniter\Model->save(Array)
+#7 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(910): App\Controllers\Business->purchase_subscription('1')
+#8 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Business))
+#9 /home/kriishna/beauty.kriishnacab.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/kriishna/beauty.kriishnacab.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}

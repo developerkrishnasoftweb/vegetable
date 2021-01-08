@@ -1,0 +1,140 @@
+CRITICAL - 2020-09-30 12:47:06 --> Call to a member function get_menus() on null
+#0 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->index()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-30 12:47:36 --> Call to a member function get_menus() on null
+#0 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->index()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-30 12:50:38 --> Class 'App\Models\Add_ons_model' not found
+#0 /home/krishna/Desktop/beauty/system/CodeIgniter.php(882): App\Controllers\Business->__construct()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-30 12:51:35 --> Class 'App\Models\Add_ons_model' not found
+#0 /home/krishna/Desktop/beauty/system/CodeIgniter.php(882): App\Controllers\Business->__construct()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-30 12:56:43 --> Call to a member function get_menus() on null
+#0 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->pastBooking()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-30 13:31:51 --> Call to a member function query() on null
+#0 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->login()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-30 13:32:26 --> Call to a member function query() on null
+#0 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->login()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-30 13:34:38 --> Call to a member function query() on null
+#0 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->login()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-30 13:35:17 --> Call to a member function query() on null
+#0 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->login()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-30 13:39:42 --> Call to a member function query() on null
+#0 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->login()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-30 13:40:54 --> Argument 2 passed to view() must be of the type array, null given, called in /home/krishna/Desktop/beauty/app/Controllers/User.php on line 24
+#0 /home/krishna/Desktop/beauty/app/Controllers/User.php(24): view()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->index()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#3 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#4 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2020-09-30 13:47:09 --> Call to a member function get_menus() on null
+#0 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->upcomingBooking()
+#1 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-09-30 13:47:29 --> Invalid argument supplied for foreach()
+#0 /home/krishna/Desktop/beauty/app/Views/admin/pages/sidebar.php(40): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/krishna/Desktop/beauty/system/View/View.php(236): include('/home/krishna/D...')
+#2 /home/krishna/Desktop/beauty/system/Common.php(1071): CodeIgniter\View\View->render()
+#3 /home/krishna/Desktop/beauty/app/Views/user/booking/upcoming_booking.php(18): view()
+#4 /home/krishna/Desktop/beauty/system/View/View.php(236): include('/home/krishna/D...')
+#5 /home/krishna/Desktop/beauty/system/Common.php(1071): CodeIgniter\View\View->render()
+#6 /home/krishna/Desktop/beauty/app/Controllers/User.php(129): view()
+#7 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->upcomingBooking()
+#8 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#9 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-09-30 13:50:27 --> Invalid file: {0}
+#0 /home/krishna/Desktop/beauty/system/View/View.php(224): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /home/krishna/Desktop/beauty/system/Common.php(1071): CodeIgniter\View\View->render()
+#2 /home/krishna/Desktop/beauty/app/Controllers/User.php(137): view()
+#3 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->past_booking()
+#4 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#5 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#6 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2020-09-30 15:26:30 --> Unknown column 'business_services.title' in 'field list'
+#0 /home/krishna/Desktop/beauty/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/krishna/Desktop/beauty/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/krishna/Desktop/beauty/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/krishna/Desktop/beauty/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/krishna/Desktop/beauty/app/Controllers/User.php(136): CodeIgniter\Model->__call()
+#5 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->past_booking()
+#6 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-09-30 15:33:19 --> Column 'name' cannot be null
+#0 /home/krishna/Desktop/beauty/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/krishna/Desktop/beauty/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/krishna/Desktop/beauty/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/krishna/Desktop/beauty/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query()
+#4 /home/krishna/Desktop/beauty/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/krishna/Desktop/beauty/system/Model.php(550): CodeIgniter\Model->insert()
+#6 /home/krishna/Desktop/beauty/app/Controllers/User.php(74): CodeIgniter\Model->save()
+#7 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->profile()
+#8 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#9 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-09-30 15:35:23 --> Invalid argument supplied for foreach()
+#0 /home/krishna/Desktop/beauty/app/Views/user/user_profile.php(74): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/krishna/Desktop/beauty/system/View/View.php(236): include('/home/krishna/D...')
+#2 /home/krishna/Desktop/beauty/system/Common.php(1071): CodeIgniter\View\View->render()
+#3 /home/krishna/Desktop/beauty/app/Controllers/User.php(79): view()
+#4 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->profile()
+#5 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#6 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2020-09-30 17:08:12 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=< NOW() and booking.service_provided = 'n' and booking.user_id = user.id and bo' at line 1
+#0 /home/krishna/Desktop/beauty/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/krishna/Desktop/beauty/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/krishna/Desktop/beauty/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/krishna/Desktop/beauty/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/krishna/Desktop/beauty/app/Controllers/User.php(128): CodeIgniter\Model->__call()
+#5 /home/krishna/Desktop/beauty/system/CodeIgniter.php(910): App\Controllers\User->past_booking()
+#6 /home/krishna/Desktop/beauty/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/krishna/Desktop/beauty/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/krishna/Desktop/beauty/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}

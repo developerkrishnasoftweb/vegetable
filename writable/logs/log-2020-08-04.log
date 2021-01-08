@@ -1,0 +1,13 @@
+CRITICAL - 2020-08-04 11:14:50 --> Illegal string offset 'image'
+#0 /home/u716350106/domains/my3skills.com/public_html/app/Views/web/pages/header.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', '/home/u71635010...', 36, Array)
+#1 /home/u716350106/domains/my3skills.com/public_html/system/View/View.php(236): include('/home/u71635010...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Common.php(1071): CodeIgniter\View\View->render('web/pages/heade...', Array, true)
+#3 /home/u716350106/domains/my3skills.com/public_html/app/Views/web/help.php(26): view('web/pages/heade...')
+#4 /home/u716350106/domains/my3skills.com/public_html/system/View/View.php(236): include('/home/u71635010...')
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Common.php(1071): CodeIgniter\View\View->render('web/help', Array, true)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(950): view('web/help', Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->help()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}

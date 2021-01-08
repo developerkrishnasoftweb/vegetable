@@ -1,0 +1,13 @@
+CRITICAL - 2021-01-01 19:07:16 --> Column 'token' cannot be null
+#0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `cu...')
+#1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 /home3/saptkri1/admin.saptkrishi.in/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home3/saptkri1/admin.saptkrishi.in/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home3/saptkri1/admin.saptkrishi.in/app/Controllers/Api.php(227): CodeIgniter\Model->save(Array)
+#7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Api->customer('signup')
+#8 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#9 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}

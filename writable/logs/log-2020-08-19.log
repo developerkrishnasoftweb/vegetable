@@ -1,0 +1,97 @@
+CRITICAL - 2020-08-19 00:25:38 --> Too few arguments to function App\Controllers\Services::get_teacher_profile(), 0 passed in /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->get_teacher_profile()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-19 00:26:10 --> Too few arguments to function App\Controllers\Services::get_teacher_profile(), 0 passed in /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->get_teacher_profile()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-19 09:14:09 --> Column 'description' cannot be null
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `te...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `te...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `te...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `te...', Array, false)
+#4 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(1030): CodeIgniter\Model->save(Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->submit_teacher()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-08-19 17:44:53 --> Column 'student_id' cannot be null
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `pa...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', Array, false)
+#4 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(492): CodeIgniter\Model->save(Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->checkout()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-08-19 17:46:50 --> Column 'student_id' cannot be null
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `pa...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pa...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pa...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pa...', Array, false)
+#4 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(492): CodeIgniter\Model->save(Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->checkout()
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-08-19 19:58:52 --> The api key provided is invalid
+#0 /home/u716350106/domains/my3skills.com/public_html/app/Libraries/razorpay/src/Request.php(109): Razorpay\Api\Request->processError(Array, 401, Object(Requests_Response))
+#1 /home/u716350106/domains/my3skills.com/public_html/app/Libraries/razorpay/src/Request.php(58): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#2 /home/u716350106/domains/my3skills.com/public_html/app/Libraries/razorpay/src/Entity.php(86): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#3 /home/u716350106/domains/my3skills.com/public_html/app/Libraries/razorpay/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#4 /home/u716350106/domains/my3skills.com/public_html/app/Libraries/razorpay/src/Order.php(12): Razorpay\Api\Entity->create(Array)
+#5 /home/u716350106/domains/my3skills.com/public_html/app/Views/web/wallet_checkout.php(177): Razorpay\Api\Order->create(Array)
+#6 /home/u716350106/domains/my3skills.com/public_html/system/View/View.php(236): include('/home/u71635010...')
+#7 /home/u716350106/domains/my3skills.com/public_html/system/Common.php(1071): CodeIgniter\View\View->render('web/wallet_chec...', Array, true)
+#8 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Web.php(1111): view('web/wallet_chec...', Array)
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Web->wallet_checkout()
+#10 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Web))
+#11 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2020-08-19 21:01:09 --> Too few arguments to function App\Controllers\Services::get_teacher_profile(), 0 passed in /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->get_teacher_profile()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-19 21:10:48 --> Too few arguments to function App\Controllers\Services::get_teacher_profile(), 0 passed in /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->get_teacher_profile()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-19 21:11:09 --> Too few arguments to function App\Controllers\Services::get_teacher_profile(), 0 passed in /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->get_teacher_profile()
+#1 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#2 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-08-19 21:17:22 --> Column 'name' cannot be null
+#0 /home/u716350106/domains/my3skills.com/public_html/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `te...')
+#1 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `te...')
+#2 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `te...')
+#3 /home/u716350106/domains/my3skills.com/public_html/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `te...', Array, false)
+#4 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/u716350106/domains/my3skills.com/public_html/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/u716350106/domains/my3skills.com/public_html/app/Controllers/Services.php(636): CodeIgniter\Model->save(Array)
+#7 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(910): App\Controllers\Services->profile_teacher('27')
+#8 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#9 /home/u716350106/domains/my3skills.com/public_html/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/u716350106/domains/my3skills.com/public_html/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}

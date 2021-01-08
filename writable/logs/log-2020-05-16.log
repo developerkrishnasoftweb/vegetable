@@ -1,0 +1,28 @@
+CRITICAL - 2020-05-16 12:13:00 --> session_start(): Cannot start session when headers already sent
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'session_start()...', 'C:\\xampp\\htdocs...', 17, Array)
+#1 C:\xampp\htdocs\skillshare\app\Controllers\Teacherzone.php(17): session_start()
+#2 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(882): App\Controllers\Teacherzone->__construct()
+#3 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#4 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2020-05-16 12:13:00 --> Uncaught ErrorException: Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\skillshare\app\Config\Events.php:27) in C:\xampp\htdocs\skillshare\system\Debug\Exceptions.php:161
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot modify h...', 'C:\\xampp\\htdocs...', 161, Array)
+#1 C:\xampp\htdocs\skillshare\system\Debug\Exceptions.php(161): header('HTTP/1.1 500 In...', true, 500)
+#2 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#3 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2020-05-16 20:23:29 --> Table 'my3skill.courses' doesn't exist
+#0 C:\xampp\htdocs\skillshare\system\Database\MySQLi\Connection.php(330): mysqli->query('select * from c...')
+#1 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from c...')
+#2 C:\xampp\htdocs\skillshare\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from c...')
+#3 C:\xampp\htdocs\skillshare\system\Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from c...')
+#4 C:\xampp\htdocs\skillshare\app\Controllers\Services.php(144): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(910): App\Controllers\Services->get_featured_courses()
+#6 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#7 C:\xampp\htdocs\skillshare\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\skillshare\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}

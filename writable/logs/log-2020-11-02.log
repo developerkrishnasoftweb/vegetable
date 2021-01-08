@@ -1,0 +1,139 @@
+CRITICAL - 2020-11-02 09:55:15 --> Unknown column 'city.name' in 'field list'
+#0 /home/whoami/Projects/e-commerce/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/e-commerce/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/e-commerce/app/Controllers/Area.php(25): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Area->index()
+#6 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-02 09:57:03 --> Unknown column 'city.name' in 'field list'
+#0 /home/whoami/Projects/e-commerce/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/e-commerce/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/e-commerce/app/Controllers/Area.php(25): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Area->index()
+#6 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-02 10:06:49 --> Column 'title' cannot be null
+#0 /home/whoami/Projects/e-commerce/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/e-commerce/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/e-commerce/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/whoami/Projects/e-commerce/system/Model.php(550): CodeIgniter\Model->insert()
+#6 /home/whoami/Projects/e-commerce/app/Controllers/Country.php(37): CodeIgniter\Model->save()
+#7 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Country->insert()
+#8 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#9 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-11-02 10:26:21 --> Unknown column 's.country_id' in 'where clause'
+#0 /home/whoami/Projects/e-commerce/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/e-commerce/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/e-commerce/app/Controllers/State.php(23): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\State->index()
+#6 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-02 10:51:04 --> Unknown column 'c.country_id' in 'where clause'
+#0 /home/whoami/Projects/e-commerce/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/e-commerce/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/e-commerce/app/Controllers/City.php(25): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\City->index()
+#6 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-02 11:05:02 --> Column 'title' cannot be null
+#0 /home/whoami/Projects/e-commerce/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/e-commerce/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/e-commerce/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/whoami/Projects/e-commerce/system/Model.php(550): CodeIgniter\Model->insert()
+#6 /home/whoami/Projects/e-commerce/app/Controllers/City.php(39): CodeIgniter\Model->save()
+#7 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\City->insert()
+#8 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#9 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-11-02 11:19:12 --> Table 'e_commerce.counrty' doesn't exist
+#0 /home/whoami/Projects/e-commerce/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/e-commerce/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/e-commerce/app/Controllers/Area.php(23): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Area->index()
+#6 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-02 11:19:42 --> Unknown column 'a.country_id' in 'where clause'
+#0 /home/whoami/Projects/e-commerce/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/e-commerce/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/e-commerce/app/Controllers/Area.php(26): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Area->index()
+#6 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-02 12:13:53 --> Class 'App\Controllers\Area_model' not found
+#0 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-02 12:13:56 --> Class 'App\Controllers\Area_model' not found
+#0 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-02 12:14:40 --> Class 'App\Controllers\Area_model' not found
+#0 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-02 12:19:39 --> Unknown column 'country_id' in 'where clause'
+#0 /home/whoami/Projects/e-commerce/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/e-commerce/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/e-commerce/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/e-commerce/app/Controllers/Api.php(15): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Api->country()
+#6 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-02 12:49:34 --> Class 'App\Models\Costomer_model' not found
+#0 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(882): App\Controllers\Customer->__construct()
+#1 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-02 13:13:23 --> Too few arguments to function App\Controllers\Api::customer(), 0 passed in /home/whoami/Projects/e-commerce/system/CodeIgniter.php on line 910 and exactly 1 expected
+#0 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Api->customer()
+#1 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-02 15:31:56 --> Call to a member function save() on null
+#0 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(910): App\Controllers\Api->delivery_boy()
+#1 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#2 /home/whoami/Projects/e-commerce/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#3 /home/whoami/Projects/e-commerce/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}

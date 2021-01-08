@@ -1,0 +1,28 @@
+CRITICAL - 2020-05-24 00:24:38 --> Class 'App\Models\Course_resource_model' not found
+#0 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Teacherzone->course_resource()
+#1 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Teacherzone))
+#2 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-05-24 17:05:00 --> Table 'my3skill.courses' doesn't exist
+#0 C:\xampp\htdocs\my3skill\system\Database\MySQLi\Connection.php(330): mysqli->query('select * from c...')
+#1 C:\xampp\htdocs\my3skill\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from c...')
+#2 C:\xampp\htdocs\my3skill\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from c...')
+#3 C:\xampp\htdocs\my3skill\system\Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from c...')
+#4 C:\xampp\htdocs\my3skill\app\Controllers\Services.php(262): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Services->get_course_teacher('1')
+#6 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#7 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-05-24 17:05:08 --> Unknown column 'teacher_id' in 'where clause'
+#0 C:\xampp\htdocs\my3skill\system\Database\MySQLi\Connection.php(330): mysqli->query('select * from c...')
+#1 C:\xampp\htdocs\my3skill\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from c...')
+#2 C:\xampp\htdocs\my3skill\system\Database\BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from c...')
+#3 C:\xampp\htdocs\my3skill\system\Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from c...')
+#4 C:\xampp\htdocs\my3skill\app\Controllers\Services.php(262): CodeIgniter\Model->__call('query', Array)
+#5 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(910): App\Controllers\Services->get_course_teacher('1')
+#6 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Services))
+#7 C:\xampp\htdocs\my3skill\system\CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\my3skill\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}

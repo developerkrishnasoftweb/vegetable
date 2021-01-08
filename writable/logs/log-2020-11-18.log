@@ -1,0 +1,311 @@
+CRITICAL - 2020-11-18 15:13:42 --> Table 'kriishna_vegetable.cart' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select count(*)...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select count(*)...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select count(*)...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select count(*)...', Array)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(857): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->cart('count')
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:13:42 --> Table 'kriishna_vegetable.cart' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select count(*)...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select count(*)...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select count(*)...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select count(*)...', Array)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(857): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->cart('count')
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:13:46 --> Table 'kriishna_vegetable.product' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select * from p...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from p...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from p...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from p...')
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(709): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->product()
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:13:59 --> Table 'kriishna_vegetable.category' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select *, (sele...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select *, (sele...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select *, (sele...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select *, (sele...')
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(103): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->category()
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:13:59 --> Table 'kriishna_vegetable.product' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select * from p...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from p...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from p...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from p...')
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(709): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->product()
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:13:59 --> Table 'kriishna_vegetable.banner' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select b.*, c.t...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select b.*, c.t...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select b.*, c.t...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select b.*, c.t...')
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(139): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->banner()
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:13:59 --> Table 'kriishna_vegetable.cart' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select count(*)...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select count(*)...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select count(*)...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select count(*)...', Array)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(857): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->cart('count')
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:13:59 --> Table 'kriishna_vegetable.cart' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select count(*)...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select count(*)...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select count(*)...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select count(*)...', Array)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(857): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->cart('count')
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:13:59 --> Table 'kriishna_vegetable.product' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select * from p...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from p...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from p...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from p...')
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(730): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->popular_product()
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:13:59 --> Table 'kriishna_vegetable.cart' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select count(*)...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select count(*)...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select count(*)...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select count(*)...', Array)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(857): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->cart('count')
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:13:59 --> Table 'kriishna_vegetable.cart' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select count(*)...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select count(*)...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select count(*)...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select count(*)...', Array)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(857): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->cart('count')
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:14:15 --> Table 'kriishna_vegetable.order' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select o.*, op....')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select o.*, op....')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select o.*, op....')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select o.*, op....', Array)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(603): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->order('view')
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 15:14:15 --> Table 'kriishna_vegetable.cart' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select count(*)...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select count(*)...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select count(*)...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select count(*)...', Array)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(857): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->cart('count')
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 16:42:32 --> Table 'kriishna_vegetable.cart' doesn't exist
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select count(*)...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select count(*)...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select count(*)...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select count(*)...', Array)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(873): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->cart('count')
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2020-11-18 16:51:21 --> Column 'gender' cannot be null
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `de...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `de...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `de...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `de...', Array, false)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(412): CodeIgniter\Model->save(Array)
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->delivery_boy('signup')
+#8 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#9 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-11-18 16:54:11 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 16:56:00 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 16:56:37 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 16:56:47 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 16:57:35 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 16:57:43 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 16:58:55 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:00:12 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:04:42 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:06:36 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:06:38 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:19:43 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:28:00 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:29:02 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:29:22 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:29:26 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:31:24 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:31:40 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:31:49 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:33:21 --> Class 'App\Models\Notification_model' not found
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(882): App\Controllers\Api->__construct()
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(393): CodeIgniter\CodeIgniter->createController()
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2020-11-18 17:58:29 --> Column 'gender' cannot be null
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('INSERT INTO `de...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `de...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `de...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseBuilder.php(2206): CodeIgniter\Database\BaseConnection->query('INSERT INTO `de...', Array, false)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(722): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(550): CodeIgniter\Model->insert(Array, false)
+#6 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(414): CodeIgniter\Model->save(Array)
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->delivery_boy('signup')
+#8 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#9 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2020-11-18 19:00:27 --> Operand should contain 1 column(s)
+#0 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/MySQLi/Connection.php(330): mysqli->query('select * from p...')
+#1 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select * from p...')
+#2 /home/kriishna/vegetable.krishnasoftweb.com/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select * from p...')
+#3 /home/kriishna/vegetable.krishnasoftweb.com/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select * from p...', Array)
+#4 /home/kriishna/vegetable.krishnasoftweb.com/app/Controllers/Api.php(606): CodeIgniter\Model->__call('query', Array)
+#5 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(910): App\Controllers\Api->order('new')
+#6 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home/kriishna/vegetable.krishnasoftweb.com/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/kriishna/vegetable.krishnasoftweb.com/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
