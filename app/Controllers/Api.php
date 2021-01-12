@@ -978,7 +978,8 @@ class Api extends BaseController {
                 $res['message'] = 'Items Not removed from cart';
             }
         } else if(strtolower($action)=='view') {
-            $res['data'] = $this->model->query("select c.*, p.category_id, p.sub_category_id, p.title, p.short_info, p.long_info, p.image, p.price, p.display_price, p.unit, p.capacity, p.package_count, p.featured, p.oos, p.popular, p.home_product, (p.price * c.quantity) as total_price from cart c, product p where c.customer_id = ? and c.product_id = p.id", array($this->request->getVar('customer_id')))->getResult('array'); if(is_array($res['data']) && count($res['data']) > 0) {
+            $res['data'] = $this->model->query("select c.*, p.category_id, p.sub_category_id, p.title, p.short_info, p.long_info, p.image, p.price, p.display_price, p.unit, p.quantity, p.package_count, p.featured, p.oos, p.popular, p.home_product, (p.price * c.quantity) as total_price from cart c, product p where c.customer_id = ? and c.product_id = p.id", array($this->request->getVar('customer_id')))->getResult('array');
+            if(is_array($res['data']) && count($res['data']) > 0) {
                 $res['status'] = 1;
                 $res['message'] = 'Data found';
             } else {
