@@ -169,6 +169,23 @@ class Api extends BaseController {
         echo json_encode($res);
     }
 
+    public function timeslot() {
+        if($this->request->getVar('timeslot_id')) {
+            $res['data'] = $this->model->query("select * from time_slot where id = ? and status = 'y'", array($this->request->getVar('timeslot_id')))->getResult('array');
+        } else {
+            $res['data'] = $this->model->query("select * from time_slot where status = 'y' order by start_time asc")->getResult('array');
+        }
+        if(is_array($res['data']) && count($res['data']) > 0) {
+            $res['status'] = 1;
+            $res['message'] = 'Data found';
+        } else {
+            $res['data'] = [];
+            $res['status'] = 0;
+            $res['message'] = 'Data not found';
+        }
+        echo json_encode($res);
+    }
+
     public function check($action) {
         if(strtolower($action)=='mobile') {
             $mobile = $this->model->query("select * from customer where mobile = ?", array($this->request->getVar('mobile')))->getResult('array');
@@ -978,8 +995,7 @@ class Api extends BaseController {
                 $res['message'] = 'Items Not removed from cart';
             }
         } else if(strtolower($action)=='view') {
-            $res['data'] = $this->model->query("select c.*, p.category_id, p.sub_category_id, p.title, p.short_info, p.long_info, p.image, p.price, p.display_price, p.unit, p.quantity, p.package_count, p.featured, p.oos, p.popular, p.home_product, (p.price * c.quantity) as total_price from cart c, product p where c.customer_id = ? and c.product_id = p.id", array($this->request->getVar('customer_id')))->getResult('array');
-            if(is_array($res['data']) && count($res['data']) > 0) {
+            $res['data'] = $this->model->query("select c.*, p.category_id, p.sub_category_id, p.title, p.short_info, p.long_info, p.image, p.price, p.display_price, p.unit, p.quantity, p.package_count, p.featured, p.oos, p.popular, p.home_product, (p.price * c.quantity) as total_price from cart c, product p where c.customer_id = ? and c.product_id = p.id", array($this->request->getVar('customer_id')))->getResult('array'); if(is_array($res['data']) && count($res['data']) > 0) {
                 $res['status'] = 1;
                 $res['message'] = 'Data found';
             } else {
@@ -990,6 +1006,7 @@ class Api extends BaseController {
         }
         echo json_encode($res);
     }
+
     function user_profile(){
         $data=array(
             'id' => $this->request->getVar('id'),
@@ -1004,6 +1021,7 @@ class Api extends BaseController {
         $res['message'] = 'Data not found';
         echo json_encode($res);
     }
+
     function check_coupon(){
         $response=array(
             'status' => 0,
@@ -1068,22 +1086,24 @@ class Api extends BaseController {
         $response['status']=1;
         echo json_encode($response);
     }
+
     function forget_password(){
         $username=$this->request->getVar('username');
         $utilities=new \Utilities();
         $model=new Customer_model();
         $resp=$model->where('email',$username)->orWhere('mobile',$username)->find();
-        if(count($resp)==0){
+        if(count($resp)==0) {
             echo json_encode(array('status' => 0,'message' => 'Account not found associated with this email or mobile'));
-        }else{
+        } else {
             $email=$resp[0]['email'];
             $encrypted=$this->_encryptString($email);
-//            echo $encrypted; exit;
+            //echo $encrypted; exit;
             $mailContent="Dear ".$resp[0]['first_name'].",<br>Your password reset link is below please click on the link and change your password.<br><a href='".base_url()."/api/reset_password/".$encrypted."/dx32oT09utBkhy4PNMZzz7AXBDjzH9NU-dx32oT09utBkhy4PNMZzz7AXBDjzH9NU-dx32oT09utBkhy4PNMZzz7AXBDjzH9NU-dx32oT09utBkhy4PNMZzz7AXBDjzH9NU'>Click to Reset</a><br>Thanks & Regards<br><b>SaptKrishi</b>";
             @$utilities->send_email($email,$mailContent,"Reset Password");
             echo json_encode(array('status' => 1,'message' => 'An password reset link has been sent to your email address'));
         }
     }
+
     function reset_password($encrypted_email){
         $email=$this->_decryptString($encrypted_email);
         $model=new Customer_model();
@@ -1094,6 +1114,7 @@ class Api extends BaseController {
         }
         return view('admin/reset_password',$data);
     }
+
     function change_password(){
         $model=new Customer_model();
         $data=array(
@@ -1103,12 +1124,15 @@ class Api extends BaseController {
         $model->save($data);
         echo "Your Password has been changed successfully please go to the application and login with the new password";
     }
+
     function _encryptString($string){
         return base64_encode($string);
     }
+
     function _decryptString($string){
         return base64_decode($string);
     }
+
     function test_noti(){
         $customer=$this->customer->where('id',31)->first();
         @$this->utilities->push_notification('Order Placed',array($customer['token']),"Your order has been placed successfully");

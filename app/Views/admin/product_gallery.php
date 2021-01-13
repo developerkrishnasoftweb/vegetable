@@ -167,6 +167,7 @@
             }
         });
     });
+
     function validateAndUpload(input){
         var URL = window.URL || window.webkitURL;
         var file = input.files[0];

@@ -1,57 +1,4 @@
-CRITICAL - 2021-01-08 12:58:19 --> Table 'saptkri1_grocery.product' doesn't exist
-#0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select *, (sele...')
-#1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select *, (sele...')
-#2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select *, (sele...')
-#3 /home3/saptkri1/admin.saptkrishi.in/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select *, (sele...')
-#4 /home3/saptkri1/admin.saptkrishi.in/app/Controllers/Api.php(113): CodeIgniter\Model->__call('query', Array)
-#5 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Api->departments()
-#6 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
-#7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
-#9 {main}
-CRITICAL - 2021-01-08 13:07:46 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php on line 910 and exactly 1 expected
-#0 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
-#1 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
-#2 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#3 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
-#4 {main}
-CRITICAL - 2021-01-08 13:08:08 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php on line 910 and exactly 1 expected
-#0 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
-#1 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
-#2 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#3 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
-#4 {main}
-CRITICAL - 2021-01-08 13:09:32 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php on line 910 and exactly 1 expected
-#0 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
-#1 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
-#2 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#3 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
-#4 {main}
-CRITICAL - 2021-01-08 13:10:13 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php on line 910 and exactly 1 expected
-#0 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
-#1 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
-#2 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#3 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
-#4 {main}
-CRITICAL - 2021-01-08 13:12:07 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php on line 910 and exactly 1 expected
-#0 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
-#1 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
-#2 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#3 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
-#4 {main}
-CRITICAL - 2021-01-08 13:16:59 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php on line 910 and exactly 1 expected
-#0 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
-#1 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
-#2 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#3 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
-#4 {main}
-CRITICAL - 2021-01-08 13:19:34 --> Too few arguments to function App\Controllers\Product::product_image(), 0 passed in /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php on line 910 and exactly 1 expected
-#0 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Product->product_image()
-#1 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
-#2 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#3 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
-#4 {main}
-CRITICAL - 2021-01-08 13:21:17 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 07:58:30 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -62,7 +9,7 @@ CRITICAL - 2021-01-08 13:21:17 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 13:22:28 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 08:01:51 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -73,7 +20,7 @@ CRITICAL - 2021-01-08 13:22:28 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 13:23:07 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 08:16:59 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -84,7 +31,7 @@ CRITICAL - 2021-01-08 13:23:07 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 14:50:23 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 08:18:32 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -95,7 +42,7 @@ CRITICAL - 2021-01-08 14:50:23 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 14:50:42 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 09:37:34 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -106,7 +53,7 @@ CRITICAL - 2021-01-08 14:50:42 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 14:51:32 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 09:38:02 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -117,7 +64,7 @@ CRITICAL - 2021-01-08 14:51:32 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 14:51:52 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 09:39:12 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -128,7 +75,7 @@ CRITICAL - 2021-01-08 14:51:52 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 14:52:41 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 09:55:16 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -139,7 +86,7 @@ CRITICAL - 2021-01-08 14:52:41 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 15:07:43 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 09:56:02 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -150,7 +97,7 @@ CRITICAL - 2021-01-08 15:07:43 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 15:19:34 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 09:57:10 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -161,7 +108,7 @@ CRITICAL - 2021-01-08 15:19:34 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 15:21:33 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 09:57:53 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -172,7 +119,7 @@ CRITICAL - 2021-01-08 15:21:33 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 15:58:29 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 10:13:23 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -183,7 +130,7 @@ CRITICAL - 2021-01-08 15:58:29 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 15:59:44 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 10:21:38 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -194,7 +141,7 @@ CRITICAL - 2021-01-08 15:59:44 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 16:01:01 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 10:23:05 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -205,7 +152,7 @@ CRITICAL - 2021-01-08 16:01:01 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 16:01:18 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 10:27:35 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -216,7 +163,7 @@ CRITICAL - 2021-01-08 16:01:18 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 16:01:56 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 10:29:38 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -227,7 +174,7 @@ CRITICAL - 2021-01-08 16:01:56 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 16:02:51 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 10:29:40 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -238,7 +185,7 @@ CRITICAL - 2021-01-08 16:02:51 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 16:05:04 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 13:19:19 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -249,7 +196,7 @@ CRITICAL - 2021-01-08 16:05:04 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 16:36:07 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 13:19:57 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -260,7 +207,7 @@ CRITICAL - 2021-01-08 16:36:07 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 17:23:18 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 15:05:57 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -271,7 +218,7 @@ CRITICAL - 2021-01-08 17:23:18 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 17:26:39 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 16:31:50 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -282,7 +229,7 @@ CRITICAL - 2021-01-08 17:26:39 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 17:26:51 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 17:00:20 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -293,7 +240,7 @@ CRITICAL - 2021-01-08 17:26:51 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 17:27:22 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 18:05:16 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -304,7 +251,7 @@ CRITICAL - 2021-01-08 17:27:22 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 17:48:42 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 18:05:45 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -315,7 +262,7 @@ CRITICAL - 2021-01-08 17:48:42 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 17:49:43 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 18:38:41 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -326,7 +273,7 @@ CRITICAL - 2021-01-08 17:49:43 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 17:50:47 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 19:42:47 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -337,7 +284,7 @@ CRITICAL - 2021-01-08 17:50:47 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 17:52:20 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 19:43:00 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -348,7 +295,7 @@ CRITICAL - 2021-01-08 17:52:20 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 18:04:35 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 19:43:23 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -359,7 +306,7 @@ CRITICAL - 2021-01-08 18:04:35 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 18:13:42 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 19:44:18 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -370,7 +317,7 @@ CRITICAL - 2021-01-08 18:13:42 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 19:34:47 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 19:46:32 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -381,7 +328,7 @@ CRITICAL - 2021-01-08 19:34:47 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 19:36:47 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 21:07:18 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -392,7 +339,7 @@ CRITICAL - 2021-01-08 19:36:47 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 20:12:08 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 23:27:11 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -403,7 +350,7 @@ CRITICAL - 2021-01-08 20:12:08 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 23:05:34 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 23:27:43 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
@@ -414,7 +361,51 @@ CRITICAL - 2021-01-08 23:05:34 --> Unknown column 'p.capacity' in 'field list'
 #7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
 #9 {main}
-CRITICAL - 2021-01-08 23:05:49 --> Unknown column 'p.capacity' in 'field list'
+CRITICAL - 2021-01-09 23:28:56 --> Unknown column 'p.capacity' in 'field list'
+#0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
+#1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
+#2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
+#3 /home3/saptkri1/admin.saptkrishi.in/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select c.*, p.c...', Array)
+#4 /home3/saptkri1/admin.saptkrishi.in/app/Controllers/Api.php(981): CodeIgniter\Model->__call('query', Array)
+#5 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Api->cart('view')
+#6 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-09 23:30:38 --> Unknown column 'p.capacity' in 'field list'
+#0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
+#1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
+#2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
+#3 /home3/saptkri1/admin.saptkrishi.in/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select c.*, p.c...', Array)
+#4 /home3/saptkri1/admin.saptkrishi.in/app/Controllers/Api.php(981): CodeIgniter\Model->__call('query', Array)
+#5 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Api->cart('view')
+#6 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-09 23:34:01 --> Unknown column 'p.capacity' in 'field list'
+#0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
+#1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
+#2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
+#3 /home3/saptkri1/admin.saptkrishi.in/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select c.*, p.c...', Array)
+#4 /home3/saptkri1/admin.saptkrishi.in/app/Controllers/Api.php(981): CodeIgniter\Model->__call('query', Array)
+#5 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Api->cart('view')
+#6 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-09 23:34:56 --> Unknown column 'p.capacity' in 'field list'
+#0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
+#1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
+#2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')
+#3 /home3/saptkri1/admin.saptkrishi.in/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query('select c.*, p.c...', Array)
+#4 /home3/saptkri1/admin.saptkrishi.in/app/Controllers/Api.php(981): CodeIgniter\Model->__call('query', Array)
+#5 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(910): App\Controllers\Api->cart('view')
+#6 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+#7 /home3/saptkri1/admin.saptkrishi.in/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home3/saptkri1/admin.saptkrishi.in/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-09 23:35:50 --> Unknown column 'p.capacity' in 'field list'
 #0 /home3/saptkri1/admin.saptkrishi.in/system/Database/MySQLi/Connection.php(330): mysqli->query('select c.*, p.c...')
 #1 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('select c.*, p.c...')
 #2 /home3/saptkri1/admin.saptkrishi.in/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('select c.*, p.c...')

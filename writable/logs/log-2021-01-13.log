@@ -1,0 +1,43 @@
+CRITICAL - 2021-01-13 14:35:02 --> Access denied for user '****'@'localhost' (using password: YES)
+#0 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(377): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(643): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/whoami/Projects/vegetable/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#3 /home/whoami/Projects/vegetable/app/Controllers/Clogin.php(30): CodeIgniter\Model->__call()
+#4 /home/whoami/Projects/vegetable/system/CodeIgniter.php(910): App\Controllers\Clogin->check_login()
+#5 /home/whoami/Projects/vegetable/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#6 /home/whoami/Projects/vegetable/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/whoami/Projects/vegetable/index.php(53): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-01-13 15:44:45 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'form title_slot where status = 'y' order by start_time asc' at line 1
+#0 /home/whoami/Projects/vegetable/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/vegetable/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/vegetable/app/Controllers/Api.php(176): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/vegetable/system/CodeIgniter.php(910): App\Controllers\Api->timeslot()
+#6 /home/whoami/Projects/vegetable/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/vegetable/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/vegetable/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-13 15:46:58 --> Table 'vegetable.title_slot' doesn't exist
+#0 /home/whoami/Projects/vegetable/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/vegetable/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/vegetable/app/Controllers/Api.php(176): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/vegetable/system/CodeIgniter.php(910): App\Controllers\Api->timeslot()
+#6 /home/whoami/Projects/vegetable/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/vegetable/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/vegetable/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-13 15:47:08 --> Table 'vegetable.title_slot' doesn't exist
+#0 /home/whoami/Projects/vegetable/system/Database/MySQLi/Connection.php(330): mysqli->query()
+#1 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/whoami/Projects/vegetable/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/whoami/Projects/vegetable/system/Model.php(1698): CodeIgniter\Database\BaseConnection->query()
+#4 /home/whoami/Projects/vegetable/app/Controllers/Api.php(176): CodeIgniter\Model->__call()
+#5 /home/whoami/Projects/vegetable/system/CodeIgniter.php(910): App\Controllers\Api->timeslot()
+#6 /home/whoami/Projects/vegetable/system/CodeIgniter.php(398): CodeIgniter\CodeIgniter->runController()
+#7 /home/whoami/Projects/vegetable/system/CodeIgniter.php(306): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/whoami/Projects/vegetable/index.php(53): CodeIgniter\CodeIgniter->run()
+#9 {main}

@@ -54,7 +54,6 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Mobile</th>
-                                    <th>Gender</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -66,7 +65,6 @@
                                         <td><?php echo $row['first_name'].' '.$row['last_name']; ?></td>
                                         <td><?php echo $row['email']; ?></td>
                                         <td><?php echo $row['mobile']; ?></td>
-                                        <td><?php echo $row['gender']; ?></td>
                                         <td id="status<?php echo $row['id']; ?>">
                                             <a href="javascript:;" class="status_change" data-status="<?php echo $row['status']=="y"?"n":"y"; ?>" data-id="<?php echo $row['id']; ?>"><span class="label label-<?php echo $row['status']=='y'?"success":"danger"; ?>"><?php echo $row['status']=='y'?"<i class='fa fa-check'></i> Shown":"<i class='fa fa-ban'></i>  Hidden"; ?></span></a>
                                         </td>
