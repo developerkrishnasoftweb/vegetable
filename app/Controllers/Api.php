@@ -681,7 +681,7 @@ class Api extends BaseController {
                 $data = array();
                 $cnt=0;
                 foreach($order_data as $order) {
-                    $order_data[$cnt++]['products'] = $this->model->query("select od.product_id,od.price, p.title, p.short_info, p.image, od.quantity, od.total from order_detail od, product p where od.product_id=p.id and od.order_id = ?", array($order['id']))->getResult('array');
+                    $order_data[$cnt++]['products'] = $this->model->query("select od.product_id, od.price, p.title, p.short_info, p.image, p.unit, od.quantity, od.total from order_detail od, product p where od.product_id=p.id and od.order_id = ?", array($order['id']))->getResult('array');
                     //                    $data[] = $order;
                 }
                 $res['data'] = $order_data;
@@ -698,7 +698,7 @@ class Api extends BaseController {
             if(is_array($order_data) && count($order_data) > 0) {
                 $data = array();
                 foreach($order_data as $order) {
-                    $order['products'] = $this->model->query("select od.product_id, p.title, p.short_info, p.image, od.quantity, od.total from order_detail od, product p where od.product_id=p.id and od.order_id = ?", array($order['id']))->getResult('array');
+                    $order['products'] = $this->model->query("select od.product_id, p.title, p.short_info, p.image, p.unit, od.quantity, od.total from order_detail od, product p where od.product_id=p.id and od.order_id = ?", array($order['id']))->getResult('array');
                     $data[] = $order;
                 }
                 $res['data'] = $data;
@@ -738,7 +738,7 @@ class Api extends BaseController {
             $delivered_order_data = $this->model->query("select * from `order` where delivery_boy_id = ? and order_status = 'delivered' order by datetime desc", array($this->request->getVar('delivery_boy_id')))->getResult('array');
             if((is_array($delivered_order_data) && count($delivered_order_data) > 0)) {
                 foreach($delivered_order_data as $order) {
-                    $order['products'] = $this->model->query("select od.product_id, p.title, p.short_info, p.image, od.quantity, od.total from order_detail od, product p where od.product_id=p.id and od.order_id = ?", array($order['id']))->getResult('array');
+                    $order['products'] = $this->model->query("select od.product_id, p.title, p.short_info, p.image, p.unit, od.quantity, od.total from order_detail od, product p where od.product_id=p.id and od.order_id = ?", array($order['id']))->getResult('array');
                     $data[] = $order;
                 }
                 $res['data'] = $data;
