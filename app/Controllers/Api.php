@@ -1018,7 +1018,7 @@ class Api extends BaseController {
         $data = $this->model->query("select is_offline from configuration where id = '1'")->getResult('array');
         if(is_array($data) && count($data) > 0) {
             $res['data'] = [
-                ['is_offline' => ($data['is_offline'] == 'true' ? true : false)]
+                ['is_offline' => ($data[0]['is_offline'] == 'true' ? true : false)]
             ];
             $res['status'] = 1;
             $res['message'] = 'Data found';

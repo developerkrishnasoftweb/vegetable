@@ -178,7 +178,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="is_offline">Google Analytic Code</label>
+                                            <label for="is_offline">Site Offline</label>
                                             <select type="text" class="form-control" name="is_offline" id="is_offline">
                                                 <?php if($configuration[0]['is_offline'] == 'true') { ?>
                                                     <option value='true'>True</option>
