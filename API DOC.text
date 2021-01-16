@@ -371,10 +371,12 @@ Delivery Boy API :
 
 
 
-
-
 # Configuration APIs
 
   1) Get all configuration
     URL : /configuration/view
+    Method : GET
+
+  2) Is offline
+    URL : /is_offline
     Method : GET
