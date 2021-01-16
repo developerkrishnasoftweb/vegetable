@@ -27,7 +27,7 @@ class Timeslot extends BaseController {
     public function insert() {
         helper(['form', 'url']);
         $data = array(
-            'title' => $this->request->getVar('timeslot_title'),
+            'title' => strtoupper($this->request->getVar('timeslot_title')),
             'start_time' => $this->request->getVar('start_time'),
             'end_time' => $this->request->getVar('end_time'),
             'status'  => 'y',
@@ -47,7 +47,7 @@ class Timeslot extends BaseController {
     public function update() {
         $data = array(
             'id' => $this->request->getVar('id'),
-            'title' => $this->request->getVar('timeslot_title'),
+            'title' => strtoupper($this->request->getVar('timeslot_title')),
             'start_time' => $this->request->getVar('start_time'),
             'end_time' => $this->request->getVar('end_time'),
             'modified_at'  => date('Y-m-d H:i:s'),

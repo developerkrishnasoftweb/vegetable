@@ -33,6 +33,7 @@
             'reference_no',
             'transaction_date',
             'transaction_time',
+            'comment',
             'order_status',
         ];
         function getDeliveryBoysArray(){

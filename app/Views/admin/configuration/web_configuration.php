@@ -156,6 +156,42 @@
                                     </div>
                                 </div>
                                 <br>
+                                <h4>Payment Configurations</h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="razorpay_key">Razorpay Key</label>
+                                            <textarea type="text" class="form-control" name="razorpay_key" id="razorpay_key"><?php echo $configuration[0]['razorpay_key']; ?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="razorpay_secret_key">Razorpay Secret Key</label>
+                                            <textarea type="text" class="form-control" name="razorpay_secret_key" id="razorpay_secret_key"><?php echo $configuration[0]['razorpay_secret_key']; ?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <h4>Site Configurations</h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="is_offline">Google Analytic Code</label>
+                                            <select type="text" class="form-control" name="is_offline" id="is_offline">
+                                                <?php if($configuration[0]['is_offline'] == 'true') { ?>
+                                                    <option value='true'>True</option>
+                                                    <option value='false'>False</option>
+                                                <?php } else { ?>
+                                                    <option value='false'>False</option>
+                                                    <option value='true'>True</option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
                             </div>
                             <!-- /.card-body -->
 

@@ -44,6 +44,9 @@ class Configuration extends BaseController {
             'min_order' => $this->request->getVar('min_order'),
             'tax' => $this->request->getVar('tax'),
             'discount' => $this->request->getVar('discount'),
+            'razorpay_key' => $this->request->getVar('razorpay_key'),
+            'razorpay_secret_key' => $this->request->getVar('razorpay_secret_key'),
+            'is_offline' => $this->request->getVar('is_offline'),
         );
         if($_FILES['logo']['name']!=""){
             $_SESSION['ins']=1;

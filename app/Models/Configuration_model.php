@@ -38,7 +38,8 @@
             'checkout_meta_description',
             'checkout_meta_keywords',
             'razorpay_key',
-            'razorpay_secret_key'
+            'razorpay_secret_key',
+            'is_offline'
         ];
         function getCount(){
             $res=$this->query("select device_limit from ".$this->table." where id=1")->getResult('array');

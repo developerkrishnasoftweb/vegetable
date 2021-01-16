@@ -625,6 +625,7 @@ class Api extends BaseController {
                     'reference_no' => $this->request->getVar('reference_no'),
                     'transaction_date' => $this->request->getVar('transaction_date'),
                     'transaction_time' => $this->request->getVar('transaction_time'),
+                    'comment' => $this->request->getVar('comment'),
                     'order_status' => 'pending'
                 );
                 $save = $this->order->save($data);
@@ -782,7 +783,7 @@ class Api extends BaseController {
 
     public function product() {
         if($this->request->getVar('product_id')) {
-            $res['data'] = $this->model->query("select * from product where id = ? and status = 'y'", array($this->request->getVar('product_id')))->getResult('array');
+            $res['data'] = $this->model->query("select *, (select image from product_image where product_id = ? and status = 'y') as images from product where id = ? and status = 'y'", array($this->request->getVar('product_id'), $this->request->getVar('product_id')))->getResult('array');
         } else if($this->request->getVar('category_id')) {
             $res['data'] = $this->model->query("select * from product where category_id = ? and status = 'y'", array($this->request->getVar('category_id')))->getResult('array');
         } else if($this->request->getVar('sub_category_id')) {
@@ -803,7 +804,7 @@ class Api extends BaseController {
 
     public function popular_product() {
         if($this->request->getVar('product_id')) {
-            $res['data'] = $this->model->query("select * from product where id = ? and popular = 'y' and status = 'y'", array($this->request->getVar('product_id')))->getResult('array');
+            $res['data'] = $this->model->query("select *, (select image from product_image where product_id = ? and status = 'y') as images from product where id = ? and popular = 'y' and status = 'y'", array($this->request->getVar('product_id'), $this->request->getVar('product_id')))->getResult('array');
         } else if($this->request->getVar('category_id')) {
             $res['data'] = $this->model->query("select * from product where category_id = ? and popular = 'y' and status = 'y'", array($this->request->getVar('category_id')))->getResult('array');
         } else if($this->request->getVar('sub_category_id')) {
@@ -995,7 +996,22 @@ class Api extends BaseController {
                 $res['message'] = 'Items Not removed from cart';
             }
         } else if(strtolower($action)=='view') {
-            $res['data'] = $this->model->query("select c.*, p.category_id, p.sub_category_id, p.title, p.short_info, p.long_info, p.image, p.price, p.display_price, p.unit, p.quantity, p.package_count, p.featured, p.oos, p.popular, p.home_product, (p.price * c.quantity) as total_price from cart c, product p where c.customer_id = ? and c.product_id = p.id", array($this->request->getVar('customer_id')))->getResult('array'); if(is_array($res['data']) && count($res['data']) > 0) {
+            $res['data'] = $this->model->query("select c.*, p.category_id, p.sub_category_id, p.title, p.short_info, p.long_info, p.image, p.price, p.display_price, p.unit, p.package_count, p.featured, p.oos, p.popular, p.home_product, (p.price * c.quantity) as total_price from cart c, product p where c.customer_id = ? and c.product_id = p.id", array($this->request->getVar('customer_id')))->getResult('array'); if(is_array($res['data']) && count($res['data']) > 0) {
+                $res['status'] = 1;
+                $res['message'] = 'Data found';
+            } else {
+                $res['data'] = [];
+                $res['status'] = 0;
+                $res['message'] = 'Data not found';
+            }
+        }
+        echo json_encode($res);
+    }
+
+    public function configuration($action) {
+        if(strtolower($action)=='view') {
+            $res['data'] = $this->model->query("select * from configuration where id='1'")->getResult('array');
+            if(is_array($res['data']) && count($res['data']) > 0) {
                 $res['status'] = 1;
                 $res['message'] = 'Data found';
             } else {

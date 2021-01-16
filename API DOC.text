@@ -368,3 +368,13 @@ Delivery Boy API :
     Method : POST
     Params Type: FormData
     Params : delivery_boy_id
+
+
+
+
+
+# Configuration APIs
+
+  1) Get all configuration
+    URL : /configuration/view
+    Method : GET
