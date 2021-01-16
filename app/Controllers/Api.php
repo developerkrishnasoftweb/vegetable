@@ -784,10 +784,6 @@ class Api extends BaseController {
     public function product() {
         if($this->request->getVar('product_id')) {
             $res['data'] = $this->model->query("select * from product where id = ? and status = 'y'", array($this->request->getVar('product_id')))->getResult('array');
-            $images = $this->model->query("select image from product_image where product_id = ? and status = 'y'", array($this->request->getVar('product_id')))->getResult('array');
-            if(is_array($images) && count($images) > 0) {
-                $res['data'][0]['images'] = $images;
-            }
         } else if($this->request->getVar('category_id')) {
             $res['data'] = $this->model->query("select * from product where category_id = ? and status = 'y'", array($this->request->getVar('category_id')))->getResult('array');
         } else if($this->request->getVar('sub_category_id')) {
@@ -796,6 +792,12 @@ class Api extends BaseController {
             $res['data'] = $this->model->query("select * from product where status = 'y'")->getResult('array');
         }
         if(is_array($res['data']) && count($res['data']) > 0) {
+            $images = $this->model->query("select image from product_image where product_id = ? and status = 'y'", array($this->request->getVar('product_id')))->getResult('array');
+            if(is_array($images) && count($images) > 0) {
+                $res['data'][0]['images'] = $images;
+            } else {
+                $res['data'][0]['images'] = [];
+            }
             $res['status'] = 1;
             $res['message'] = 'Data found';
         } else {
