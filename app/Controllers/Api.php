@@ -717,11 +717,11 @@ class Api extends BaseController {
             $ongoing_order_data = $this->model->query("select * from `order` where delivery_boy_id = ? and order_status != 'pending' and order_status != 'delivered' order by datetime desc", array($this->request->getVar('delivery_boy_id')))->getResult('array');
             if((is_array($pending_order_data) && count($pending_order_data) > 0) || (is_array($ongoing_order_data) && count($ongoing_order_data) > 0)) {
                 foreach($pending_order_data as $order) {
-                    $order['products'] = $this->model->query("select od.product_id, p.title, p.short_info, p.image, od.quantity, od.total from order_detail od, product p where od.product_id=p.id and od.order_id = ?", array($order['id']))->getResult('array');
+                    $order['products'] = $this->model->query("select od.product_id, p.title, p.short_info, p.image, p.unit, od.quantity, od.total from order_detail od, product p where od.product_id=p.id and od.order_id = ?", array($order['id']))->getResult('array');
                     $data['pending_order'][] = $order;
                 }
                 foreach($ongoing_order_data as $order) {
-                    $order['products'] = $this->model->query("select product_id, p.title, p.short_info, p.image, od.quantity, od.total from order_detail od, product p where od.product_id=p.id and od.order_id = ?", array($order['id']))->getResult('array');
+                    $order['products'] = $this->model->query("select product_id, p.title, p.short_info, p.image, p.unit, od.quantity, od.total from order_detail od, product p where od.product_id=p.id and od.order_id = ?", array($order['id']))->getResult('array');
                     $data['ongoing_order'][] = $order;
                 }
                 $res['data'] = $data;
